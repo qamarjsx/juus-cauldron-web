@@ -3,21 +3,21 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-black h-64">
+    <footer className="bg-black h-72">
       <div className="text-snow border-b border-zinc-900 w-full h-4/5 flex flex-col justify-evenly">
         <p className="text-center text-sm">Subscribe to our emails</p>
         <div className="relative flex items-center justify-center">
-          <label className="absolute left-11" htmlFor="email">
+          <label className="absolute left-12 xs:left-14 sm:left-16 md:left-20 lg:left-52 xl:left-72 2xl:left-80 3xl:left-[440px] 4xl:left-[550px] 5xl:left-[590px]" htmlFor="email">
             Email
           </label>
           <input
-            className="outline-none appearance-none border bg-black border-snow h-11 w-4/5 px-3"
+            className="outline-none appearance-none border bg-black border-snow h-11 px-3 w-4/5 lg:w-1/2 xl:w-2/5 3xl:w-1/3 4xl:w-1/4"
             id="email"
             type="email"
             name="email"
           />
           <svg
-            className="inline-block absolute right-11"
+            className="inline-block absolute right-12 xs:right-14 sm:right-16 md:right-20 lg:right-52 xl:right-72 2xl:right-80 3xl:right-[440px] 4xl:right-[550px] 5xl:right-[590px]"
             xmlns="http://www.w3.org/2000/svg"
             width="1.5em"
             height="2em"
@@ -33,7 +33,7 @@ function Footer() {
             ></path>
           </svg>
         </div>
-        <div className="flex items-center justify-evenly h-5">
+        <div className="flex items-center justify-center h-5">
           <Link to={"https://www.facebook.com/profile.php?id=61550934897741"}>
             <img
               className="h-5"
@@ -43,7 +43,7 @@ function Footer() {
           </Link>
           <Link to={"https://www.instagram.com/official.juus"}>
             <img
-              className="h-5"
+              className="h-5 mx-10"
               src="https://juusstorage.blob.core.windows.net/website/images/general/insta-white.png"
               alt="instagram logo"
             />
