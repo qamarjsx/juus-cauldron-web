@@ -12,7 +12,7 @@ function Home() {
     <div className="bg-black">
       <Swiper
         modules={[Navigation, Pagination, A11y]}
-        spaceBetween={1}
+        spaceBetween={3}
         slidesPerView={1.1}
         navigation
         pagination={{
@@ -26,7 +26,7 @@ function Home() {
             name="Juus"
             text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, fuga
             similique laboriosam eos veritatis id!"
-            mediaLink="https://juusstorage.blob.core.windows.net/website/videos/home/turntable-mobile.mp4"
+            mediaLink="https://juusstorage.blob.core.windows.net/website/images/shop/strawberry-front.png"
             shopRoute="shop/juus-products"
           />
         </SwiperSlide>
@@ -35,7 +35,7 @@ function Home() {
             name="Nova"
             text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, fuga
             similique laboriosam eos veritatis id!"
-            mediaLink="https://juusstorage.blob.core.windows.net/website/videos/home/homepage-explosion.mp4"
+            mediaLink="https://juusstorage.blob.core.windows.net/website/images/shop/apple-front.png"
             shopRoute="shop/nova-products"
           />
         </SwiperSlide>
