@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="fixed z-10 w-full flex justify-between items-center p-5 border-b border-zinc-900 bg-black">
+    <header className="fixed z-40 w-full flex justify-between items-center p-4 border-b border-zinc-900 bg-black">
       <svg
         className="transform scale-y-[-1]"
         xmlns="http://www.w3.org/2000/svg"
@@ -22,8 +22,8 @@ function Header() {
       </svg>
       <Link to={"/"}>
         <img
-          className="w-24 cursor-pointer"
-          src="https://juusstorage.blob.core.windows.net/website/images/general/juus-logo-white-transparent-bg.png"
+          className="h-16 cursor-pointer"
+          src="https://juusstorage.blob.core.windows.net/creatives/Homepage JC/Juus cauldron logo white.png"
           alt=""
         />
       </Link>

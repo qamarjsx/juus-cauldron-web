@@ -27,3 +27,6 @@
   height: 6px !important;
 }
 
+.juus-component, .nova-component {
+  transition: all 10s ease-in-out 5s;
+}
