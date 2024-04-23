@@ -8,7 +8,7 @@ export default {
         'rich-black': "#000411",
       },
       boxShadow: {
-        'btn-shadow': 'rgba(0, 0, 0, 0.18) 0px 2px 4px',
+        'primary-shadow': 'rgba(0, 0, 0, 0.18) 0px 2px 4px',
       },
       screens: {
         'xs': "480px",

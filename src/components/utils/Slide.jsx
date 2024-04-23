@@ -27,7 +27,7 @@ function Slide({ name, text, mediaLink, shopRoute }) {
         <button
           onMouseEnter={() => setArrowColor("black")}
           onMouseLeave={() => setArrowColor("white")}
-          className="cursor-pointer my-12 flex items-center italic justify-between p-3 w-36 h-11 text-snow text-sm border rounded-full hover:bg-snow hover:text-rich-black hover:shadow-btn-shadow hover:shadow-snow transition"
+          className="cursor-pointer my-12 flex items-center italic justify-between p-3 w-36 h-11 text-snow text-sm border rounded-full hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
         >
           Discover more
           <svg
