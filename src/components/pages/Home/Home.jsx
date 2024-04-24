@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import Slide from "../../utils/Slide.jsx";
 import "./Home.css";
-import { Navigation, Pagination, A11y } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { useSwipeable } from "react-swipeable";
 
 function Home() {

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="fixed z-40 w-full flex justify-between items-center p-4 border-b border-zinc-900 bg-black">
+    <header className="fixed z-40 w-full h-24 flex justify-between items-center p-4 border-b border-zinc-900 bg-black">
       <svg
         className="transform scale-y-[-1]"
         xmlns="http://www.w3.org/2000/svg"
