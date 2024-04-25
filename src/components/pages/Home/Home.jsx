@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Slide from "../../utils/Slide.jsx";
 import "./Home.css";
 import { useSwipeable } from "react-swipeable";
+import About from "../About/About.jsx";
+import Contact from "../Contact/Contact.jsx";
 
 function Home() {
   const [showLeftHalf, setShowLeftHalf] = useState(false);
@@ -83,13 +85,14 @@ function Home() {
           }}
         >
           {showLeftHalf ? (
-            <img
-              className={`transition-all duration-500 ease-in-out absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
-                showLeftHalf ? "opacity-100" : "opacity-0"
-              }`}
-              src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Juus%20bottle%20green%20apple%20wbg.png"
-              alt="Juus bottle"
-            />
+            // <img
+            //   className={`transition-all duration-500 ease-in-out absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
+            //     showLeftHalf ? "opacity-100" : "opacity-0"
+            //   }`}
+            //   src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Juus%20bottle%20green%20apple%20wbg.png"
+            //   alt="Juus bottle"
+            // />
+            <About />
           ) : (
             <img
               className="absolute z-10 top-1/2 left-1/2 -translate-x-[54%] -translate-y-1/2"
@@ -107,13 +110,14 @@ function Home() {
           }}
         >
           {showRightHalf ? (
-            <img
-              className={`transition-all duration-500 ease-in-out absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
-                showRightHalf ? "opacity-100" : "opacity-0"
-              }`}
-              src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/full%20bottle%20nova.png"
-              alt="Nova bottle"
-            />
+            // <img
+            //   className={`transition-all duration-500 ease-in-out absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
+            //     showRightHalf ? "opacity-100" : "opacity-0"
+            //   }`}
+            //   src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/full%20bottle%20nova.png"
+            //   alt="Nova bottle"
+            // />
+            <Contact />
           ) : (
             <img
               className="absolute z-10 top-1/2 left-1/2 transform -translate-x-[52%] -translate-y-1/2"

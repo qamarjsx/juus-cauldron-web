@@ -16,6 +16,8 @@ import Contact from "./components/pages/Contact/Contact.jsx";
 import NotFound from "./components/pages/NotFound/NotFound.jsx";
 import NovaShop from "./components/pages/NovaShop/NovaShop.jsx";
 import JuusShop from "./components/pages/JuusShop/JuusShop.jsx";
+import Test from "./components/pages/Test/Test.jsx";
+import Test2 from "./components/pages/Test2/Test2.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +29,8 @@ const router = createBrowserRouter(
       <Route path="shop/juus-products" element={<JuusShop />} />
       <Route path="faqs" element={<FAQs />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="test" element={<Test />} />
+      <Route path="test2" element={<Test2 />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
