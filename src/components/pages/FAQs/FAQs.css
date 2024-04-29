@@ -1,12 +1,6 @@
 :root {
-    --image-comparison-slider-width: min(80vw, 768px);
+    --image-comparison-slider-width: 100vw;
     --image-comparison-slider-handle-width: 50px;
-}
-
-@media (max-width: 768px) {
-    :root {
-        --image-comparison-slider-width: 90vw;
-    }
 }
 
 #image-comparison-slider {
@@ -25,7 +19,7 @@
     height: var(--image-comparison-slider-handle-width);
 }
 
-#image-comparison-slider img {
+#image-comparison-slider .slide {
     width: var(--image-comparison-slider-width);
 }
 

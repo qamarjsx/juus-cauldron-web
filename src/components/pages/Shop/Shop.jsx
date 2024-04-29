@@ -5,6 +5,9 @@ import "allotment/dist/style.css";
 import "./Shop.css";
 
 function Shop() {
+  function handleChange() {
+    console.log("changed");
+  }
   return (
     <div className="relative h-screen">
       <img
@@ -12,7 +15,7 @@ function Shop() {
             src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Typography%20Delve%20in%20future.png"
             alt=""
           />
-      <Allotment separator>
+      <Allotment>
         <Allotment.Pane>
           <div
             style={{

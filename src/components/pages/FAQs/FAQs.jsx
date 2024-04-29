@@ -1,13 +1,41 @@
-import React, { useRef } from "react";
+import React, {useState, useEffect, useRef } from "react";
 import "./FAQs.css";
+import SlideA from "../../utils/SlideA.jsx"
+import SlideB from "../../utils/SlideB.jsx"
+import SlideC from "../../utils/SlideC.jsx";
+import SlideD from "../../utils/SlideD.jsx";
+
 
 function FAQs() {
   let isSliderLocked = false;
   const sliderRef = useRef(null);
   const sliderHandleRef = useRef(null);
   const sliderImgWrapperRef = useRef(null);
+  const [showSlideA, setShowSlideA] = useState(false);
+  const [showSlideB, setShowSlideB] = useState(false);
+
+  
+    const checkWidth = () => {
+      if (sliderImgWrapperRef.current) {
+        const elementWidth = sliderImgWrapperRef.current.offsetWidth;
+        const parentWidth = sliderImgWrapperRef.current.parentElement.offsetWidth;
+        const widthPercentage = (elementWidth / parentWidth) * 100;
+
+        if (widthPercentage <= 30) {
+          setShowSlideA(true);
+          setShowSlideB(false);
+        } else if (widthPercentage >= 70) {
+          setShowSlideA(false);
+          setShowSlideB(true);
+        } else {
+          setShowSlideA(false);
+          setShowSlideB(false);
+        }
+      }
+    };
 
   function sliderMouseMove(event) {
+    checkWidth();
     if (isSliderLocked) return;
     // console.log(event);
     const sliderLeftX = sliderRef.current.offsetLeft;
@@ -29,6 +57,7 @@ function FAQs() {
   }
 
   function sliderMouseDown(event) {
+    checkWidth();
     if (isSliderLocked) isSliderLocked = false;
     sliderMouseMove(event);
   }
@@ -40,9 +69,9 @@ function FAQs() {
   function sliderMouseLeave() {
     if (isSliderLocked) isSliderLocked = false;
   }
-
+  
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-blue-900">
+    <div className="w-full h-screen flex items-center justify-center">
       <div
         ref={sliderRef}
         onMouseMove={sliderMouseMove}
@@ -55,18 +84,24 @@ function FAQs() {
         id="image-comparison-slider"
         className="relative overflow-hidden cursor-e-resize"
       >
-        <img
+        <div className="slide block h-auto object-cover pointer-events-none select-none">
+        <SlideC showFullSlide={showSlideA}/>
+        </div>
+        {/* <img
           src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Juus%20bottle%20green%20apple%20wbg.png"
           className="block h-auto max-h-[80vh] object-cover pointer-events-none select-none"
-        />
+        /> */}
         <div
           ref={sliderImgWrapperRef}
           className="img-wrapper absolute top-0 right-0 w-1/2 h-full overflow-hidden z-10"
         >
-          <img
+          <div className="slide absolute top-0 right-0 h-full object-cover pointer-events-none select-none">
+          <SlideD showFullSlide={showSlideB}/>
+          </div>
+          {/* <img
             src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Juus%20bottle%20green%20apple%20wbg.png"
             className="absolute top-0 right-0 h-full max-h-[80vh] object-cover pointer-events-none select-none"
-          />
+          /> */}
         </div>
         {/* <span className="label label-before">Before</span>
       <span className="label label-after">After</span> */}
@@ -75,7 +110,7 @@ function FAQs() {
           className="handle absolute top-0 h-full flex flex-col justify-center items-center select-none z-20"
         >
           <div className="handle-line w-0.5 grow bg-white"></div>
-          <div className="handle-circle text-white border-2 border-solid border-white rounded-[50%] flex items-center justify-evenly">
+          <div className="handle-circle text-white shadow-primary-shadow bg-yellow-400 rounded-[50%] flex items-center justify-evenly">
             <svg
               className={``}
               xmlns="http://www.w3.org/2000/svg"
