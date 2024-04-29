@@ -1,9 +1,11 @@
-import React, {useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./FAQs.css";
-import SlideA from "../../utils/SlideA.jsx"
-import SlideB from "../../utils/SlideB.jsx"
+import SlideA from "../../utils/SlideA.jsx";
+import SlideB from "../../utils/SlideB.jsx";
 import SlideC from "../../utils/SlideC.jsx";
 import SlideD from "../../utils/SlideD.jsx";
+import SlideT from "../../utils/SlideT.jsx";
+import SlideU from "../../utils/SlideU.jsx";
 
 
 function FAQs() {
@@ -14,25 +16,24 @@ function FAQs() {
   const [showSlideA, setShowSlideA] = useState(false);
   const [showSlideB, setShowSlideB] = useState(false);
 
-  
-    const checkWidth = () => {
-      if (sliderImgWrapperRef.current) {
-        const elementWidth = sliderImgWrapperRef.current.offsetWidth;
-        const parentWidth = sliderImgWrapperRef.current.parentElement.offsetWidth;
-        const widthPercentage = (elementWidth / parentWidth) * 100;
+  const checkWidth = () => {
+    if (sliderImgWrapperRef.current) {
+      const elementWidth = sliderImgWrapperRef.current.offsetWidth;
+      const parentWidth = sliderImgWrapperRef.current.parentElement.offsetWidth;
+      const widthPercentage = (elementWidth / parentWidth) * 100;
 
-        if (widthPercentage <= 30) {
-          setShowSlideA(true);
-          setShowSlideB(false);
-        } else if (widthPercentage >= 70) {
-          setShowSlideA(false);
-          setShowSlideB(true);
-        } else {
-          setShowSlideA(false);
-          setShowSlideB(false);
-        }
+      if (widthPercentage <= 25) {
+        setShowSlideA(true);
+        setShowSlideB(false);
+      } else if (widthPercentage >= 75) {
+        setShowSlideA(false);
+        setShowSlideB(true);
+      } else {
+        setShowSlideA(false);
+        setShowSlideB(false);
       }
-    };
+    }
+  };
 
   function sliderMouseMove(event) {
     checkWidth();
@@ -69,7 +70,7 @@ function FAQs() {
   function sliderMouseLeave() {
     if (isSliderLocked) isSliderLocked = false;
   }
-  
+
   return (
     <div className="w-full h-screen flex items-center justify-center">
       <div
@@ -85,7 +86,7 @@ function FAQs() {
         className="relative overflow-hidden cursor-e-resize"
       >
         <div className="slide block h-auto object-cover pointer-events-none select-none">
-        <SlideC showFullSlide={showSlideA}/>
+          {showSlideA ? <SlideT/> : <SlideA />}
         </div>
         {/* <img
           src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Juus%20bottle%20green%20apple%20wbg.png"
@@ -96,7 +97,7 @@ function FAQs() {
           className="img-wrapper absolute top-0 right-0 w-1/2 h-full overflow-hidden z-10"
         >
           <div className="slide absolute top-0 right-0 h-full object-cover pointer-events-none select-none">
-          <SlideD showFullSlide={showSlideB}/>
+            {showSlideB ? <SlideU /> : <SlideB />}
           </div>
           {/* <img
             src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Juus%20bottle%20green%20apple%20wbg.png"

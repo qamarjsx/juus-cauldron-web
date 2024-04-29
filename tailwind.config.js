@@ -11,6 +11,7 @@ export default {
         'primary-shadow': 'rgba(0, 0, 0, 0.18) 0px 2px 4px',
       },
       screens: {
+        'xxxs': '375px',
         'xxs': "425px",
         'xs': "480px",
         'sm': '540px',
@@ -21,7 +22,7 @@ export default {
         '3xl': '1280px',
         '4xl': '1440px',
         '5xl': '1536px',
-        '6xl': '1640px',
+        '6xl': '1920px',
       }
     },
   },
