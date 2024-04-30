@@ -18,19 +18,23 @@ function SlideU() {
           src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Juus%20bottle%20green%20apple%20wbg.png"
           alt="Juus Bottle"
         />
+        <Fade direction="down" className="w-11/12 xxxs:w-10/12 xxs:w-9/12 xs:w-8/12 lg:w-7/12 3xl:w-1/5 4xl:w-1/4">
         <img
-          className="w-11/12 xxxs:w-10/12 xxs:w-9/12 xs:w-8/12 lg:w-7/12 3xl:w-1/5 4xl:w-1/4"
+          className=""
           src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Typography%20Delve%20in%20future.png"
           alt="FUTURE"
         />
+        </Fade>
         <div className="flex flex-col items-center mt-40 xxs:mt-48 xs:mt-56 3xl:mt-48 -mb-16 xxxs:-mb-[72px] 3xl:-mb-16 3xl:flex-row 3xl:justify-center">
+          <Fade delay={300} direction="right" className="w-11/12 xxxs:w-10/12 xxs:w-9/12 xs:w-8/12 lg:w-7/12 3xl:w-1/5 4xl:w-1/4">
           <img
-            className="w-11/12 xxxs:w-10/12 xxs:w-9/12 xs:w-8/12 lg:w-7/12 3xl:w-1/5 4xl:w-1/4"
+            className=""
             src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Typography%20Delve%20in%20future.png"
             alt="Text about Juus"
           />
-
-          <Link className="self-end mx-5" to={"/shop"}>
+          </Fade>
+          <Fade delay={800} direction="up" className="self-end mx-5">
+          <Link className="" to={"/shop"}>
             <button
               onMouseEnter={() => setArrowColor("black")}
               onMouseLeave={() => setArrowColor("white")}
@@ -54,6 +58,7 @@ function SlideU() {
               </svg>
             </button>
           </Link>
+          </Fade>
         </div>
       </div>
     </div>

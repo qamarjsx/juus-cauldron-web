@@ -11,7 +11,7 @@ function SlideA() {
         }}
         className={`relative overflow-hidden h-screen bg-cover bg-center`}
       >
-        <Fade cascade damping={0.75}>
+        <Fade delay={300} cascade damping={0.75}>
           <img
             className="scale-125 xs:scale-110 md:scale-100 xl:scale-75 2xl:scale-[.55] 3xl:scale-50 6xl:scale-[.6] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform"
             src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Juus%20bottle%20green%20apple%20wbg.png"
