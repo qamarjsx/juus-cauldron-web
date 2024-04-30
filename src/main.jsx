@@ -19,7 +19,7 @@ import JuusShop from "./components/pages/JuusShop/JuusShop.jsx";
 import Test from "./components/pages/Test/Test.jsx";
 import SlideC from "./components/utils/SlideC.jsx";
 import SlideT from "./components/utils/SlideT.jsx";
-
+import NovaHome from "./components/pages/NovaHome/NovaHome.jsx"
 
 
 
@@ -33,6 +33,7 @@ const router = createBrowserRouter(
       <Route path="shop/juus-products" element={<JuusShop />} />
       <Route path="faqs" element={<FAQs />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="nova" element={<NovaHome />} />
       <Route path="slidec" element={<SlideC />} />
       <Route path="slidet" element={<SlideT />} />
       <Route path="test" element={<Test />} />

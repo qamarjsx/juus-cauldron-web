@@ -4,7 +4,7 @@ import Header from "./components/utils/Header";
 function App() {
   return (
     <div className="relative">
-      <Header />
+      {/* <Header /> */}
       <Outlet />
     </div>
   );

@@ -6,6 +6,7 @@ import SlideC from "../../utils/SlideC.jsx";
 import SlideD from "../../utils/SlideD.jsx";
 import SlideT from "../../utils/SlideT.jsx";
 import SlideU from "../../utils/SlideU.jsx";
+import Header from "../../utils/Header.jsx";
 
 
 function FAQs() {
@@ -71,7 +72,8 @@ function FAQs() {
     if (isSliderLocked) isSliderLocked = false;
   }
 
-  return (
+  return (<>
+    <Header />
     <div className="w-full h-screen flex items-center justify-center">
       <div
         ref={sliderRef}
@@ -141,6 +143,7 @@ function FAQs() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
