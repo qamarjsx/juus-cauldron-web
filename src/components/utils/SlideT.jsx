@@ -28,7 +28,7 @@ function SlideT() {
             alt="FUTURE"
           />
         </Fade>
-        <div className="flex flex-col items-center mt-40 xxs:mt-48 xs:mt-56 3xl:mt-48 -mb-16 xxxs:-mb-[72px] 3xl:-mb-16 3xl:flex-row 3xl:justify-center">
+        <div className="z-30 flex flex-col items-center mt-40 xxs:mt-48 xs:mt-56 3xl:mt-48 -mb-16 xxxs:-mb-[72px] 3xl:-mb-16 3xl:flex-row 3xl:justify-center">
           <Fade
             delay={300}
             direction="left"
@@ -41,7 +41,7 @@ function SlideT() {
             />
           </Fade>
           <Fade delay={800} direction="up" className="self-end mx-5">
-            <Link className="" to={"/shop"}>
+            <Link className="" to={"/nova"}>
               <button
                 onMouseEnter={() => setArrowColor("black")}
                 onMouseLeave={() => setArrowColor("white")}

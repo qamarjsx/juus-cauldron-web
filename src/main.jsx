@@ -17,8 +17,6 @@ import NotFound from "./components/pages/NotFound/NotFound.jsx";
 import NovaShop from "./components/pages/NovaShop/NovaShop.jsx";
 import JuusShop from "./components/pages/JuusShop/JuusShop.jsx";
 import Test from "./components/pages/Test/Test.jsx";
-import SlideC from "./components/utils/SlideC.jsx";
-import SlideT from "./components/utils/SlideT.jsx";
 import NovaHome from "./components/pages/NovaHome/NovaHome.jsx"
 
 
@@ -34,8 +32,6 @@ const router = createBrowserRouter(
       <Route path="faqs" element={<FAQs />} />
       <Route path="contact" element={<Contact />} />
       <Route path="nova" element={<NovaHome />} />
-      <Route path="slidec" element={<SlideC />} />
-      <Route path="slidet" element={<SlideT />} />
       <Route path="test" element={<Test />} />
       <Route path="*" element={<NotFound />} />
     </Route>
