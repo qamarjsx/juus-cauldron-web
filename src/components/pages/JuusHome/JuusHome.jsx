@@ -1,41 +1,41 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import NovaHeader from "../../utils/NovaHeader";
 import { Link } from "react-router-dom";
 
 function NovaHome() {
-  const [arrowColor, setArrowColor] = useState("white");
+    const [arrowColor, setArrowColor] = useState("white");
 
   return (
-    <div className="relative overflow-x-hidden bg-[#fed381]">
-      <div className="">
-        <NovaHeader />
-      </div>
-      <main className="pt-24 pb-10 h-screen flex flex-col items-center">
+    <div className="relative h-screen overflow-hidden">
+      <NovaHeader />
+      <div
+        className="pt-24 bg-[#fed381]"
+      >
         <img
-          className="h-1/3 lg:h-2/3 w-full object-fill xl:h-full"
+          className="h-1/3 lg:h-2/5 lg:w-full lg:object-fill 3xl:h-2/5"
           src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/nova main banner.jpg"
           alt=""
         />
         <img
-          className="mt-4 xl:mt-2 lg:mt-8 xl:scale-[.8] xl:-ml-40 "
+        className="mt-4 lg:h-[12.5%] 4xl:h-[14%] xl:w-2/3 4xl:w-3/4"
           src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/Future is Sugar (typography).png"
           alt=""
         />
         <img
-          className="scale-105 xl:scale-[.85] xl:-ml-40 xl:-mt-6"
+        className="lg:h-[12.5%] 4xl:h-[14%] xl:w-2/3 4xl:w-3/4"
           src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Free%20Paragraph%20(typography).png"
           alt=""
         />
         <img
-          className="mt-6 lg:mt-16 lg:scale-90 xl:mt-12"
+          className="mt-5 lg:mt-3 xl:mt-2 3xl:mt-0 lg:h-1/6 xl:h-[27%] self-center"
           src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Tags.png"
           alt=""
         />
-        <Link className="mt-32 lg:mt-64" to={"/shop"}>
+        <Link className="mt-28 lg:mt-16 xl:mt-4 3xl:mt-2 4xl:mt-0 flex justify-center items-center" to={"/shop"}>
               <button
                 onMouseEnter={() => setArrowColor("black")}
                 onMouseLeave={() => setArrowColor("white")}
-                className="cursor-pointer flex items-center font-bold justify-between p-2 w-48 lg:w-56 xl:w-72 h-9 lg:h-11 text-snow text-sm lg border-2 rounded-xl hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
+                className="cursor-pointer flex items-center font-bold justify-between p-2 w-48 lg:w-52 xl:w-48 h-9 lg:h-11 xl:h-9 text-snow text-sm lg border-2 rounded-xl hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
               >
                 DISCOVER FLAVORS
                 <svg
@@ -55,9 +55,9 @@ function NovaHome() {
                 </svg>
               </button>
             </Link>
-      </main>
+      </div>
       <img
-        className="pointer-events-none opacity-65 absolute bottom-16 xxxs:-bottom-16 lg:-bottom-[600px] xl:-bottom-[1366px] 3xl:-bottom-[1600px] scale-150 xxxs:scale-125 lg:scale-100 xl:scale-90 3xl:scale-100"
+        className="pointer-events-none absolute bottom-0 xxxs:-bottom-14 xxs:-bottom-28 lg:-bottom-80 xl:-bottom-[100%] 3xl:-bottom-[90%] 4xl:-bottom-[80%] scale-125 xxs:scale-110 lg:scale-100 3xl:scale-x-125 opacity-70"
         src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Doodle%20art.png"
         alt=""
       />

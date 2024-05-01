@@ -89,7 +89,7 @@ function Home() {
           </div>
           <div
             ref={sliderImgWrapperRef}
-            className="img-wrapper absolute top-0 right-0 w-1/2 h-full overflow-hidden z-10"
+            className="img-wrapper absolute top-0 right-0 w-1/2 h-full overflow-hidden"
           >
             <div className="slide absolute top-0 right-0 h-full object-cover">
               {showSlideB ? <SlideU /> : <SlideB />}
@@ -97,7 +97,7 @@ function Home() {
           </div>
           <div
             ref={sliderHandleRef}
-            className="handle absolute top-0 h-full flex flex-col justify-center items-center select-none z-20"
+            className="handle absolute top-0 h-full flex flex-col justify-center items-center z-20"
           >
             <div className="handle-line w-0.5 grow bg-white"></div>
             <div className="handle-circle text-white shadow-primary-shadow bg-yellow-400 rounded-[50%] flex items-center justify-evenly">

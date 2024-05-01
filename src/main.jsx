@@ -18,6 +18,7 @@ import NovaShop from "./components/pages/NovaShop/NovaShop.jsx";
 import JuusShop from "./components/pages/JuusShop/JuusShop.jsx";
 import Test from "./components/pages/Test/Test.jsx";
 import NovaHome from "./components/pages/NovaHome/NovaHome.jsx"
+import JuusHome from "./components/pages/JuusHome/JuusHome.jsx";
 
 
 
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
       <Route path="faqs" element={<FAQs />} />
       <Route path="contact" element={<Contact />} />
       <Route path="nova" element={<NovaHome />} />
+      <Route path="juus" element={<JuusHome />} />
       <Route path="test" element={<Test />} />
       <Route path="*" element={<NotFound />} />
     </Route>
