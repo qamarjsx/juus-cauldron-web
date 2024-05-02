@@ -6,6 +6,7 @@ export default {
       colors: {
         'snow': "#FDF7FA",
         'rich-black': "#000411",
+        'nova': "#FED381",
       },
       boxShadow: {
         'primary-shadow': 'rgba(0, 0, 0, 0.18) 0px 2px 4px',

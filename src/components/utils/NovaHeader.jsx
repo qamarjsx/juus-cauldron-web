@@ -7,7 +7,7 @@ function NovaHeader() {
       style={{
         backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Top%20header%20design.png"})`,
       }}
-      className="absolute z-40 w-full h-24 flex justify-between items-center p-6 border-b bg-center bg-cover"
+      className="fixed bg-nova z-40 w-full h-24 flex justify-between items-center p-6 border-b bg-center bg-cover"
     >
       <svg
         className="transform scale-y-[-1]"

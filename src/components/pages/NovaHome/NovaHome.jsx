@@ -6,28 +6,28 @@ function NovaHome() {
   const [arrowColor, setArrowColor] = useState("white");
 
   return (
-    <div className="relative overflow-x-hidden bg-[#fed381]">
+    <div className="relative overflow-x-hidden bg-nova">
       <div className="">
         <NovaHeader />
       </div>
       <main className="pt-24 pb-10 h-screen flex flex-col items-center">
         <img
-          className="h-1/3 lg:h-2/3 w-full object-fill xl:h-full"
+          className="h-1/3 lg:h-2/3 w-full object-fill xl:h-[105%] pointer-events-none select-none"
           src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/nova main banner.jpg"
           alt=""
         />
         <img
-          className="mt-4 xl:mt-2 lg:mt-8 xl:scale-[.8] xl:-ml-40 "
+          className="mt-4 xl:mt-2 lg:mt-8 xl:scale-[.8] 3xl:scale-[.7] 5xl:scale-[.6] xl:-ml-40 3xl:-ml-80 5xl:-ml-[540px] pointer-events-none select-none"
           src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/Future is Sugar (typography).png"
           alt=""
         />
         <img
-          className="scale-105 xl:scale-[.85] xl:-ml-40 xl:-mt-6"
+          className="scale-105 xl:scale-[.85] 3xl:scale-[.75] 5xl:scale-[.65] xl:-ml-40 3xl:-ml-80 5xl:-ml-[540px] xl:-mt-6 3xl:-mt-20 5xl:-mt-28 pointer-events-none select-none"
           src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Free%20Paragraph%20(typography).png"
           alt=""
         />
         <img
-          className="mt-6 lg:mt-16 lg:scale-90 xl:mt-12"
+          className="mt-6 lg:mt-16 6xl:mt-0 lg:scale-90 3xl:scale-[.8] 5xl:scale-75 xl:mt-12 pointer-events-none select-none"
           src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Tags.png"
           alt=""
         />
@@ -57,7 +57,7 @@ function NovaHome() {
             </Link>
       </main>
       <img
-        className="pointer-events-none opacity-65 absolute bottom-16 xxxs:-bottom-16 lg:-bottom-[600px] xl:-bottom-[1366px] 3xl:-bottom-[1600px] scale-150 xxxs:scale-125 lg:scale-100 xl:scale-90 3xl:scale-100"
+        className="pointer-events-none select-none opacity-65 absolute right-0 3xl:right-32 5xl:right-64 6xl:right-96 bottom-16 xxxs:-bottom-16 lg:-bottom-[600px] xl:-bottom-[1366px] 3xl:-bottom-[1600px] 4xl:-bottom-[1700px] 5xl:-bottom-[1750px] 6xl:-bottom-[1920px] scale-150 xxxs:scale-125 lg:scale-100 xl:scale-90 3xl:scale-100 4xl:scale-x-110 5xl:scale-x-125 6xl:scale-x-150"
         src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Doodle%20art.png"
         alt=""
       />
