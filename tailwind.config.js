@@ -12,8 +12,9 @@ export default {
         'primary-shadow': 'rgba(0, 0, 0, 0.18) 0px 2px 4px',
       },
       screens: {
-        'xxxs': '360px',
-        'xxs': "425px",
+        'xxxxs': '360px',
+        'xxxs': '375px',
+        'xxs': "390px",
         'xs': "480px",
         'sm': '540px',
         'md': '640px',

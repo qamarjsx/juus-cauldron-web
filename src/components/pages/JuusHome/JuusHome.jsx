@@ -7,7 +7,7 @@ function JuusHome() {
   const [arrowColor, setArrowColor] = useState("white");
 
   return (
-    <div className="relative overflow-x-hidden bg-black">
+    <div className="relative overflow-x-hidden bg-black scroll-smooth">
       <div className="">
         <JuusHeader />
       </div>

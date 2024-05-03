@@ -7,7 +7,7 @@ function NovaHome() {
   const [arrowColor, setArrowColor] = useState("white");
 
   return (
-    <div className="relative overflow-x-hidden bg-nova">
+    <div className="relative overflow-x-hidden bg-nova scroll-smooth">
       <div className="">
         <NovaHeader />
       </div>
