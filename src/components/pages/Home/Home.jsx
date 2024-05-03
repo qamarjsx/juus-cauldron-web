@@ -82,7 +82,7 @@ function Home() {
           onTouchEnd={sliderMouseUp}
           onMouseLeave={sliderMouseLeave}
           id="image-comparison-slider"
-          className="relative overflow-hidden cursor-e-resize"
+          className="relative overflow-hidden"
         >
           <div className="slide block h-auto object-cover">
             {showSlideA ? <SlideT /> : <SlideA />}

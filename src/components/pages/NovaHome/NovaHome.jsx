@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NovaHeader from "../../utils/NovaHeader";
 import { Link } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
 function NovaHome() {
   const [arrowColor, setArrowColor] = useState("white");
@@ -31,7 +32,8 @@ function NovaHome() {
           src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Tags.png"
           alt=""
         />
-        <Link className="mt-32 lg:mt-64" to={"/shop"}>
+        <Link className="mt-32 lg:mt-64" to={"/nova/shop"}>
+            <Fade direction="up" duration={1000} delay={500}>
               <button
                 onMouseEnter={() => setArrowColor("black")}
                 onMouseLeave={() => setArrowColor("white")}
@@ -53,7 +55,7 @@ function NovaHome() {
                     d="M3 12h18m0 0l-8.5-8.5M21 12l-8.5 8.5"
                   ></path>
                 </svg>
-              </button>
+              </button></Fade>
             </Link>
       </main>
       <img

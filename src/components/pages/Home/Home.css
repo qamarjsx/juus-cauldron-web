@@ -58,6 +58,6 @@
   width: var(--image-comparison-slider-width);
 }
 
-#image-comparison-slider .img-wrapper {
+/* #image-comparison-slider .img-wrapper {
 transform: translateZ(0);
-}
+} */

@@ -34,7 +34,8 @@ const router = createBrowserRouter(
       <Route path="contact" element={<Contact />} />
       <Route path="nova" element={<NovaHome />} />
       <Route path="juus" element={<JuusHome />} />
-      <Route path="test" element={<Test />} />
+      <Route path="juus/shop" element={<JuusShop />} />
+      <Route path="nova/shop" element={<NovaShop />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
