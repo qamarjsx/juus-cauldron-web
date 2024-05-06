@@ -31,7 +31,7 @@ function FullNovaSlide() {
         <div className="z-30 flex flex-col sm:flex-row lg:flex-row sm:justify-center lg:justify-center 3xl:justify-evenly items-center mt-[112px] xxs:mt-48 xs:mt-56 sm:mt-36 lg:mt-56 xl:-mt-2 3xl:mt-48 4xl:mt-56 -mb-16 xxxs:-mb-[72px] 3xl:-mb-16 3xl:flex-row">
           <Fade
             delay={300}
-            direction="left"
+            direction="right"
             className="w-11/12 xxxs:w-10/12 xxs:w-9/12 xs:w-8/12 lg:w-7/12 3xl:w-1/5 4xl:w-1/4"
           >
             <img

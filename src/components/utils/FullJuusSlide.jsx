@@ -6,7 +6,7 @@ function FullJuusSlide() {
   const [arrowColor, setArrowColor] = useState("white");
 
   return (
-    <div className="relative">
+    <div className="relative h-auto">
       <div
         style={{
           backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Background%20Greenapple.png"})`,

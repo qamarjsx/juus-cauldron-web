@@ -20,10 +20,10 @@ function Home() {
       const parentWidth = sliderImgWrapperRef.current.parentElement.offsetWidth;
       const widthPercentage = (elementWidth / parentWidth) * 100;
 
-      if (widthPercentage <= 25) {
+      if (widthPercentage <= 20) {
         setShowSlideA(true);
         setShowSlideB(false);
-      } else if (widthPercentage >= 75) {
+      } else if (widthPercentage >= 80) {
         setShowSlideA(false);
         setShowSlideB(true);
       } else {
@@ -76,7 +76,7 @@ function Home() {
           ref={sliderRef}
           onMouseMove={sliderMouseMove}
           onTouchMove={sliderMouseMove}
-          // onMouseDown={sliderMouseDown}
+          
           onTouchStart={sliderMouseDown}
           onMouseUp={sliderMouseUp}
           onTouchEnd={sliderMouseUp}
@@ -98,6 +98,7 @@ function Home() {
           <div
             ref={sliderHandleRef}
             className="handle absolute top-0 h-full flex flex-col justify-center items-center z-20"
+            onMouseEnter={sliderMouseLeave}
           >
             <div className="handle-line w-0.5 grow bg-white"></div>
             <div className="handle-circle text-white shadow-primary-shadow bg-yellow-400 rounded-[50%] flex items-center justify-evenly">
@@ -133,5 +134,5 @@ function Home() {
     </>
   );
 }
-
+// onMouseDown={sliderMouseDown}
 export default Home;
