@@ -2,6 +2,7 @@ import React from "react";
 import JuusHeader from "../../utils/JuusHeader.jsx";
 import { Link } from "react-router-dom";
 import Footer from "../../utils/Footer.jsx";
+import { Fade } from "react-awesome-reveal";
 
 function JuusHome() {
 
@@ -12,7 +13,7 @@ function JuusHome() {
       </div>
       <main className="mt-24 xl:mt-16 3xl:mt-8 h-screen flex flex-col items-center justify-between lg:h-auto">
         <div className="">
-          <video controls autoPlay loop playsInline className="w-full aspect-video xl:h-full 3xl:h-screen 4xl:aspect-auto">
+          <video controls autoPlay loop playsInline className="select-none w-full aspect-video xl:h-full 3xl:h-screen 4xl:aspect-auto">
             <source
               src={
                 "https://juusstorage.blob.core.windows.net/website/videos/home/juus-fit-ad-desktop.mp4"
@@ -35,8 +36,9 @@ function JuusHome() {
           </div>
         </div>
         <Link className="sm:my-20 lg:my-24 xl:my-32 3xl:my-44 5xl:my-52" to={"/juus/shop"}>
+          <Fade direction="down" duration={1000} delay={500}>
           <button
-            className="cursor-pointer flex items-center font-bold justify-between p-2 w-40 lg:w-56 xl:w-72 h-9 lg:h-11 text-snow text-sm lg border-2 rounded-3xl hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
+            className="select-none cursor-pointer flex items-center font-bold justify-between p-2 w-40 lg:w-56 xl:w-72 h-9 lg:h-11 text-snow text-sm lg border-2 rounded-3xl hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
           >
             <span className="mx-auto">DISCOVER FLAVORS</span>
             {/* <svg
@@ -55,6 +57,7 @@ function JuusHome() {
               ></path>
             </svg> */}
           </button>
+          </Fade>
         </Link>
         <img
           className=""
