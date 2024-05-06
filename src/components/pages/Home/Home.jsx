@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
-import SlideA from "../../utils/SlideA.jsx";
-import SlideB from "../../utils/SlideB.jsx";
-import SlideT from "../../utils/SlideT.jsx";
-import SlideU from "../../utils/SlideU.jsx";
+import SplitJuusSlide from "../../utils/SplitJuusSlide.jsx";
+import SplitNovaSlide from "../../utils/SplitNovaSlide.jsx";
+import FullJuusSlide from "../../utils/FullJuusSlide.jsx";
+import FullNovaSlide from "../../utils/FullNovaSlide.jsx";
 import Header from "../../utils/Header.jsx";
 
 function Home() {
@@ -76,7 +76,7 @@ function Home() {
           ref={sliderRef}
           onMouseMove={sliderMouseMove}
           onTouchMove={sliderMouseMove}
-          onMouseDown={sliderMouseDown}
+          // onMouseDown={sliderMouseDown}
           onTouchStart={sliderMouseDown}
           onMouseUp={sliderMouseUp}
           onTouchEnd={sliderMouseUp}
@@ -85,14 +85,14 @@ function Home() {
           className="relative overflow-hidden"
         >
           <div className="slide block h-auto object-cover">
-            {showSlideA ? <SlideT /> : <SlideA />}
+            {showSlideA ? <FullJuusSlide /> : <SplitJuusSlide />}
           </div>
           <div
             ref={sliderImgWrapperRef}
             className="img-wrapper absolute top-0 right-0 w-1/2 h-full overflow-hidden"
           >
             <div className="slide absolute top-0 right-0 h-full object-cover">
-              {showSlideB ? <SlideU /> : <SlideB />}
+              {showSlideB ? <FullNovaSlide /> : <SplitNovaSlide />}
             </div>
           </div>
           <div

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 
-function SlideB() {
+function SplitNovaSlide() {
   return (
     <div className="relative">
       <div
@@ -27,4 +27,4 @@ function SlideB() {
   );
 }
 // scale-125 xs:scale-110 md:scale-100 xl:scale-75 2xl:scale-[.55] 3xl:scale-50 6xl:scale-[.6] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform
-export default SlideB;
+export default SplitNovaSlide;

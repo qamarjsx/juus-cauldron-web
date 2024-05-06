@@ -16,7 +16,7 @@ function JuusHome() {
           <video controls autoPlay loop playsInline className="w-full aspect-video">
             <source
               src={
-                "https://juusstorage.blob.core.windows.net/website/videos/home/juus-fit-ad-mobile.mp4"
+                "https://juusstorage.blob.core.windows.net/website/videos/home/juus-fit-ad-desktop.mp4"
               }
               type="video/mp4"
             />
