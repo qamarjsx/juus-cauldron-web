@@ -8,12 +8,19 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import Home from "./pages/Home/Home.jsx";
-import About from "./pages/About/About.jsx";
-import Shop from "./pages/Shop/Shop.jsx";
-import FAQs from "./pages/FAQs/FAQs.jsx";
-import Contact from "./pages/Contact/Contact.jsx";
-import NotFound from "./pages/NotFound/NotFound.jsx";
+import Home from "./components/pages/Home/Home.jsx";
+import About from "./components/pages/About/About.jsx";
+import Shop from "./components/pages/Shop/Shop.jsx";
+import FAQs from "./components/pages/FAQs/FAQs.jsx";
+import Contact from "./components/pages/Contact/Contact.jsx";
+import NotFound from "./components/pages/NotFound/NotFound.jsx";
+import NovaShop from "./components/pages/NovaShop/NovaShop.jsx";
+import JuusShop from "./components/pages/JuusShop/JuusShop.jsx";
+import Test from "./components/pages/Test/Test.jsx";
+import NovaHome from "./components/pages/NovaHome/NovaHome.jsx"
+import JuusHome from "./components/pages/JuusHome/JuusHome.jsx";
+
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,8 +28,14 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="shop" element={<Shop />} />
+      <Route path="shop/nova-products" element={<NovaShop />} />
+      <Route path="shop/juus-products" element={<JuusShop />} />
       <Route path="faqs" element={<FAQs />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="nova" element={<NovaHome />} />
+      <Route path="juus" element={<JuusHome />} />
+      <Route path="juus/shop" element={<JuusShop />} />
+      <Route path="nova/shop" element={<NovaShop />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )

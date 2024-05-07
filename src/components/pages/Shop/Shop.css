@@ -1,0 +1,8 @@
+:root {
+    --separator-border: #fff;
+    --focus-border: #fff;
+    --sash-hover-size: 6px;
+}
+.sash {
+    cursor: e-resize !important;
+}
