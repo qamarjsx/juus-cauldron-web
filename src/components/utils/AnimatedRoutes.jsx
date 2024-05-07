@@ -11,6 +11,7 @@ import JuusShop from "../pages/JuusShop/JuusShop.jsx";
 import NovaHome from "../pages/NovaHome/NovaHome.jsx";
 import JuusHome from "../pages/JuusHome/JuusHome.jsx";
 import { AnimatePresence } from "framer-motion";
+import SlidingMenu from "./SlidingMenu.jsx";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -26,6 +27,7 @@ function AnimatedRoutes() {
         <Route path="contact" element={<Contact />} />
         <Route path="nova/shop" element={<NovaShop />} />
         <Route path="juus/shop" element={<JuusShop />} />
+        <Route path="menu" element={<SlidingMenu />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>

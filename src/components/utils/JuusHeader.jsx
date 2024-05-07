@@ -1,28 +1,53 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import SlidingMenu from "./SlidingMenu";
 
 function JuusHeader() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleHamburgerClick = () => {
+    setIsOpen(!isOpen);
+    console.log(isOpen);
+  };
   return (
+    <>
     <header className="fixed z-40 w-full h-24 flex justify-between items-center p-4 border-b border-zinc-900 bg-black">
-      <svg
-        className="transform scale-y-[-1]"
-        xmlns="http://www.w3.org/2000/svg"
-        width="1.5em"
-        height="2em"
-        viewBox="0 0 24 24"
-      >
-        <path
-          fill="none"
-          stroke="white"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M3 5h8m-8 7h13M3 19h18"
-        ></path>
-      </svg>
+      {isOpen ? (
+          <svg
+            onClick={handleHamburgerClick}
+            className="transform scale-y-[-1]"
+            xmlns="http://www.w3.org/2000/svg"
+            width="1.5em"
+            height="2em"
+            viewBox="0 0 32 32"
+          >
+            <path
+              fill="white"
+              d="M17.414 16L26 7.414L24.586 6L16 14.586L7.414 6L6 7.414L14.586 16L6 24.586L7.414 26L16 17.414L24.586 26L26 24.586z"
+            ></path>
+          </svg>
+        ) : (
+          <svg
+            onClick={handleHamburgerClick}
+            className="transform scale-y-[-1]"
+            xmlns="http://www.w3.org/2000/svg"
+            width="1.5em"
+            height="2em"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="white"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M3 5h8m-8 7h13M3 19h18"
+            ></path>
+          </svg>
+        )}
       <Link to={"/"}>
         <img
-          className="h-10 cursor-pointer"
+          className="h-10 cursor-pointer select-none"
           src="https://juusstorage.blob.core.windows.net/website/images/general/juus-logo-white-transparent-bg.png"
           alt=""
         />
@@ -67,6 +92,8 @@ function JuusHeader() {
         </svg>
       </div>
     </header>
+    {isOpen && <SlidingMenu />}
+    </>
   );
 }
 
