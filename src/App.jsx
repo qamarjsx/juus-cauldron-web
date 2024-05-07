@@ -1,11 +1,11 @@
-import { Outlet } from "react-router-dom";
-import Header from "./components/utils/Header";
+import React from "react";
+import AnimatedRoutes from "./components/utils/AnimatedRoutes.jsx";
 
 function App() {
+
   return (
     <div className="relative">
-      {/* <Header /> */}
-      <Outlet />
+        <AnimatedRoutes />
     </div>
   );
 }

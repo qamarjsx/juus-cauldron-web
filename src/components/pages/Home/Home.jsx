@@ -5,6 +5,7 @@ import SplitNovaSlide from "../../utils/SplitNovaSlide.jsx";
 import FullJuusSlide from "../../utils/FullJuusSlide.jsx";
 import FullNovaSlide from "../../utils/FullNovaSlide.jsx";
 import Header from "../../utils/Header.jsx";
+import { motion } from "framer-motion";
 
 function Home() {
   let isSliderLocked = false;
@@ -69,14 +70,18 @@ function Home() {
     if (isSliderLocked) isSliderLocked = false;
   }
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{duration: 0.5}}
+    >
       <Header />
       <div className="w-full h-screen flex items-center justify-center">
         <div
           ref={sliderRef}
           onMouseMove={sliderMouseMove}
           onTouchMove={sliderMouseMove}
-          
           onTouchStart={sliderMouseDown}
           onMouseUp={sliderMouseUp}
           onTouchEnd={sliderMouseUp}
@@ -131,7 +136,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }
 // onMouseDown={sliderMouseDown}

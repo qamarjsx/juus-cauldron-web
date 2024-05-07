@@ -3,11 +3,16 @@ import JuusHeader from "../../utils/JuusHeader.jsx";
 import { Link } from "react-router-dom";
 import Footer from "../../utils/Footer.jsx";
 import { Fade } from "react-awesome-reveal";
+import { motion } from "framer-motion";
+
 
 function JuusHome() {
 
   return (
-    <div className="relative overflow-x-hidden bg-black scroll-smooth">
+    <motion.div className="relative overflow-x-hidden bg-black scroll-smooth"
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}} >
       <div className="">
         <JuusHeader />
       </div>
@@ -23,6 +28,7 @@ function JuusHome() {
             Your browser does not support the video tag.
           </video>
           <div className="">
+          <Fade direction="left" cascade damping={0.5}>
             <img
               className="mt-4 xl:mt-2 lg:mt-8 sm:scale-90 lg:scale-[.8] xl:scale-75 3xl:scale-[.65] lg:-ml-16 xl:-ml-28 3xl:-ml-48 5xl:-ml-64 6xl:-ml-80 pointer-events-none select-none"
               src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/Future is Sugar (typography).png"
@@ -33,6 +39,7 @@ function JuusHome() {
               src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Free%20Paragraph%20(typography).png"
               alt=""
             />
+          </Fade>
           </div>
         </div>
         <Link className="sm:my-20 lg:my-24 xl:my-32 3xl:my-44 5xl:my-52" to={"/juus/shop"}>
@@ -65,7 +72,7 @@ function JuusHome() {
           alt=""
         />
       </main>
-    </div>
+    </motion.div>
   );
 }
 
