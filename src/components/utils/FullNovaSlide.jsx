@@ -28,7 +28,7 @@ function FullNovaSlide() {
             alt="FUTURE"
           />
         </Fade>
-        <div className="z-30 flex flex-col sm:flex-row lg:flex-row sm:justify-center lg:justify-center 3xl:justify-evenly items-center mt-[112px] xxs:mt-48 xs:mt-56 sm:mt-36 lg:mt-56 xl:-mt-2 3xl:mt-48 4xl:mt-56 -mb-16 xxxs:-mb-[72px] 3xl:-mb-16 3xl:flex-row">
+        <div className="z-30 flex flex-col sm:flex-row lg:flex-row sm:justify-center lg:justify-center 3xl:justify-evenly items-center mt-24 xxs:mt-48 xs:mt-56 sm:mt-36 lg:mt-56 xl:-mt-2 3xl:mt-48 4xl:mt-56 -mb-16 xxxs:-mb-[72px] 3xl:-mb-16 3xl:flex-row">
           <Fade
             delay={300}
             direction="right"
@@ -40,14 +40,14 @@ function FullNovaSlide() {
               alt="Text about Juus"
             />
           </Fade>
-          <Fade delay={800} direction="down" className="select-none self-end xl:self-center xl:pt-20 3xl:-ml-40 6xl:-ml-80 mx-5">
+          <Fade delay={800} direction="down" className="select-none xl:self-center xl:pt-20 3xl:-ml-40 6xl:-ml-80 mx-5">
             <Link className="" to={"/nova"}>
               <button
                 onMouseEnter={() => setArrowColor("black")}
                 onMouseLeave={() => setArrowColor("white")}
-                className="cursor-pointer flex items-center italic justify-between p-2 w-32 h-10 text-snow text-sm border-2 rounded-full hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
+                className="xxxxs:-mt-3.5 cursor-pointer flex items-center italic justify-between p-2 w-28 h-8 text-snow text-sm border-2 rounded-full hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
               >
-                Discover more
+                <span className="mx-auto">Buy Nova</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.5em"
