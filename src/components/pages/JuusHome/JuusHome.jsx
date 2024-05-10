@@ -18,7 +18,7 @@ function JuusHome() {
       </div>
       <main className="mt-24 xl:mt-16 3xl:mt-8 h-screen flex flex-col items-center justify-between lg:h-auto">
         <div className="">
-          <video controls autoPlay loop playsInline className="select-none w-full aspect-video xl:h-full 3xl:h-screen 4xl:aspect-auto">
+          <video controls disablePictureInPicture controlsList="nodownload" autoPlay loop playsInline className="select-none w-full aspect-video xl:h-full 3xl:h-screen 4xl:aspect-auto">
             <source
               src={
                 "https://juusstorage.blob.core.windows.net/website/videos/home/juus-fit-ad-desktop.mp4"

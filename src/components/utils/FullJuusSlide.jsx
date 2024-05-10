@@ -45,7 +45,7 @@ function FullJuusSlide() {
               <button
                 onMouseEnter={() => setArrowColor("black")}
                 onMouseLeave={() => setArrowColor("white")}
-                className="xxxxs:-mt-3.5 cursor-pointer flex items-center italic justify-between p-2 w-28 h-8 text-snow text-sm border-2 rounded-full hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
+                className="shake xxxxs:-mt-3.5 cursor-pointer flex items-center italic justify-between p-2 w-28 h-8 text-snow text-sm border-2 rounded-full hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
               >
                 <span className="mx-auto">Buy Juus</span>
                 <svg
