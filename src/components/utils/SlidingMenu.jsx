@@ -1,49 +1,31 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
+import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
+import NavLinks from "./NavLinks";
 
 function SlidingMenu({theme}) {
+
+  const menuVars = {
+    initial: {x: "-100%"},
+    animate: {x: 0, transition:{duration:0.5, ease: [0.37, 0, 0.63, 1] }},
+    exit: {x: "-100%", transition: {duration: 0.8, ease:[0.22, 1, 0.36, 0]}},
+  }
+
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
     <motion.div className="absolute top-0 left-0 z-[35] w-full"
-        initial={{x: -300}}
-        animate={{x: 0}}
-        exit={{x: 300, transition: {duration: 0.8, ease:[0.22, 1, 0.36, 1]}}}
-        transition={{duration: 0.8, ease: [0.22, 1, 0.36, 1]}}
-    >
+        variants={menuVars}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        >
       <div className={`${theme? "bg-nova" : "bg-black"} h-screen w-full overflow-hidden flex flex-col justify-around pl-10`}>
-        <div>
-          <Link to={"/"}>
-            <h1 className="my-7 text-snow text-xl cursor-pointer w-28">Home</h1>
-          </Link>
-          <Link to={"/juus"}>
-            <h1 className="my-7 text-snow text-xl cursor-pointer w-28">Juus</h1>
-          </Link>
-          <Link to={"/nova"}>
-            <h1 className="my-7 text-snow text-xl cursor-pointer w-28">Nova</h1>
-          </Link>
-          <Link to={"/about"}>
-            {" "}
-            <h1 className="my-7 text-snow text-xl cursor-pointer w-28">
-              About Us
-            </h1>
-          </Link>
-          <Link to={"/shop"}>
-            {" "}
-            <h1 className="my-7 text-snow text-xl cursor-pointer w-28">Shop</h1>
-          </Link>
-          <Link to={"/faqs"}>
-            {" "}
-            <h1 className="my-7 text-snow text-xl cursor-pointer w-28">FAQs</h1>
-          </Link>
-          <Link to={"/contact"}>
-            {" "}
-            <h1 className="my-7 text-snow text-xl cursor-pointer w-28">
-              Contact Us
-            </h1>
-          </Link>
+        <div className="w-24">
+          <NavLinks />
         </div>
         <div className="flex">
+          <Fade direction="down" cascade damping={0.3}>
           <Link to={"https://www.facebook.com/profile.php?id=61550934897741"}>
             <img
               className="h-5"
@@ -65,6 +47,7 @@ function SlidingMenu({theme}) {
               alt="linkedin logo"
             />
           </Link>
+          </Fade>
         </div>
       </div>
     </motion.div>

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SlidingMenu from "./SlidingMenu.jsx";
+import NavLinks from "./NavLinks.jsx";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const handleHamburgerClick = () => {
     setIsOpen(!isOpen);
@@ -12,11 +14,11 @@ function Header() {
 
   return (
     <>
-      <header className="fixed z-40 w-full h-24 flex justify-between items-center p-4 border-b border-zinc-900 bg-black">
-        {isOpen ? (
+      <header className="fixed z-40 w-full h-24 flex justify-between 6xl:justify-evenly items-center p-4 lg:px-12 3xl:px-24 4xl:px-32 5xl:px-36 border-b border-zinc-900 bg-black">
+        {(isOpen) ? (
           <svg
             onClick={handleHamburgerClick}
-            className="transform scale-y-[-1]"
+            className="transform scale-y-[-1] lg:hidden"
             xmlns="http://www.w3.org/2000/svg"
             width="1.5em"
             height="2em"
@@ -30,7 +32,7 @@ function Header() {
         ) : (
           <svg
             onClick={handleHamburgerClick}
-            className="transform scale-y-[-1]"
+            className="transform scale-y-[-1] lg:hidden"
             xmlns="http://www.w3.org/2000/svg"
             width="1.5em"
             height="2em"
@@ -46,13 +48,16 @@ function Header() {
             ></path>
           </svg>
         )}
+        <div className="lg:flex lg:w-5/6">
         <Link to={"/"}>
           <img
-            className="h-16 cursor-pointer select-none"
+            className="h-16 cursor-pointer select-none lg:mr-0.5 xl:mr-9"
             src="https://juusstorage.blob.core.windows.net/creatives/Homepage JC/Juus cauldron logo white.png"
             alt=""
           />
         </Link>
+        {(!isMobile) && <NavLinks/ >}
+        </div>
         <div className="flex">
           <svg
             className="mr-1.5"
