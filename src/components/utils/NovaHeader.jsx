@@ -104,7 +104,7 @@ function NovaHeader() {
         </svg>
       </div>
     </header>
-    {isOpen && <SlidingMenu isOpen={isOpen} theme={"#FED381"}/>}
+    <SlidingMenu isOpen={isOpen} theme={"#FED381"}/>
     </>
   );
 }
