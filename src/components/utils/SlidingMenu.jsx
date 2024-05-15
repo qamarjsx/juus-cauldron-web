@@ -4,24 +4,24 @@ import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 import NavLinks from "./NavLinks";
 
-function SlidingMenu({theme}) {
-
-  const menuVars = {
-    initial: {x: "-100%"},
-    animate: {x: 0, transition:{duration:0.5, ease: [0.37, 0, 0.63, 1] }},
-    exit: {x: "-100%", transition: {duration: 0.8, ease:[0.22, 1, 0.36, 0]}},
-  }
-
+function SlidingMenu({theme, isOpen}) {
   return (
     <AnimatePresence>
     <motion.div className="absolute top-0 left-0 z-[35] w-full"
-        variants={menuVars}
-        initial="initial"
-        animate="animate"
-        exit="exit"
+        animate={{
+          x: isOpen ? 0 : "-100%",
+          transition: {
+            duration: 0.5,
+            ease: [0.22, 1, 0.36, 1]
+          }
+        }}
+        initial={{
+          x: "-100%"
+        }}
+        
         >
       <div className={`${theme? "bg-nova" : "bg-black"} h-screen w-full overflow-hidden flex flex-col justify-around pl-10`}>
-        <div className="w-24">
+        <div className="w-24 mt-7">
           <NavLinks />
         </div>
         <div className="flex">

@@ -98,7 +98,7 @@ function JuusHeader() {
         </svg>
       </div>
     </header>
-    {isOpen && <SlidingMenu />}
+    <SlidingMenu isOpen={isOpen} />
     </>
   );
 }

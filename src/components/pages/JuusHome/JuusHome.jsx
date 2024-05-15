@@ -49,12 +49,12 @@ function JuusHome() {
           <div className="">
             <Fade direction="left" cascade damping={0.5}>
               <img
-                className="mt-4 xl:mt-2 lg:mt-8 sm:scale-90 lg:scale-[.8] xl:scale-75 3xl:scale-[.65] lg:-ml-16 xl:-ml-28 3xl:-ml-48 5xl:-ml-64 6xl:-ml-80 pointer-events-none select-none"
+                className="mt-4 xl:mt-2 lg:mt-8 sm:scale-90 lg:scale-[.8] xl:scale-75 3xl:scale-[.65] 6xl:scale-50 lg:-ml-16 xl:-ml-28 3xl:-ml-48 5xl:-ml-64 6xl:-ml-[400px] pointer-events-none select-none"
                 src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/Future is Sugar (typography).png"
                 alt=""
               />
               <img
-                className="scale-105 sm:scale-95 lg:scale-[.85] xl:scale-[.8] 3xl:scale-[.7] lg:-ml-16 xl:-ml-28 3xl:-ml-48 5xl:-ml-64 6xl:-ml-80 lg:-mt-8 xl:-mt-12 3xl:-mt-20 5xl:-mt-28 pointer-events-none select-none"
+                className="scale-105 sm:scale-95 lg:scale-[.85] xl:scale-[.8] 3xl:scale-[.7] 6xl:scale-[.55] lg:-ml-16 xl:-ml-28 3xl:-ml-48 5xl:-ml-64 6xl:-ml-[380px] lg:-mt-8 xl:-mt-12 3xl:-mt-20 5xl:-mt-28 6xl:-mt-44 pointer-events-none select-none"
                 src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Free%20Paragraph%20(typography).png"
                 alt=""
               />

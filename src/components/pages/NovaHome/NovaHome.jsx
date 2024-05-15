@@ -49,7 +49,7 @@ function NovaHome() {
           </Fade>
         </Link>
         <img
-          className="pointer-events-none select-none opacity-65 absolute right-0 4xl:right-32 6xl:right-96 bottom-16 xxxxs:-bottom-24 xxxs:-bottom-44 xxs:-bottom-16 sm:-bottom-96 lg:-bottom-[540px] xl:-bottom-[1080px] 2xl:-bottom-[580px] 3xl:-bottom-[1440px] 4xl:-bottom-[1720px] scale-150 xxxs:scale-125 lg:scale-100 xl:scale-90 3xl:scale-100 4xl:scale-x-110 5xl:scale-x-125 6xl:scale-x-150"
+          className="pointer-events-none select-none opacity-65 absolute right-0 4xl:right-32 6xl:right-72 -bottom-10 xxxxs:-bottom-20 xxxs:-bottom-44 xxs:-bottom-12 sm:-bottom-96 lg:-bottom-[540px] xl:-bottom-[1080px] 2xl:-bottom-[580px] 3xl:-bottom-[1500px] 4xl:-bottom-[1720px] scale-125 xxxs:scale-125 lg:scale-100 xl:scale-90 3xl:scale-100 4xl:scale-x-110 5xl:scale-x-125 6xl:scale-x-150"
           src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Doodle%20art.png"
           alt=""
         />
