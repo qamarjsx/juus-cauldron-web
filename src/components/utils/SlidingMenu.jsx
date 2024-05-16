@@ -7,7 +7,7 @@ import NavLinks from "./NavLinks";
 function SlidingMenu({theme, isOpen}) {
   return (
     <AnimatePresence>
-    <motion.div className="absolute top-0 left-0 z-[35] w-full"
+    <motion.div style={{top: `${window.scrollY}px`}} className={`absolute left-0 z-[35] w-full overflow-hidden`}
         animate={{
           x: isOpen ? 0 : "-100%",
           transition: {

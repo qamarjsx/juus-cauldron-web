@@ -7,9 +7,13 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
+  useEffect(() => {
+    if (isOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "auto";
+  }, [isOpen])
+
   const handleHamburgerClick = () => {
     setIsOpen(!isOpen);
-    console.log(isOpen);
   };
 
   return (
