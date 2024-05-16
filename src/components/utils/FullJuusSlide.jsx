@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
+import { motion } from "framer-motion";
+
 
 function FullJuusSlide() {
   const [arrowColor, setArrowColor] = useState("white");
@@ -42,10 +44,16 @@ function FullJuusSlide() {
           </Fade>
           <Fade delay={800} direction="down" className="select-none xl:self-center xl:pt-20 3xl:-ml-40 6xl:-ml-80 mx-5">
             <Link className="" to={"/juus"}>
-              <button
+              <motion.button
                 onMouseEnter={() => setArrowColor("black")}
                 onMouseLeave={() => setArrowColor("white")}
-                className="shake xxxxs:-mt-3.5 cursor-pointer flex items-center italic justify-between p-2 w-28 h-8 text-snow text-sm border-2 rounded-full hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
+                animate={{x: [0, 20, -20, 0]}}
+                transition={{
+                  duration: 0.8,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                className="xxxxs:-mt-3.5 cursor-pointer flex items-center italic justify-between p-2 w-28 h-8 text-snow text-sm border-2 rounded-full hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
               >
                 <span className="mx-auto">Buy Juus</span>
                 <svg
@@ -63,7 +71,7 @@ function FullJuusSlide() {
                     d="M3 12h18m0 0l-8.5-8.5M21 12l-8.5 8.5"
                   ></path>
                 </svg>
-              </button>
+              </motion.button>
             </Link>
           </Fade>
         </div>
