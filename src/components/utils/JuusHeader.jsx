@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import SlidingMenu from "./SlidingMenu";
 import NavLinks from "./NavLinks";
@@ -7,6 +7,11 @@ function JuusHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
+  useEffect(() => {
+    if (isOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "auto";
+  }, [isOpen])
+  
   const handleHamburgerClick = () => {
     setIsOpen(!isOpen);
     console.log(isOpen);

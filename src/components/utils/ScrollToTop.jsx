@@ -6,6 +6,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (pathname === "/") document.body.style.overflow = "hidden";
   }, [pathname]);
 
   return null;
