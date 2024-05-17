@@ -46,14 +46,14 @@ function JuusHome() {
             Your browser does not support the video tag.
           </video>
           <div className="">
-            <Fade direction="left" cascade damping={0.5}>
+            <Fade triggerOnce={true} direction="left" cascade damping={0.5}>
               <img
-                className="mt-4 xl:mt-2 lg:mt-8 sm:scale-90 lg:scale-[.8] xl:scale-75 3xl:scale-[.65] 6xl:scale-50 lg:-ml-16 xl:-ml-28 3xl:-ml-48 5xl:-ml-64 6xl:-ml-[400px] pointer-events-none select-none"
-                src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Future%20is%20Sugar%20(typography).png"
+                className="mt-4 xl:mt-2 3xl:-mt-7 lg:mt-8 scale-75 sm:scale-90 lg:scale-[.6] xl:scale-50 3xl:scale-[.45] 6xl:scale-[.4] -ml-8 xxxxs:-ml-9 lg:-ml-[124px] xl:-ml-[216px] 3xl:-ml-[312px] 4xl:-ml-80 5xl:-ml-[394px] 6xl:-ml-[470px] pointer-events-none select-none"
+                src="https://juusstorage.blob.core.windows.net/creatives/Juus Home/future is sugar.png"
                 alt=""
               />
               <img
-                className="scale-105 sm:scale-95 lg:scale-[.85] xl:scale-[.8] 3xl:scale-[.7] 6xl:scale-[.55] lg:-ml-16 xl:-ml-28 3xl:-ml-48 5xl:-ml-64 6xl:-ml-[380px] lg:-mt-8 xl:-mt-12 3xl:-mt-20 5xl:-mt-28 6xl:-mt-44 pointer-events-none select-none"
+                className="scale-105 sm:scale-95 lg:scale-[.85] xl:scale-[.8] 3xl:scale-[.7] 6xl:scale-[.55] lg:-ml-16 xl:-ml-28 3xl:-ml-48 5xl:-ml-64 6xl:-ml-[380px] lg:-mt-8 xl:-mt-16 3xl:-mt-28 5xl:-mt-28 6xl:-mt-44 pointer-events-none select-none"
                 src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Free%20Paragraph%20(typography).png"
                 alt=""
               />

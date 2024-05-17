@@ -13,7 +13,7 @@ function FullJuusSlide() {
         style={{
           backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Background%20Greenapple.png"})`,
         }}
-        className={`flex flex-col justify-evenly xxs:justify-around sm:justify-evenly lg:justify-around 2xl:justify-evenly items-center relative overflow-hidden h-screen bg-cover bg-center`}
+        className={`flex flex-col justify-evenly sm:justify-evenly lg:justify-around 2xl:justify-evenly items-center relative overflow-hidden h-screen bg-cover bg-center`}
       >
         <img
           className="pointer-events-none select-none z-10 scale-105 xxs:scale-110 sm:scale-[.85] lg:scale-90 xl:scale-[.4] 3xl:scale-[.4] 4xl:scale-[.45] 6xl:scale-50 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform"
@@ -30,7 +30,7 @@ function FullJuusSlide() {
             alt="FUTURE"
           />
         </Fade>
-        <div className="z-30 flex flex-col sm:flex-row lg:flex-row sm:justify-center lg:justify-center 3xl:justify-evenly items-center mt-24 xxs:mt-28 xs:mt-56 sm:mt-36 lg:mt-56 xl:-mt-2 3xl:mt-48 4xl:mt-56 -mb-16 xxxs:-mb-[72px] 3xl:-mb-16 3xl:flex-row">
+        <div className="z-30 flex flex-col sm:flex-row lg:flex-row sm:justify-center lg:justify-center 3xl:justify-evenly items-center mt-24 xxs:mt-32 xs:mt-56 sm:mt-36 lg:mt-56 xl:-mt-2 3xl:mt-48 4xl:mt-56 -mb-16 xxxs:-mb-[72px] 3xl:-mb-16 3xl:flex-row">
           <Fade
             delay={300}
             direction="left"
@@ -53,7 +53,7 @@ function FullJuusSlide() {
                   repeat: Infinity,
                   repeatType: "loop",
                 }}
-                className="xxxxs:-mt-3.5 cursor-pointer flex items-center italic justify-between p-2 w-28 h-8 text-snow text-sm border-2 rounded-full hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
+                className="xxxxs:-mt-3.5 xxs:-mt-0 cursor-pointer flex items-center italic justify-between p-2 w-28 h-8 text-snow text-sm border-2 rounded-full hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
               >
                 <span className="mx-auto">Buy Juus</span>
                 <svg

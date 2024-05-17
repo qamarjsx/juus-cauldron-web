@@ -23,7 +23,7 @@ function NovaHome() {
           src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/nova main banner.jpg"
           alt=""
         />
-        <Fade className="lg:ml-16 xl:ml-32 3xl:ml-52 4xl:ml-80 5xl:ml-96" direction="left" cascade damping={0.5}>
+        <Fade triggerOnce={true} className="lg:ml-16 xl:ml-32 3xl:ml-52 4xl:ml-80 5xl:ml-96" direction="left" cascade damping={0.5}>
         <img
           className="mt-4 xl:mt-2 lg:mt-8 sm:scale-90 lg:scale-[.8] xl:scale-75 3xl:scale-[.65] lg:-ml-32 xl:-ml-56 3xl:-ml-96 4xl:-ml-[480px] 5xl:-ml-[540px] 6xl:-ml-[640px] pointer-events-none select-none"
           src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/Future is Sugar (typography).png"
