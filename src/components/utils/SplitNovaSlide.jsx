@@ -16,7 +16,7 @@ function SplitNovaSlide() {
             src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/full%20bottle%20nova.png"
             alt=""
           />
-          <div className="pointer-events-none select-none absolute flex flex-col justify-center items-start bottom-[3.5%] xxxs:bottom-[4.5%] 3xl:bottom-[1%] right-[6%] xxxxs:right-[10%] xxxs:right-[11.5%] xxs:right-[3%] sm:right-[15%] lg:right-[19.5%] xl:right-[34.5%] 2xl:right-[36%] 3xl:right-[35%] 4xl:right-[33.5%] 5xl:right-[34.5%] 6xl:right-[37.5%] text-4xl xxs:text-5xl lg:text-6xl xl:text-4xl 3xl:text-5xl 4xl:text-6xl text-snow font-extrabold">
+          <div className="pointer-events-none select-none absolute flex flex-col justify-center items-start bottom-[3.5%] xxxs:bottom-[4.5%] 3xl:bottom-[1%] right-[6%] xxxxs:right-[10%] xxxs:right-[11.5%] xxs:right-[3%] sm:right-[15%] lg:right-[19.5%] xl:right-[34.5%] 2xl:right-[36%] 3xl:right-[35%] 4xl:right-[33.5%] 5xl:right-[34.5%] 6xl:right-[37.5%] text-4xl xxs:text-5xl lg:text-6xl xl:text-4xl 3xl:text-5xl 4xl:text-6xl xxs:bottom-20 text-snow font-extrabold">
             <h1>INTO</h1>
             <h1>FUTURE</h1>
           </div>
