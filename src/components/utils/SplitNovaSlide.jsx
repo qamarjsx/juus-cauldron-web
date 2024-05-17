@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 
 function SplitNovaSlide() {

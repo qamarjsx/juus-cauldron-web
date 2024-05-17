@@ -1,9 +1,8 @@
-import React, { useState, useRef } from "react";
-import JuusHeader from "../../utils/JuusHeader.jsx";
+import React, { useState, useRef, lazy } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../../utils/Footer.jsx";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
+const JuusHeader = lazy(() => import("../../utils/JuusHeader.jsx"));
 
 function JuusHome() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -50,7 +49,7 @@ function JuusHome() {
             <Fade direction="left" cascade damping={0.5}>
               <img
                 className="mt-4 xl:mt-2 lg:mt-8 sm:scale-90 lg:scale-[.8] xl:scale-75 3xl:scale-[.65] 6xl:scale-50 lg:-ml-16 xl:-ml-28 3xl:-ml-48 5xl:-ml-64 6xl:-ml-[400px] pointer-events-none select-none"
-                src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/Future is Sugar (typography).png"
+                src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Future%20is%20Sugar%20(typography).png"
                 alt=""
               />
               <img

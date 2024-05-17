@@ -1,10 +1,12 @@
-import React from "react";
-import NovaHeader from "../../utils/NovaHeader";
+import React, {lazy, useState} from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
+const NovaHeader = lazy(() => import("../../utils/NovaHeader"));
 
 function NovaHome() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <motion.div
       className="relative overflow-x-hidden bg-nova scroll-smooth lg:h-auto"
@@ -13,7 +15,7 @@ function NovaHome() {
       exit={{ opacity: 0 }}
     >
       <div className="">
-        <NovaHeader />
+        <NovaHeader isOpen={isOpen} setIsOpen={setIsOpen}/>
       </div>
       <main className="pt-24 pb-10 h-screen flex flex-col items-center">
         <img
@@ -43,13 +45,13 @@ function NovaHome() {
           to={"/nova/shop"}
         >
           <Fade direction="down" duration={1000} delay={500}>
-            <button className="select-none cursor-pointer flex items-center font-bold justify-between p-2 w-40 lg:w-56 xl:w-72 h-9 lg:h-11 text-snow text-sm lg border-2 rounded-xl hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition">
+            <button className="select-none cursor-pointer flex items-center justify-between p-2 w-40 lg:w-56 xl:w-72 h-7 lg:h-11 text-snow text-sm lg border-2 rounded-xl hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition">
               <span className="mx-auto">DISCOVER FLAVORS</span>
             </button>
           </Fade>
         </Link>
         <img
-          className="pointer-events-none select-none opacity-65 absolute right-0 4xl:right-32 6xl:right-72 -bottom-10 xxxxs:-bottom-20 xxxs:-bottom-44 xxs:-bottom-12 sm:-bottom-96 lg:-bottom-[540px] xl:-bottom-[1080px] 2xl:-bottom-[580px] 3xl:-bottom-[1500px] 4xl:-bottom-[1720px] scale-125 xxxs:scale-125 lg:scale-100 xl:scale-90 3xl:scale-100 4xl:scale-x-110 5xl:scale-x-125 6xl:scale-x-150"
+          className={`${isOpen? "hidden" : "absolute"} pointer-events-none select-none opacity-65 right-0 4xl:right-32 6xl:right-72 -bottom-10 xxxxs:-bottom-20 xxxs:-bottom-44 xxs:-bottom-12 sm:-bottom-96 lg:-bottom-[540px] xl:-bottom-[1080px] 2xl:-bottom-[580px] 3xl:-bottom-[1500px] 4xl:-bottom-[1720px] scale-125 xxxs:scale-125 lg:scale-100 xl:scale-90 3xl:scale-100 4xl:scale-x-110 5xl:scale-x-125 6xl:scale-x-150`}
           src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Doodle%20art.png"
           alt=""
         />

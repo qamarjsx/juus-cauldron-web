@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy } from "react";
 import { Link } from "react-router-dom";
-import SlidingMenu from "./SlidingMenu";
-import NavLinks from "./NavLinks";
+const SlidingMenu = lazy(() => import("./SlidingMenu.jsx"));
+const NavLinks = lazy(() => import("./NavLinks.jsx"));
 
-function NovaHeader() {
-  const [isOpen, setIsOpen] = useState(false);
+function NovaHeader({isOpen, setIsOpen}) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  
-
 
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
@@ -114,7 +111,7 @@ function NovaHeader() {
           </svg>
         </div>
       </header>
-      {isOpen && <SlidingMenu isOpen={isOpen} theme={"#FED381"} />}
+      <SlidingMenu isOpen={isOpen} theme={"#FED381"} />
     </>
   );
 }

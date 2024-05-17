@@ -1,7 +1,7 @@
 import React, { lazy } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import ScrollToTop from "./ScrollToTop.jsx";
+// import ScrollToTop from "./ScrollToTop.jsx";
 // import Home from "../pages/Home/Home.jsx";
 // import About from "../pages/About/About.jsx";
 // import Shop from "../pages/Shop/Shop.jsx";
@@ -23,7 +23,6 @@ const NovaShop = lazy(() => import("../pages/NovaShop/NovaShop.jsx"));
 const JuusShop = lazy(() => import("../pages/JuusShop/JuusShop.jsx"));
 const NovaHome = lazy(() => import("../pages/NovaHome/NovaHome.jsx"));
 const JuusHome = lazy(() => import("../pages/JuusHome/JuusHome.jsx"));
-const SlidingMenu = lazy(() => import("./SlidingMenu.jsx"));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -39,7 +38,6 @@ function AnimatedRoutes() {
         <Route path="contact" element={<Contact />} />
         <Route path="nova/shop" element={<NovaShop />} />
         <Route path="juus/shop" element={<JuusShop />} />
-        <Route path="menu" element={<SlidingMenu />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>

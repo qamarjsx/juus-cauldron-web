@@ -1,12 +1,6 @@
-import React, { useState, useEffect, useRef, lazy } from "react";
+import React, { useState, useRef, lazy } from "react";
 import "./Home.css";
-// import SplitJuusSlide from "../../utils/SplitJuusSlide.jsx";
-// import SplitNovaSlide from "../../utils/SplitNovaSlide.jsx";
-// import FullJuusSlide from "../../utils/FullJuusSlide.jsx";
-// import FullNovaSlide from "../../utils/FullNovaSlide.jsx";
-// import Header from "../../utils/Header.jsx";
 import { motion } from "framer-motion";
-
 const SplitJuusSlide = lazy(() => import("../../utils/SplitJuusSlide.jsx"))
 const SplitNovaSlide = lazy(() => import("../../utils/SplitNovaSlide.jsx"))
 const FullJuusSlide = lazy(() => import("../../utils/FullJuusSlide.jsx"))

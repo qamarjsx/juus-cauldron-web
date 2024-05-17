@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy } from "react";
 import { Link } from "react-router-dom";
-import SlidingMenu from "./SlidingMenu.jsx";
-import NavLinks from "./NavLinks.jsx";
+const SlidingMenu = lazy(()=> import("./SlidingMenu.jsx"))
+const NavLinks = lazy(() => import("./NavLinks.jsx"));
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);

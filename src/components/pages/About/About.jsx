@@ -1,10 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, lazy } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../utils/Footer.jsx";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
-import Header from "../../utils/Header.jsx";
-import Certification from "../../utils/Certification.jsx";
+const Header = lazy(() => import("../../utils/Header.jsx"));
+const Certification = lazy(() => import("../../utils/Certification.jsx"));
 
 function About() {
   const [isPlaying, setIsPlaying] = useState(true);

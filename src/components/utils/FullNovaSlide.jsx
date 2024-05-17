@@ -29,7 +29,7 @@ function FullNovaSlide() {
             alt="FUTURE"
           />
         </Fade>
-        <div className="z-30 flex flex-col sm:flex-row lg:flex-row sm:justify-center lg:justify-center 3xl:justify-evenly items-center mt-24 xxs:mt-48 xs:mt-56 sm:mt-36 lg:mt-56 xl:-mt-2 3xl:mt-48 4xl:mt-56 -mb-16 xxxs:-mb-[72px] 3xl:-mb-16 3xl:flex-row">
+        <div className="z-30 flex flex-col sm:flex-row lg:flex-row sm:justify-center lg:justify-center 3xl:justify-evenly items-center mt-24 xxs:mt-28 xs:mt-56 sm:mt-36 lg:mt-56 xl:-mt-2 3xl:mt-48 4xl:mt-56 -mb-16 xxxs:-mb-[72px] 3xl:-mb-16 3xl:flex-row">
           <Fade
             delay={300}
             direction="right"

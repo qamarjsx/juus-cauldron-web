@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React from "react";
+import React, {lazy} from "react";
 import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
-import NavLinks from "./NavLinks";
+const NavLinks = lazy(() => import("./NavLinks.jsx"));
 
 function SlidingMenu({theme, isOpen}) {
   return (
@@ -20,8 +20,8 @@ function SlidingMenu({theme, isOpen}) {
         }}
         
         >
-      <div className={`${theme? "bg-nova" : "bg-black"} h-screen w-full overflow-hidden flex flex-col justify-around pl-10`}>
-        <div className="w-24 mt-7">
+      <div className={`${theme? "bg-nova" : "bg-black"} h-screen w-full overflow-hidden flex flex-col justify-between py-28 pl-10`}>
+        <div className="w-24">
           <NavLinks />
         </div>
         <div className="flex">
