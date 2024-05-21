@@ -7,19 +7,19 @@ function FaqAccordion({ question, answer }) {
 
   return (
     <div
-      className="mx-3 rounded-lg shadow-primary-shadow"
+      className="mx-3 xxxxs:mx-6 xxs:mx-8 rounded-lg shadow-primary-shadow"
     >
       <div
         onClick={() => setShowAnswer(!showAnswer)}
-        className="mt-4 h-12 flex items-center"
+        className="mt-4 xxs:mt-6 h-12 flex items-center"
       >
-        <li className="px-3">{question}</li>
+        <li className="px-3 text-sm xxs:text-base">{question}</li>
       </div>
       {showAnswer && (
         <Fade
           className="p-3 rounded-lg bg-nova"
         >
-          <p>{answer}</p>
+          <p className="text-sm xxs:text-base">{answer}</p>
         </Fade>
       )}
     </div>

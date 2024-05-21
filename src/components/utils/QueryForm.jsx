@@ -1,41 +1,45 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 function QueryForm() {
+  const titleInputRef = useRef(null);
+  const textareaRef = useRef(null);
+  const emailInputRef = useRef(null);
   const [titleInputFocused, setTitleInputFocused] = useState(false);
   const [textareaFocused, setTextareaFocused] = useState(false);
   const [emailInputFocused, setEmailInputFocused] = useState(false);
 
   const handleTextareaFocus = () => {
-    setTextareaFocused(true);
+    if (textareaRef.current.value === "") setTextareaFocused(true);
   };
   const handleTextareaBlur = () => {
-    setTextareaFocused(false);
+    if (textareaRef.current.value === "") setTextareaFocused(false);
   };
 
   const handleTitleInputFocus = () => {
-    setTitleInputFocused(true);
+    if (titleInputRef.current.value === "") setTitleInputFocused(true);
   };
   const handleTitleInputBlur = () => {
-    setTitleInputFocused(false);
+    if (titleInputRef.current.value === "") setTitleInputFocused(false);
   };
 
   const handleEmailInputFocus = () => {
-    setEmailInputFocused(true);
+    if (emailInputRef.current.value === "") setEmailInputFocused(true);
   };
   const handleEmailInputBlur = () => {
-    setEmailInputFocused(false);
+    if (emailInputRef.current.value === "") setEmailInputFocused(false);
   };
 
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
-      className="bg-faq-orange p-5 shadow-primary-shadow rounded-2xl my-10 mx-3 flex flex-col justify-center items-center"
+      className="h-[480px] w-72 xxxxs:w-80 xxs:w-[360px] lg:w-72 xl:w-96 2xl:w-80 3xl:w-96 4xl:w-[420px] lg:relative lg:bottom-20 2xl:bottom-32 bg-faq-orange p-5 shadow-primary-shadow rounded-2xl my-10 mx-3 xxxxs:mx-6 xxs:mx-8 lg:mx-0 flex flex-col justify-center items-center"
     >
       <div className="my-3 h-9 relative w-11/12">
         <input
+          ref={titleInputRef}
           onClick={handleTitleInputFocus}
           onBlur={handleTitleInputBlur}
-          className="rounded-3xl border-white border h-9 w-full outline-none px-4"
+          className="text-rich-black rounded-3xl border-white border h-9 w-full outline-none px-4"
           name="query-subject"
           id="query-subject"
           type="text"
@@ -51,10 +55,11 @@ function QueryForm() {
       </div>
       <div className="my-3 w-11/12 flex flex-col items-center relative">
         <textarea
+          ref={textareaRef}
           onClick={handleTextareaFocus}
           onBlur={handleTextareaBlur}
           onResize={"none"}
-          className="bg-faq-orange rounded-2xl w-full border-white border outline-none p-4 h-64"
+          className="text-rich-black bg-faq-orange rounded-2xl w-full border-white border outline-none p-4 h-64"
           name="query-description"
           id=""
           cols=""
@@ -72,9 +77,10 @@ function QueryForm() {
       </div>
       <div className="my-3 relative h-11 w-11/12">
         <input
+          ref={emailInputRef}
           onClick={handleEmailInputFocus}
           onBlur={handleEmailInputBlur}
-          className="bg-faq-orange rounded-2xl h-full border-white border w-full outline-none p-4"
+          className="text-rich-black bg-faq-orange rounded-2xl h-full border-white border w-full outline-none p-4"
           type="email"
           name="sender-email"
           id="sender-email"
@@ -88,7 +94,7 @@ function QueryForm() {
           </label>
         )}
       </div>
-      <div className="mt-4 bg-spring-green rounded-2xl w-32 h-12 flex justify-center items-center">
+      <div className="shadow-primary-shadow relative top-7 mt-4 bg-spring-green rounded-xl w-32 h-12 flex justify-center items-center">
         <button className="text-white text-3xl">SEND</button>
       </div>
     </form>
