@@ -16,7 +16,7 @@ function FaqAccordion({ question, answer }) {
         <li className="px-3 text-sm xxs:text-base">{question}</li>
       </div>
       {showAnswer && (
-        <Fade
+        <Fade triggerOnce={true}
           className="p-3 rounded-lg bg-nova"
         >
           <p className="text-sm xxs:text-base">{answer}</p>
