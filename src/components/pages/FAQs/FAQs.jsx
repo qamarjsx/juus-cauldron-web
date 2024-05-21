@@ -100,7 +100,7 @@ const FAQsArr = [
 function FAQs() {
   return (
     <div
-      className="bg-cover bg-fixed bg-no-repeat bg-center overflow-x-hidden"
+      className="bg-cover bg-fixed 2xl:bg-scroll bg-no-repeat bg-center overflow-x-hidden"
       style={{
         backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/FAQs%20Page/background.png"})`,
       }}
@@ -110,14 +110,14 @@ function FAQs() {
       </div>
         <section className="pt-24">
           <img
-          className="scale-105"
+          className=""
             rel="preload"
             src="https://juusstorage.blob.core.windows.net/creatives/FAQs%20Page/faq%20bg.png"
             alt=""
           />
           <img
             rel="preload"
-            className="scale-75 2xl:scale-50 absolute top-0 left-0 translate-y-3/4 lg:translate-y-1/3 2xl:translate-y-[15%]"
+            className="scale-75 2xl:scale-50 absolute top-0 left-0 translate-y-24 lg:translate-y-1/3 2xl:translate-y-[15%]"
             src="https://juusstorage.blob.core.windows.net/creatives/FAQs%20Page/faq%20vector.png"
             alt=""
           />
@@ -136,7 +136,7 @@ function FAQs() {
         </Fade>
         </div>
         <div className="lg:col-span-3">
-        <QueryForm />
+          <QueryForm />
         </div>
       </main>
     </div>
