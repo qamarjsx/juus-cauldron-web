@@ -22,7 +22,7 @@ function Header() {
         {(isOpen) ? (
           <svg
             onClick={handleHamburgerClick}
-            className="transform scale-y-[-1] lg:hidden"
+            className="transform scale-y-[-1] lg:hidden hover:scale-105 cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
             width="1.5em"
             height="2em"
@@ -36,7 +36,7 @@ function Header() {
         ) : (
           <svg
             onClick={handleHamburgerClick}
-            className="transform scale-y-[-1] lg:hidden"
+            className="transform scale-y-[-1] lg:hidden hover:scale-105 cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
             width="1.5em"
             height="2em"
@@ -64,7 +64,7 @@ function Header() {
         </div>
         <div className="flex">
           <svg
-            className="mr-1.5"
+            className="mr-1.5 hover:scale-105 cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
             width="1.5em"
             height="2em"
@@ -80,7 +80,7 @@ function Header() {
             ></path>
           </svg>
           <svg
-            className="ml-1.5"
+            className="ml-1.5 hover:scale-105 cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
             width="1.5em"
             height="2em"

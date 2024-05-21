@@ -7,6 +7,9 @@ function QueryForm() {
   const [titleInputFocused, setTitleInputFocused] = useState(false);
   const [textareaFocused, setTextareaFocused] = useState(false);
   const [emailInputFocused, setEmailInputFocused] = useState(false);
+  const [subject, setSubject] = useState("");
+  const [description, setDescription] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleTextareaFocus = () => {
     if (textareaRef.current.value === "") setTextareaFocused(true);
@@ -29,13 +32,56 @@ function QueryForm() {
     if (emailInputRef.current.value === "") setEmailInputFocused(false);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (subject && email && description !== "") {
+      const formData = {
+        subject,
+        description,
+        email,
+      };
+    }
+
+    else {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    // Send the form data to the backend
+    fetch("http://localhost:5000/send-query", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          alert("Query sent successfully!");
+          setSubject("");
+          setEmail("");
+          setDescription("");
+        } else {
+          alert("Failed to send query.1");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("Failed to send query.2");
+      });
+  };
+
   return (
     <form
-      onSubmit={(e) => e.preventDefault()}
+      onSubmit={handleSubmit}
       className="h-[480px] w-72 xxxxs:w-80 xxs:w-[360px] lg:w-72 xl:w-96 2xl:w-80 3xl:w-96 4xl:w-[420px] lg:relative lg:bottom-20 2xl:bottom-32 bg-faq-orange p-5 shadow-primary-shadow rounded-2xl my-10 mx-3 xxxxs:mx-6 xxs:mx-8 lg:mx-0 flex flex-col justify-center items-center"
     >
       <div className="my-3 h-9 relative w-11/12">
         <input
+          value={subject}
+          onChange={(e) => setSubject(e.target.value)}
           ref={titleInputRef}
           onClick={handleTitleInputFocus}
           onBlur={handleTitleInputBlur}
@@ -55,13 +101,15 @@ function QueryForm() {
       </div>
       <div className="my-3 w-11/12 flex flex-col items-center relative">
         <textarea
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
           ref={textareaRef}
           onClick={handleTextareaFocus}
           onBlur={handleTextareaBlur}
           onResize={"none"}
           className="text-rich-black bg-faq-orange rounded-2xl w-full border-white border outline-none p-4 h-64"
           name="query-description"
-          id=""
+          id="query-description"
           cols=""
           rows="7"
         ></textarea>
@@ -77,6 +125,8 @@ function QueryForm() {
       </div>
       <div className="my-3 relative h-11 w-11/12">
         <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           ref={emailInputRef}
           onClick={handleEmailInputFocus}
           onBlur={handleEmailInputBlur}

@@ -7,7 +7,7 @@ const Header = lazy(() => import("../../utils/Header.jsx"));
 const Certification = lazy(() => import("../../utils/Certification.jsx"));
 
 function About() {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
 
   const togglePlay = () => {
@@ -32,8 +32,8 @@ function About() {
       <main className="pt-24">
         <div>
           <video
+          rel="preload"
             ref={videoRef}
-            autoPlay
             loop
             muted
             playsInline
@@ -42,7 +42,7 @@ function About() {
           >
             <source
               src={
-                "https://cdn.shopify.com/videos/c/o/v/595e5bba7f0147bc8d1825c6307fb31e.mp4"
+                "https://juusstorage.blob.core.windows.net/creatives/About%20Us/about%20us%20video.mp4"
               }
               type="video/mp4"
             />
@@ -69,10 +69,10 @@ function About() {
           </article>
         </div>
         <div className="6xl:flex 6xl:flex-col">
-          <img className="my-5 lg:my-28 3xl:my-20 3xl:w-full 3xl:aspect-video 3xl:h-[75vh] 6xl:w-5/6 6xl:h-[55vh] 6xl:self-center" src="https://juusstorage.blob.core.windows.net/website/images/about/about-main.png" alt="" />
+          <img className="my-5 lg:my-28 3xl:mt-20 3xl:mb-0 3xl:w-full 3xl:aspect-video 3xl:h-[85vh] 6xl:w-5/6 6xl:h-[80vh] 6xl:self-center" src="https://juusstorage.blob.core.windows.net/website/images/about/about-main.png" alt="" />
           <img
-          className="xl:scale-[.8] 3xl:scale-[.6] 6xl:scale-50 xl:-ml-20 3xl:-ml-52 5xl:-ml-60 6xl:-ml-[412px]"
-            src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Future%20is%20Sugar%20(typography).png"
+          className="scale-75 xl:scale-[.65] 3xl:scale-[.55] 6xl:scale-[.45] -ml-5 xxxxs:-ml-8 lg:-ml-14 xl:-ml-32 3xl:-ml-52 4xl:-ml-56 5xl:-ml-60 6xl:-ml-[420px] -mb-3 lg:-mb-6 xl:-mb-9 3xl:-mb-24 4xl:-mb-32 6xl:-mb-16"
+            src="https://juusstorage.blob.core.windows.net/creatives/About%20Us/made%20to%20international.png"
             alt=""
           />
           <article className="mb-4 lg:mb-20 3xl:mb-32 3xl:-mt-16 6xl:-mt-32 px-4 lg:px-10 3xl:px-24 font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">

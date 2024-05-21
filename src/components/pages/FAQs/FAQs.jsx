@@ -4,6 +4,7 @@ import FaqCard from "../../utils/FaqAccordion.jsx";
 import FaqAccordion from "../../utils/FaqAccordion.jsx";
 import { Fade } from "react-awesome-reveal";
 import QueryForm from "../../utils/QueryForm.jsx";
+import { motion } from "framer-motion";
 
 const FAQsArr = [
   {
@@ -99,7 +100,7 @@ const FAQsArr = [
 
 function FAQs() {
   return (
-    <div
+    <motion.div
       className="bg-cover bg-fixed 2xl:bg-scroll bg-no-repeat bg-center overflow-x-hidden"
       style={{
         backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/FAQs%20Page/background.png"})`,
@@ -139,7 +140,7 @@ function FAQs() {
           <QueryForm />
         </div>
       </main>
-    </div>
+    </motion.div>
   );
 }
 
