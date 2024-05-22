@@ -22,7 +22,7 @@ function Header() {
         {(isOpen) ? (
           <svg
             onClick={handleHamburgerClick}
-            className="transform scale-y-[-1] lg:hidden hover:scale-105 cursor-pointer"
+            className="transform scale-y-[-1] lg:hidden cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
             width="1.5em"
             height="2em"
@@ -36,7 +36,7 @@ function Header() {
         ) : (
           <svg
             onClick={handleHamburgerClick}
-            className="transform scale-y-[-1] lg:hidden hover:scale-105 cursor-pointer"
+            className="transform scale-y-[-1] lg:hidden cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
             width="1.5em"
             height="2em"

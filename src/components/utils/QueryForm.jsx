@@ -145,7 +145,7 @@ function QueryForm() {
         )}
       </div>
       <div className="shadow-primary-shadow relative top-7 mt-4 bg-spring-green rounded-xl w-32 h-12 flex justify-center items-center">
-        <button className="text-white text-3xl">SEND</button>
+        <button className="text-white text-3xl bg-spring-green">SEND</button>
       </div>
     </form>
   );
