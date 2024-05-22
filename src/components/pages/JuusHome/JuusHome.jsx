@@ -8,6 +8,7 @@ const JuusHeader = lazy(() => import("../../utils/JuusHeader.jsx"));
 function JuusHome() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const togglePlay = () => {
     if (isPlaying) {
@@ -33,6 +34,9 @@ function JuusHome() {
       <main className="mt-24 xl:mt-16 3xl:mt-8 h-screen flex flex-col items-center justify-between lg:h-auto">
         <div className="">
           <video
+            rel="preload"
+            poster="https://juusstorage.blob.core.windows.net/website/images/about/fit-ad-girl-thumbnail"
+            preload="metadata"
             ref={videoRef}
             onClick={togglePlay}
             loop
@@ -41,7 +45,7 @@ function JuusHome() {
           >
             <source
               src={
-                "https://juusstorage.blob.core.windows.net/website/videos/home/juus-fit-ad-desktop.mp4"
+                isMobile? "https://juusstorage.blob.core.windows.net/website/videos/home/juus-fit-ad-mobile.mp4" : "https://juusstorage.blob.core.windows.net/website/videos/home/juus-fit-ad-desktop.mp4"
               }
               type="video/mp4"
             />

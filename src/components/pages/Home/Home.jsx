@@ -1,4 +1,4 @@
-import React, { useState, useRef, lazy } from "react";
+import React, { Suspense, useState, useRef, lazy } from "react";
 import "./Home.css";
 import { motion } from "framer-motion";
 const SplitJuusSlide = lazy(() => import("../../utils/SplitJuusSlide.jsx"));
@@ -74,7 +74,7 @@ function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
     >
       <Header />
       <div className="w-full h-screen flex items-center justify-center">
@@ -90,14 +90,14 @@ function Home() {
           className="relative overflow-hidden"
         >
           <div className="slide block h-auto object-cover">
-            {showSlideA ? <FullJuusSlide /> : <SplitJuusSlide />}
+            {showSlideA ? <Suspense fallback={<p>This is loading...</p>}><FullJuusSlide /></Suspense> : <Suspense fallback={<p>This is loading...</p>}><SplitJuusSlide /></Suspense>}
           </div>
           <div
             ref={sliderImgWrapperRef}
             className="img-wrapper absolute top-0 right-0 w-1/2 h-full overflow-hidden"
           >
             <div className="slide absolute top-0 right-0 h-full object-cover">
-              {showSlideB ? <FullNovaSlide /> : <SplitNovaSlide />}
+              {showSlideB ? <Suspense fallback={<p>This is loading...</p>}><FullNovaSlide /></Suspense> : <Suspense fallback={<p>This is loading...</p>}><SplitNovaSlide /></Suspense>}
             </div>
           </div>
           <div
