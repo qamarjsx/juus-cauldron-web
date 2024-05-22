@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 function QueryForm() {
   const titleInputRef = useRef(null);
@@ -11,22 +11,26 @@ function QueryForm() {
   const [description, setDescription] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleTextareaFocus = () => {
-    if (textareaRef.current.value === "") setTextareaFocused(true);
-  };
-  const handleTextareaBlur = () => {
-    if (textareaRef.current.value === "") setTextareaFocused(false);
-  };
+  useEffect(() => {
+    if (titleInputRef.current.value !== "") setTitleInputFocused(true);
+    if (textareaRef.current.value !== "") setTextareaFocused(true);
+    if (emailInputRef.current.value !== "") setEmailInputFocused(true);
+  }, [subject, description, email]);
 
   const handleTitleInputFocus = () => {
-    if (titleInputRef.current.value === "") setTitleInputFocused(true);
+    setTitleInputFocused(true);
   };
   const handleTitleInputBlur = () => {
     if (titleInputRef.current.value === "") setTitleInputFocused(false);
   };
-
+  const handleTextareaFocus = () => {
+    setTextareaFocused(true);
+  };
+  const handleTextareaBlur = () => {
+    if (textareaRef.current.value === "") setTextareaFocused(false);
+  };
   const handleEmailInputFocus = () => {
-    if (emailInputRef.current.value === "") setEmailInputFocused(true);
+    setEmailInputFocused(true);
   };
   const handleEmailInputBlur = () => {
     if (emailInputRef.current.value === "") setEmailInputFocused(false);
@@ -41,9 +45,7 @@ function QueryForm() {
         description,
         email,
       };
-    }
-
-    else {
+    } else {
       alert("Please fill in all fields.");
       return;
     }

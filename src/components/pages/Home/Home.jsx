@@ -1,11 +1,11 @@
 import React, { useState, useRef, lazy } from "react";
 import "./Home.css";
 import { motion } from "framer-motion";
-const SplitJuusSlide = lazy(() => import("../../utils/SplitJuusSlide.jsx"))
-const SplitNovaSlide = lazy(() => import("../../utils/SplitNovaSlide.jsx"))
-const FullJuusSlide = lazy(() => import("../../utils/FullJuusSlide.jsx"))
-const FullNovaSlide = lazy(() => import("../../utils/FullNovaSlide.jsx"))
-const Header = lazy(() => import("../../utils/Header.jsx"))
+const SplitJuusSlide = lazy(() => import("../../utils/SplitJuusSlide.jsx"));
+const SplitNovaSlide = lazy(() => import("../../utils/SplitNovaSlide.jsx"));
+const FullJuusSlide = lazy(() => import("../../utils/FullJuusSlide.jsx"));
+const FullNovaSlide = lazy(() => import("../../utils/FullNovaSlide.jsx"));
+const Header = lazy(() => import("../../utils/Header.jsx"));
 
 function Home() {
   let isSliderLocked = false;
@@ -74,7 +74,7 @@ function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{duration: 0.5}}
+      transition={{ duration: 0.5 }}
     >
       <Header />
       <div className="w-full h-screen flex items-center justify-center">

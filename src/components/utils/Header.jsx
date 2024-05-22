@@ -1,6 +1,6 @@
 import React, { useState, useEffect, lazy } from "react";
 import { Link } from "react-router-dom";
-const SlidingMenu = lazy(()=> import("./SlidingMenu.jsx"))
+const SlidingMenu = lazy(() => import("./SlidingMenu.jsx"));
 const NavLinks = lazy(() => import("./NavLinks.jsx"));
 
 function Header() {
@@ -10,7 +10,7 @@ function Header() {
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "auto";
-  }, [isOpen])
+  }, [isOpen]);
 
   const handleHamburgerClick = () => {
     setIsOpen(!isOpen);
@@ -19,7 +19,7 @@ function Header() {
   return (
     <>
       <header className="fixed z-40 w-full h-24 flex justify-between 6xl:justify-evenly items-center p-4 lg:px-12 3xl:px-24 4xl:px-32 5xl:px-36 border-b border-zinc-900 bg-black">
-        {(isOpen) ? (
+        {isOpen ? (
           <svg
             onClick={handleHamburgerClick}
             className="transform scale-y-[-1] lg:hidden cursor-pointer"
@@ -53,14 +53,14 @@ function Header() {
           </svg>
         )}
         <div className="lg:flex lg:w-5/6">
-        <Link to={"/"}>
-          <img
-            className="h-16 cursor-pointer select-none lg:mr-0.5 xl:mr-9"
-            src="https://juusstorage.blob.core.windows.net/creatives/Homepage JC/Juus cauldron logo white.png"
-            alt=""
-          />
-        </Link>
-        {(!isMobile) && <NavLinks/ >}
+          <Link to={"/"}>
+            <img
+              className="h-16 cursor-pointer select-none lg:mr-0.5 xl:mr-9"
+              src="https://juusstorage.blob.core.windows.net/creatives/Homepage JC/Juus cauldron logo white.png"
+              alt=""
+            />
+          </Link>
+          {!isMobile && <NavLinks />}
         </div>
         <div className="flex">
           <svg
@@ -102,7 +102,7 @@ function Header() {
           </svg>
         </div>
       </header>
-      <SlidingMenu isOpen={isOpen}/>
+      <SlidingMenu isOpen={isOpen} />
     </>
   );
 }

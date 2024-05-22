@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import Header from "../../utils/Header.jsx";
-import FaqCard from "../../utils/FaqAccordion.jsx";
-import FaqAccordion from "../../utils/FaqAccordion.jsx";
+import React, { lazy, useState } from "react";
 import { Fade } from "react-awesome-reveal";
-import QueryForm from "../../utils/QueryForm.jsx";
 import { motion } from "framer-motion";
+const Header = lazy(() => import("../../utils/Header.jsx"));
+const FaqAccordion = lazy(() => import("../../utils/FaqAccordion.jsx"));
+const QueryForm = lazy(() => import("../../utils/QueryForm.jsx"));
+const Footer = lazy(() => import("../../utils/Footer.jsx"));
 
 const FAQsArr = [
   {
@@ -109,37 +109,50 @@ function FAQs() {
       <div>
         <Header />
       </div>
-        <section className="pt-24">
-          <img
+      <section className="pt-24">
+        <img
           className=""
-            rel="preload"
-            src="https://juusstorage.blob.core.windows.net/creatives/FAQs%20Page/faq%20bg.png"
-            alt=""
-          />
-          <img
-            rel="preload"
-            className="scale-75 2xl:scale-50 absolute top-0 left-0 translate-y-24 lg:translate-y-1/3 2xl:translate-y-[15%]"
-            src="https://juusstorage.blob.core.windows.net/creatives/FAQs%20Page/faq%20vector.png"
-            alt=""
-          />
-        </section>
+          rel="preload"
+          src="https://juusstorage.blob.core.windows.net/creatives/FAQs%20Page/faq%20bg.png"
+          alt=""
+        />
+        <img
+          rel="preload"
+          className="scale-75 2xl:scale-50 absolute top-0 left-0 translate-y-24 lg:translate-y-1/3 2xl:translate-y-[15%]"
+          src="https://juusstorage.blob.core.windows.net/creatives/FAQs%20Page/faq%20vector.png"
+          alt=""
+        />
+      </section>
       <main className="flex lg:grid lg:grid-rows-1 lg:grid-cols-7 2xl:grid-cols-9 flex-col lg:flex-row items-center lg:items-start lg:mb-8 lg:gap-5 5xl:gap-20">
         <div className="lg:col-span-4 2xl:col-span-6">
-        <Fade className="self-stretch" triggerOnce={true} direction="up" cascade damping={0.1}>
-          <div className="flex justify-center items-center h-12 mt-5 mx-3 xxxxs:mx-6 xxs:mx-8 bg-aqua border border-[#268c98] rounded-lg"><span className="text-white font-bold text-sm xxxs:text-base xl:text-xl 3xl:text-2xl 5xl:text-3xl 6xl:text-4xl">MOST FREQUENTLY ASKED QUESTIONS</span></div>
-          {FAQsArr.map((faq) => (
-            <FaqAccordion
-              key={faq.id}
-              question={faq.question}
-              answer={faq.answer}
-            />
-          ))}
-        </Fade>
+          <Fade
+            className="self-stretch"
+            triggerOnce={true}
+            direction="up"
+            cascade
+            damping={0.1}
+          >
+            <div className="flex justify-center items-center h-12 mt-5 mx-3 xxxxs:mx-6 xxs:mx-8 bg-aqua border border-[#268c98] rounded-lg">
+              <span className="text-white font-bold text-sm xxxs:text-base xl:text-xl 3xl:text-2xl 5xl:text-3xl 6xl:text-4xl">
+                MOST FREQUENTLY ASKED QUESTIONS
+              </span>
+            </div>
+            {FAQsArr.map((faq) => (
+              <FaqAccordion
+                key={faq.id}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
+          </Fade>
         </div>
         <div className="lg:col-span-3">
           <QueryForm />
         </div>
       </main>
+      <div>
+        <Footer />
+      </div>
     </motion.div>
   );
 }

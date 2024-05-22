@@ -1,11 +1,12 @@
-import React, { useState, useRef, lazy } from "react";
+import React, { useState, useRef, lazy, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
+const Footer = lazy(() => import("../../utils/Footer.jsx"));
 const JuusHeader = lazy(() => import("../../utils/JuusHeader.jsx"));
 
 function JuusHome() {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
 
   const togglePlay = () => {
@@ -16,6 +17,8 @@ function JuusHome() {
     }
     setIsPlaying(!isPlaying);
   };
+
+  useEffect(togglePlay, []);
 
   return (
     <motion.div
@@ -32,7 +35,6 @@ function JuusHome() {
           <video
             ref={videoRef}
             onClick={togglePlay}
-            autoPlay
             loop
             playsInline
             className="select-none w-full aspect-video xl:h-full 3xl:h-screen 4xl:aspect-auto"
@@ -91,6 +93,9 @@ function JuusHome() {
           alt=""
         />
       </main>
+      <div>
+        <Footer />
+      </div>
     </motion.div>
   );
 }
