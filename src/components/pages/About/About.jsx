@@ -1,25 +1,12 @@
-import React, { useState, useRef, lazy, useEffect } from "react";
+import React, { lazy } from "react";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
+const AboutVideo = lazy(() => import("../../utils/AboutVideo.jsx"));
 const Header = lazy(() => import("../../utils/Header.jsx"));
 const Certification = lazy(() => import("../../utils/Certification.jsx"));
 const Footer = lazy(() => import("../../utils/Footer.jsx"));
 
 function About() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef(null);
-
-  const togglePlay = () => {
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  useEffect(togglePlay, []);
-
   return (
     <motion.div
       className="relative overflow-x-hidden scroll-smooth"
@@ -32,24 +19,7 @@ function About() {
       </div>
       <main className="pt-24">
         <div>
-          <video
-            preload="auto"
-            rel="preload"
-            ref={videoRef}
-            loop
-            muted
-            playsInline
-            onClick={togglePlay}
-            className="select-none w-full aspect-video xl:h-full 3xl:aspect-auto"
-          >
-            <source
-              src={
-                "https://juusstorage.blob.core.windows.net/creatives/About%20Us/about%20us%20video.mp4"
-              }
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
+          <AboutVideo />
           <article className="px-4 lg:px-10 3xl:px-28 lg:text-center font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">
             <p className="my-4 3xl:my-9 4xl:my-16">
               Our journey started in the research facilities of New Zealand. Our

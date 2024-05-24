@@ -2,25 +2,13 @@ import React, { useState, useRef, lazy, useEffect, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
+const JuusVideo = lazy(() => import("../../utils/JuusVideo.jsx"))
 const Footer = lazy(() => import("../../utils/Footer.jsx"));
 const JuusHeader = lazy(() => import("../../utils/JuusHeader.jsx"));
+import 'ldrs/ring';
 
 function JuusHome() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  const togglePlay = () => {
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  useEffect(togglePlay, []);
-
+  
   return (
     <motion.div
       className="relative overflow-x-hidden bg-black scroll-smooth"
@@ -33,25 +21,7 @@ function JuusHome() {
       </div>
       <main className="mt-24 xl:mt-16 3xl:mt-8 h-screen flex flex-col items-center justify-between lg:h-auto">
         <div className="">
-          <Suspense fallback={<img src="https://juusstorage.blob.core.windows.net/website/images/about/fit-ad-girl-thumbnail" />}>
-          <video
-            rel="preload"
-            preload="auto"
-            ref={videoRef}
-            onClick={togglePlay}
-            loop
-            playsInline
-            className="select-none w-full aspect-video xl:h-full 3xl:h-screen 4xl:aspect-auto"
-          >
-            <source
-              src={
-                isMobile? "https://juusstorage.blob.core.windows.net/website/videos/home/juus-fit-ad-mobile.mp4" : "https://juusstorage.blob.core.windows.net/website/videos/home/juus-fit-ad-desktop.mp4"
-              }
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-          </Suspense>
+            <JuusVideo />
           <div className="">
             <Fade triggerOnce={true} direction="left" cascade damping={0.5}>
               <img
