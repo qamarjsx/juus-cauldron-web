@@ -80,9 +80,9 @@ function Footer() {
       </div>
 
       <div className="flex justify-center items-center h-1/5">
-        <p className="text-xs text-snow">
-          © 2024, <Link to={"/"}>Juus.pk </Link>Powered by <small> </small>
-          <Link target="_blank" to={"https://vitejs.dev/"}>
+        <p className="text-xs text-zinc-400">
+          © 2024, <Link className="hover:text-snow hover:underline-offset-4 hover:underline active:underline" to={"/"}>Juus.pk </Link>Powered by <small> </small>
+          <Link className="hover:text-snow hover:underline-offset-4 hover:underline active:underline" target="_blank" to={"https://vitejs.dev/"}>
             Vite/React
           </Link>
         </p>

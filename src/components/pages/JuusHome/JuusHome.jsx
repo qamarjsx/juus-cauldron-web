@@ -1,4 +1,4 @@
-import React, { useState, useRef, lazy, useEffect } from "react";
+import React, { useState, useRef, lazy, useEffect, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
@@ -33,10 +33,10 @@ function JuusHome() {
       </div>
       <main className="mt-24 xl:mt-16 3xl:mt-8 h-screen flex flex-col items-center justify-between lg:h-auto">
         <div className="">
+          <Suspense fallback={<img src="https://juusstorage.blob.core.windows.net/website/images/about/fit-ad-girl-thumbnail" />}>
           <video
             rel="preload"
-            poster="https://juusstorage.blob.core.windows.net/website/images/about/fit-ad-girl-thumbnail"
-            preload="metadata"
+            preload="auto"
             ref={videoRef}
             onClick={togglePlay}
             loop
@@ -51,6 +51,7 @@ function JuusHome() {
             />
             Your browser does not support the video tag.
           </video>
+          </Suspense>
           <div className="">
             <Fade triggerOnce={true} direction="left" cascade damping={0.5}>
               <img

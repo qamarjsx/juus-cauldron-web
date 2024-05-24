@@ -33,6 +33,7 @@ function About() {
       <main className="pt-24">
         <div>
           <video
+            preload="auto"
             rel="preload"
             ref={videoRef}
             loop
