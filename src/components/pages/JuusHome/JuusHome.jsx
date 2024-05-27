@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 const JuusVideo = lazy(() => import("../../utils/JuusVideo.jsx"))
 const Footer = lazy(() => import("../../utils/Footer.jsx"));
 const JuusHeader = lazy(() => import("../../utils/JuusHeader.jsx"));
-import 'ldrs/ring';
 
 function JuusHome() {
   

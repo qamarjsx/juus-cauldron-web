@@ -1,18 +1,7 @@
-import React, { lazy } from "react";
+import React, { Suspense, lazy } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-// import ScrollToTop from "./ScrollToTop.jsx";
-// import Home from "../pages/Home/Home.jsx";
-// import About from "../pages/About/About.jsx";
-// import Shop from "../pages/Shop/Shop.jsx";
-// import FAQs from "../pages/FAQs/FAQs.jsx";
-// import Contact from "../pages/Contact/Contact.jsx";
-// import NotFound from "../pages/NotFound/NotFound.jsx";
-// import NovaShop from "../pages/NovaShop/NovaShop.jsx";
-// import JuusShop from "../pages/JuusShop/JuusShop.jsx";
-// import NovaHome from "../pages/NovaHome/NovaHome.jsx";
-// import JuusHome from "../pages/JuusHome/JuusHome.jsx";
-// import SlidingMenu from "./SlidingMenu.jsx";
+import PageFallback from "./PageFallback.jsx";
 const Home = lazy(() => import("../pages/Home/Home.jsx"));
 const About = lazy(() => import("../pages/About/About.jsx"));
 const Shop = lazy(() => import("../pages/Shop/Shop.jsx"));
@@ -29,13 +18,13 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route index path="/" element={<Home />} />
-        <Route path="/juus" element={<JuusHome />} />
-        <Route path="/nova" element={<NovaHome />} />
-        <Route path="about" element={<About />} />
-        <Route path="shop" element={<Shop />} />
-        <Route path="faqs" element={<FAQs />} />
-        <Route path="contact" element={<Contact />} />
+        <Route index path="/" element={<Suspense fallback={<PageFallback />}><Home /></Suspense>}/>
+        <Route path="/juus" element={<Suspense fallback={<PageFallback />}><JuusHome /></Suspense>} />
+        <Route path="/nova" element={<Suspense fallback={<PageFallback />}><NovaHome /></Suspense>} />
+        <Route path="about" element={<Suspense fallback={<PageFallback />}><About /></Suspense>} />
+        <Route path="shop" element={<Suspense fallback={<PageFallback />}><Shop /></Suspense>} />
+        <Route path="faqs" element={<Suspense fallback={<PageFallback />}><FAQs /></Suspense>} />
+        <Route path="contact" element={<Suspense fallback={<PageFallback />}><Contact /></Suspense>} />
         <Route path="nova/shop" element={<NovaShop />} />
         <Route path="juus/shop" element={<JuusShop />} />
         <Route path="*" element={<NotFound />} />

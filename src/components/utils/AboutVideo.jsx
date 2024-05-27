@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "ldrs/tailspin";
+import Spinner from "./Spinner";
 
 function AboutVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -43,7 +43,7 @@ function AboutVideo() {
       </video>
       {!isLoaded && (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <l-tailspin size={45} color="#ee5c5e"></l-tailspin>
+          <Spinner />
         </div>
       )}
     </div>
