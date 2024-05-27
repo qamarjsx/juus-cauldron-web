@@ -1,4 +1,4 @@
-import React, { lazy, useState } from "react";
+import React, { lazy, memo, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
 const Header = lazy(() => import("../../utils/Header.jsx"));
@@ -98,7 +98,7 @@ const FAQsArr = [
   },
 ];
 
-function FAQs() {
+const FAQs = memo(() => {
   return (
     <motion.div
       className="bg-cover bg-fixed 2xl:bg-scroll bg-no-repeat bg-center overflow-x-hidden"
@@ -155,6 +155,6 @@ function FAQs() {
       </div>
     </motion.div>
   );
-}
+});
 
 export default FAQs;

@@ -1,20 +1,22 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
 
-function FullNovaSlide() {
+const FullNovaSlide = memo(() => {
   const [arrowColor, setArrowColor] = useState("white");
 
   return (
     <div className="relative">
       <div
         style={{
-          backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Nova%20background.png"})`,
+          backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/bgNova-small.png"})`,
         }}
         className={`flex flex-col justify-evenly sm:justify-evenly lg:justify-around 2xl:justify-evenly items-center relative overflow-hidden h-screen bg-cover bg-center`}
       >
         <img
+          fetchPriority="high"
+          loading="lazy"
           className="pointer-events-none select-none z-10 scale-105 xxs:scale-110 sm:scale-[.85] lg:scale-90 xl:scale-[.4] 3xl:scale-[.4] 4xl:scale-[.45] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform"
           src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/full%20bottle%20nova.png"
           alt="Juus Bottle"
@@ -41,12 +43,16 @@ function FullNovaSlide() {
               alt="Text about Juus"
             />
           </Fade>
-          <Fade delay={800} direction="down" className="select-none xl:self-center xl:pt-20 3xl:-ml-40 6xl:-ml-80 mx-5">
+          <Fade
+            delay={800}
+            direction="down"
+            className="select-none xl:self-center xl:pt-20 3xl:-ml-40 6xl:-ml-80 mx-5"
+          >
             <Link className="" to={"/nova"}>
               <motion.button
                 onMouseEnter={() => setArrowColor("black")}
                 onMouseLeave={() => setArrowColor("white")}
-                animate={{x: [0, 20, -20, 0]}}
+                animate={{ x: [0, 20, -20, 0] }}
                 transition={{
                   duration: 0.8,
                   repeat: Infinity,
@@ -77,6 +83,6 @@ function FullNovaSlide() {
       </div>
     </div>
   );
-}
+});
 
 export default FullNovaSlide;

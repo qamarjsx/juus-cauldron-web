@@ -1,10 +1,10 @@
-import React, { lazy, useState } from "react";
+import React, { lazy, memo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
 const NovaHeader = lazy(() => import("../../utils/NovaHeader"));
 
-function NovaHome() {
+const NovaHome = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -19,6 +19,8 @@ function NovaHome() {
       </div>
       <main className="pt-24 pb-10 h-screen flex flex-col items-center">
         <img
+          fetchPriority="high"
+          loading="lazy"
           rel="preload"
           className="h-1/3 lg:h-[108.5%] 5xl:h-[105.5%] 6xl:h-[105%] xl:object-cover w-full object-fill pointer-events-none select-none"
           src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/nova main banner.jpg"
@@ -67,6 +69,6 @@ function NovaHome() {
       </main>
     </motion.div>
   );
-}
+});
 
 export default NovaHome;

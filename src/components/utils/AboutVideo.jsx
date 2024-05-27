@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, memo } from "react";
 import Spinner from "./Spinner";
 
-function AboutVideo() {
+const AboutVideo = memo(() => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const videoRef = useRef(null);
@@ -48,6 +48,6 @@ function AboutVideo() {
       )}
     </div>
   );
-}
+});
 
 export default AboutVideo;

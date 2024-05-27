@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React, { lazy, memo } from "react";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
 const AboutVideo = lazy(() => import("../../utils/AboutVideo.jsx"));
@@ -6,7 +6,7 @@ const Header = lazy(() => import("../../utils/Header.jsx"));
 const Certification = lazy(() => import("../../utils/Certification.jsx"));
 const Footer = lazy(() => import("../../utils/Footer.jsx"));
 
-function About() {
+const About = memo(() => {
   return (
     <motion.div
       className="relative overflow-x-hidden scroll-smooth"
@@ -103,6 +103,6 @@ function About() {
       </div>
     </motion.div>
   );
-}
+});
 
 export default About;

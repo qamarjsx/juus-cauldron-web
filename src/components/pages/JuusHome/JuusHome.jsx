@@ -1,13 +1,19 @@
-import React, { useState, useRef, lazy, useEffect, Suspense } from "react";
+import React, {
+  useState,
+  useRef,
+  lazy,
+  useEffect,
+  Suspense,
+  memo,
+} from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
-const JuusVideo = lazy(() => import("../../utils/JuusVideo.jsx"))
+const JuusVideo = lazy(() => import("../../utils/JuusVideo.jsx"));
 const Footer = lazy(() => import("../../utils/Footer.jsx"));
 const JuusHeader = lazy(() => import("../../utils/JuusHeader.jsx"));
 
-function JuusHome() {
-  
+const JuusHome = memo(() => {
   return (
     <motion.div
       className="relative overflow-x-hidden bg-black scroll-smooth"
@@ -20,7 +26,7 @@ function JuusHome() {
       </div>
       <main className="mt-24 xl:mt-16 3xl:mt-8 h-screen flex flex-col items-center justify-between lg:h-auto">
         <div className="">
-            <JuusVideo />
+          <JuusVideo />
           <div className="">
             <Fade triggerOnce={true} direction="left" cascade damping={0.5}>
               <img
@@ -72,6 +78,6 @@ function JuusHome() {
       </div>
     </motion.div>
   );
-}
+});
 
 export default JuusHome;

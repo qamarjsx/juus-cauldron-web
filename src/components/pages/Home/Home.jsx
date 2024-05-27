@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useRef, lazy } from "react";
+import React, { Suspense, useState, useRef, lazy, memo } from "react";
 import "./Home.css";
 import { motion } from "framer-motion";
 import PageFallback from "../../utils/PageFallback.jsx";
@@ -8,7 +8,7 @@ const FullJuusSlide = lazy(() => import("../../utils/FullJuusSlide.jsx"));
 const FullNovaSlide = lazy(() => import("../../utils/FullNovaSlide.jsx"));
 const Header = lazy(() => import("../../utils/Header.jsx"));
 
-function Home() {
+const Home = memo(() => {
   let isSliderLocked = false;
   const sliderRef = useRef(null);
   const sliderHandleRef = useRef(null);
@@ -91,14 +91,30 @@ function Home() {
           className="relative overflow-hidden"
         >
           <div className="slide block h-auto object-cover">
-            {showSlideA ? <Suspense fallback={<PageFallback />}><FullJuusSlide /></Suspense> : <Suspense fallback={<PageFallback />}><SplitJuusSlide /></Suspense>}
+            {showSlideA ? (
+              <Suspense fallback={<PageFallback />}>
+                <FullJuusSlide />
+              </Suspense>
+            ) : (
+              <Suspense fallback={<PageFallback />}>
+                <SplitJuusSlide />
+              </Suspense>
+            )}
           </div>
           <div
             ref={sliderImgWrapperRef}
             className="img-wrapper absolute top-0 right-0 w-1/2 h-full overflow-hidden"
           >
             <div className="slide absolute top-0 right-0 h-full object-cover">
-              {showSlideB ? <Suspense fallback={<PageFallback />}><FullNovaSlide /></Suspense> : <Suspense fallback={<PageFallback />}><SplitNovaSlide /></Suspense>}
+              {showSlideB ? (
+                <Suspense fallback={<PageFallback />}>
+                  <FullNovaSlide />
+                </Suspense>
+              ) : (
+                <Suspense fallback={<PageFallback />}>
+                  <SplitNovaSlide />
+                </Suspense>
+              )}
             </div>
           </div>
           <div
@@ -139,6 +155,6 @@ function Home() {
       </div>
     </motion.div>
   );
-}
+});
 // onMouseDown={sliderMouseDown}
 export default Home;
