@@ -61,7 +61,7 @@ function NovaHeader({isOpen, setIsOpen}) {
           </svg>
         )}
         <div className="lg:flex lg:w-5/6">
-          <Link to={"/"} className="lg:pt-2">
+          <Link to={"/"} className="lg:pt-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:top-0 lg:left-0 lg:translate-x-0 lg:translate-y-0">
             <img
               className="h-10 cursor-pointer select-none lg:mr-0.5 xl:mr-9"
               src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Nova%20logo.png"

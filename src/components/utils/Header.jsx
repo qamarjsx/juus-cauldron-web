@@ -53,7 +53,7 @@ function Header() {
           </svg>
         )}
         <div className="lg:flex lg:w-5/6">
-          <Link to={"/"}>
+          <Link className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:top-0 lg:left-0 lg:translate-x-0 lg:translate-y-0" to={"/"}>
             <img
               className="h-16 cursor-pointer select-none lg:mr-0.5 xl:mr-9"
               src="https://juusstorage.blob.core.windows.net/creatives/Homepage JC/Juus cauldron logo white.png"
