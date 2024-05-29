@@ -11,15 +11,15 @@ function FaqAccordion({ question, answer }) {
     >
       <div
         onClick={() => setShowAnswer(!showAnswer)}
-        className="mt-4 xxs:mt-6 h-12 flex items-center"
+        className="mt-4 xxs:mt-6 h-12 flex items-center cursor-pointer"
       >
-        <li className="px-3 text-sm xxs:text-base">{question}</li>
+        <li className="px-3 text-sm xxs:text-base select-text">{question}</li>
       </div>
       {showAnswer && (
         <Fade triggerOnce={true}
           className="p-3 rounded-lg bg-nova"
         >
-          <p className="text-sm xxs:text-base">{answer}</p>
+          <p className="text-sm xxs:text-base select-text">{answer}</p>
         </Fade>
       )}
     </div>
