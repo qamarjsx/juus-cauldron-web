@@ -24,7 +24,7 @@ const JuusHome = memo(() => {
       <div className="">
         <JuusHeader />
       </div>
-      <main className="mt-24 xl:mt-16 3xl:mt-8 h-screen flex flex-col items-center justify-between lg:h-auto">
+      <main className="mt-20 xl:mt-16 3xl:mt-8 h-screen flex flex-col items-center justify-between lg:h-auto">
         <div className="">
           <JuusVideo />
           <div className="">

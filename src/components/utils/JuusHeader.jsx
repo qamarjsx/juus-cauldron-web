@@ -6,6 +6,28 @@ const NavLinks = lazy(() => import("./NavLinks.jsx"));
 function JuusHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      // Scrolling down
+      console.log(lastScrollY);
+      setShowHeader(false);
+    } else {
+      // Scrolling up
+      setShowHeader(true);
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
@@ -18,7 +40,7 @@ function JuusHeader() {
   };
   return (
     <>
-    <header className="fixed z-40 w-full h-24 flex justify-between 6xl:justify-evenly items-center p-4 lg:px-12 3xl:px-24 4xl:px-32 5xl:px-36 border-b border-zinc-900 bg-black">
+    <header className={`${showHeader? 'translate-y-0' : '-translate-y-full'} fixed z-40 w-full h-20 flex justify-between 6xl:justify-evenly items-center p-4 lg:px-12 3xl:px-24 4xl:px-32 5xl:px-36 border-b border-zinc-900 bg-black transition-transform duration-300 ease-in-out`}>
       {isOpen ? (
           <svg
             onClick={handleHamburgerClick}

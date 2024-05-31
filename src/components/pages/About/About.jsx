@@ -17,13 +17,12 @@ const About = memo(() => {
       <div className="">
         <Header />
       </div>
-      <main className="pt-24">
+      <main className="pt-20">
         <div>
           <AboutVideo />
-          <article className="px-4 lg:px-10 3xl:px-28 lg:text-center font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">
+          <article className="px-5 lg:px-24 3xl:px-28 font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">
             <p className="my-4 3xl:my-9 4xl:my-16">
-              Our journey started in the research facilities of New Zealand. Our
-              journey was a never-ending storm of difficulties.
+              Our journey started in the research facilities of New Zealand. It was a never-ending storm of difficulties.
             </p>
             <p className="my-4 3xl:my-9 4xl:my-16">
               But in these difficult times, we were clear about the vision to
@@ -42,7 +41,7 @@ const About = memo(() => {
         </div>
         <div className="6xl:flex 6xl:flex-col">
           <img
-            className="my-5 lg:my-28 3xl:mt-20 3xl:mb-0 3xl:w-full 3xl:aspect-video 3xl:h-[85vh] 6xl:w-5/6 6xl:h-[80vh] 6xl:self-center"
+            className="my-5 lg:my-28 3xl:mt-20 3xl:mb-0 3xl:w-full  6xl:self-center"
             src="https://juusstorage.blob.core.windows.net/website/images/about/about-main.png"
             alt=""
           />
@@ -54,6 +53,7 @@ const About = memo(() => {
             />
           </Fade>
           <article className="mb-4 lg:mb-20 3xl:mb-32 3xl:-mt-16 6xl:-mt-32 px-4 lg:px-10 3xl:px-24 font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">
+            <Fade cascade triggerOnce={true}>
             <h1 className="my-4 lg:mt-8 3xl:mt-20 font-bold lg:font-extrabold text-lg lg:text-2xl 3xl:text-4xl">
               INTERNATIONAL STANDARDS
             </h1>
@@ -76,24 +76,21 @@ const About = memo(() => {
               the excitement coming, while keeping the costs low and
               budget-friendly.
             </p>
+            </Fade>
           </article>
         </div>
-        <div className="w-full flex flex-col items-center justify-center">
+        <div className="mt-10 w-full flex flex-col items-center justify-center">
           <h1 className="text-2xl lg:text-5xl 3xl:text-7xl font-bold text-about lg:mb-10">
             CERTIFICATION
           </h1>
           <div className="xl:flex xl:justify-center 3xl:px-20">
             <Certification
-              certificateLink="https://cdn.shopify.com/s/files/1/0819/8619/1659/files/WhatsApp_Image_2023-11-20_at_2.47.00_PM_500x.jpg?v=1700739758"
-              certificationType="PFA CERTIFICATION"
-            />
-            <Certification
-              certificateLink="https://cdn.shopify.com/s/files/1/0819/8619/1659/files/WhatsApp_Image_2023-11-20_at_2.47.00_PM_500x.jpg?v=1700739758"
-              certificationType="MANIFESTO"
-            />
-            <Certification
-              certificateLink="https://cdn.shopify.com/s/files/1/0819/8619/1659/files/WhatsApp_Image_2023-11-20_at_2.47.00_PM_500x.jpg?v=1700739758"
+              certificateLink="https://juusstorage.blob.core.windows.net/creatives/About%20Us/Halal_Certificate"
               certificationType="HALAL CERTIFICATION"
+            />
+            <Certification
+              certificateLink="https://juusstorage.blob.core.windows.net/creatives/About%20Us/PFA_Certificate"
+              certificationType="PFA CERTIFICATION"
             />
           </div>
         </div>

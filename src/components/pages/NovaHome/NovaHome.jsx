@@ -17,7 +17,7 @@ const NovaHome = memo(() => {
       <div className="">
         <NovaHeader isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-      <main className="pt-24 pb-10 h-screen flex flex-col items-center">
+      <main className="pt-20 pb-10 h-screen flex flex-col items-center">
         <img
           fetchPriority="high"
           loading="lazy"

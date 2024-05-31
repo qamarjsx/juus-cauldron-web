@@ -109,7 +109,7 @@ const FAQs = memo(() => {
       <div>
         <Header />
       </div>
-      <section className="pt-24">
+      <section className="pt-20">
         <img
           className=""
           rel="preload"

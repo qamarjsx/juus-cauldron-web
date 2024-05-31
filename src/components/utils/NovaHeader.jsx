@@ -3,15 +3,37 @@ import { Link } from "react-router-dom";
 const SlidingMenu = lazy(() => import("./SlidingMenu.jsx"));
 const NavLinks = lazy(() => import("./NavLinks.jsx"));
 
-function NovaHeader({isOpen, setIsOpen}) {
+function NovaHeader({ isOpen, setIsOpen }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      // Scrolling down
+      console.log(lastScrollY);
+      setShowHeader(false);
+    } else {
+      // Scrolling up
+      setShowHeader(true);
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "auto";
     return () => {
       // Clean up: enable scroll on the body when component is unmounted or menu state changes
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
@@ -25,7 +47,9 @@ function NovaHeader({isOpen, setIsOpen}) {
         style={{
           backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Top%20header%20design.png"})`,
         }}
-        className="fixed bg-nova z-40 w-full h-24 flex justify-between 6xl:justify-evenly items-center p-4 lg:px-12 3xl:px-24 4xl:px-32 5xl:px-36 border-b bg-center bg-cover"
+        className={`${
+          showHeader ? "translate-y-0" : "-translate-y-full"
+        } fixed bg-nova z-40 w-full h-20 flex justify-between 6xl:justify-evenly items-center p-4 lg:px-12 3xl:px-24 4xl:px-32 5xl:px-36 border-b bg-center bg-cover transition-transform duration-300 ease-in-out`}
       >
         {isOpen ? (
           <svg
@@ -61,7 +85,10 @@ function NovaHeader({isOpen, setIsOpen}) {
           </svg>
         )}
         <div className="lg:flex lg:w-5/6">
-          <Link to={"/"} className="lg:pt-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:top-0 lg:left-0 lg:translate-x-0 lg:translate-y-0">
+          <Link
+            to={"/"}
+            className="lg:pt-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:top-0 lg:left-0 lg:translate-x-0 lg:translate-y-0"
+          >
             <img
               className="h-10 cursor-pointer select-none lg:mr-0.5 xl:mr-9"
               src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Nova%20logo.png"

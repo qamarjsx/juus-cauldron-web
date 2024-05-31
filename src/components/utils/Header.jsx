@@ -6,6 +6,27 @@ const NavLinks = lazy(() => import("./NavLinks.jsx"));
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      // Scrolling down
+      setShowHeader(false);
+    } else {
+      // Scrolling up
+      setShowHeader(true);
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
@@ -18,7 +39,7 @@ function Header() {
 
   return (
     <>
-      <header className="fixed z-40 w-full h-24 flex justify-between 6xl:justify-evenly items-center p-4 lg:px-12 3xl:px-24 4xl:px-32 5xl:px-36 border-b border-zinc-900 bg-black">
+      <header className={`${showHeader? 'translate-y-0' : '-translate-y-full'} fixed z-40 w-full h-20 flex justify-between 6xl:justify-evenly items-center p-4 lg:px-12 3xl:px-24 4xl:px-32 5xl:px-36 border-b border-zinc-900 bg-black transition-transform duration-300 ease-in-out`}>
         {isOpen ? (
           <svg
             onClick={handleHamburgerClick}
@@ -55,7 +76,7 @@ function Header() {
         <div className="lg:flex lg:w-5/6">
           <Link className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:top-0 lg:left-0 lg:translate-x-0 lg:translate-y-0" to={"/"}>
             <img
-              className="h-16 cursor-pointer select-none lg:mr-0.5 xl:mr-9"
+              className="scale-95 h-16 cursor-pointer select-none lg:mr-0.5 xl:mr-9"
               src="https://juusstorage.blob.core.windows.net/creatives/Homepage JC/Juus cauldron logo white.png"
               alt=""
             />
