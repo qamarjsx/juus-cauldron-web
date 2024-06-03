@@ -22,7 +22,8 @@ const About = memo(() => {
           <AboutVideo />
           <article className="px-5 lg:px-24 3xl:px-28 font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">
             <p className="my-4 3xl:my-9 4xl:my-16">
-              Our journey started in the research facilities of New Zealand. It was a never-ending storm of difficulties.
+              Our journey started in the research facilities of New Zealand. It
+              was a never-ending storm of difficulties.
             </p>
             <p className="my-4 3xl:my-9 4xl:my-16">
               But in these difficult times, we were clear about the vision to
@@ -54,28 +55,29 @@ const About = memo(() => {
           </Fade>
           <article className="mb-4 lg:mb-20 3xl:mb-32 3xl:-mt-16 6xl:-mt-32 px-4 lg:px-10 3xl:px-24 font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">
             <Fade cascade triggerOnce={true}>
-            <h1 className="my-4 lg:mt-8 3xl:mt-20 font-bold lg:font-extrabold text-lg lg:text-2xl 3xl:text-4xl">
-              INTERNATIONAL STANDARDS
-            </h1>
-            <p className="">
-              Juus is Pakistans's first pocket-sized liquid enhancer, developed
-              with international standards.
-            </p>
-            <h1 className="my-4 lg:mt-8 3xl:mt-20 font-bold lg:font-extrabold text-lg lg:text-2xl 3xl:text-4xl">
-              MADE WITH YOU IN MIND
-            </h1>
-            <p className="">
-              Juus creates one of a kind, new experience for its consumers. Our
-              Zero Sugar & Zero Calories principle sets you free of all worries.
-            </p>
-            <h1 className="my-4 lg:mt-8 3xl:mt-20 font-bold lg:font-extrabold text-lg lg:text-2xl 3xl:text-4xl">
-              AFFORDABLE HIGH QUALITY
-            </h1>
-            <p className="">
-              Our goal is to make people move on to something better and keep
-              the excitement coming, while keeping the costs low and
-              budget-friendly.
-            </p>
+              <h1 className="my-4 lg:mt-8 3xl:mt-20 font-bold lg:font-extrabold text-lg lg:text-2xl 3xl:text-4xl">
+                INTERNATIONAL STANDARDS
+              </h1>
+              <p className="">
+                Juus is Pakistans's first pocket-sized liquid enhancer,
+                developed with international standards.
+              </p>
+              <h1 className="my-4 lg:mt-8 3xl:mt-20 font-bold lg:font-extrabold text-lg lg:text-2xl 3xl:text-4xl">
+                MADE WITH YOU IN MIND
+              </h1>
+              <p className="">
+                Juus creates one of a kind, new experience for its consumers.
+                Our Zero Sugar & Zero Calories principle sets you free of all
+                worries.
+              </p>
+              <h1 className="my-4 lg:mt-8 3xl:mt-20 font-bold lg:font-extrabold text-lg lg:text-2xl 3xl:text-4xl">
+                AFFORDABLE HIGH QUALITY
+              </h1>
+              <p className="">
+                Our goal is to make people move on to something better and keep
+                the excitement coming, while keeping the costs low and
+                budget-friendly.
+              </p>
             </Fade>
           </article>
         </div>

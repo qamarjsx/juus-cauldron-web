@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Fade } from "react-awesome-reveal";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-function Footer() {
+function Footer({ theme }) {
   const [isEmailFieldFocused, setIsEmailFieldFocused] = useState(false);
   const emailRef = useRef(null);
 
@@ -14,14 +14,22 @@ function Footer() {
   };
 
   return (
-    <footer className="w-full bg-black h-72">
-      <div className="text-snow border-b border-zinc-900 w-full h-4/5 flex flex-col justify-evenly">
+    <footer
+      className={`w-full h-[280px] lg:h-72 ${
+        theme === "nova" ? "bg-nova-secondary" : "bg-black"
+      }`}
+    >
+      <div
+        className={`text-snow border-b ${
+          theme === "nova" ? "border-snow" : "border-zinc-900"
+        } w-full h-5/6 flex flex-col justify-evenly`}
+      >
         <Fade triggerOnce={true} direction="up">
           <p className="text-center text-sm">Subscribe to our emails</p>
-          <div className="relative flex items-center justify-center">
+          <div className={`relative flex items-center justify-center`}>
             {!isEmailFieldFocused && (
               <label
-                className="absolute left-[15%] lg:left-[27%] xl:left-[32%] 3xl:left-[35%] 4xl:left-[38%]"
+                className={`absolute left-[15%] lg:left-[27%] xl:left-[32%] 3xl:left-[35%] 4xl:left-[38%]`}
                 htmlFor="email"
               >
                 Email
@@ -31,7 +39,10 @@ function Footer() {
               ref={emailRef}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              className="outline-none appearance-none border bg-black border-snow h-11 px-3 w-4/5 lg:w-1/2 xl:w-2/5 3xl:w-1/3 4xl:w-1/4"
+              className={`outline-none appearance-none ${
+                theme === "nova" ? "bg-nova-secondary" : "bg-black"
+              } border border-snow h-11 px-3 w-4/5 lg:w-1/2 xl:w-2/5 3xl:w-1/3 4xl:w-1/4`}
+              style={{ backgroundColor: `#${theme}` }}
               id="email"
               type="email"
               name="email"
@@ -79,10 +90,25 @@ function Footer() {
         </Fade>
       </div>
 
-      <div className="flex justify-center items-center h-1/5">
-        <p className="text-xs text-zinc-400">
-          © 2024, <Link className="hover:text-snow hover:underline-offset-4 hover:underline active:underline" to={"/"}>Juus.pk </Link>Powered by <small> </small>
-          <Link className="hover:text-snow hover:underline-offset-4 hover:underline active:underline" target="_blank" to={"https://vitejs.dev/"}>
+      <div className="flex justify-center items-center h-1/6">
+        <p
+          className={`text-[11px]  ${
+            theme === "nova" ? "text-zinc-500" : "text-zinc-400"
+          }`}
+        >
+          © 2024,{" "}
+          <Link
+            className="hover:text-snow hover:underline-offset-4 hover:underline active:underline"
+            to={"/"}
+          >
+            Juus.pk{" "}
+          </Link>
+          Powered by <small> </small>
+          <Link
+            className="hover:text-snow hover:underline-offset-4 hover:underline active:underline"
+            target="_blank"
+            to={"https://vitejs.dev/"}
+          >
             Vite/React
           </Link>
         </p>

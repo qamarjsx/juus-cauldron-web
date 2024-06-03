@@ -2,6 +2,7 @@ import React, { lazy, memo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
+import Footer from "../../utils/Footer";
 const NovaHeader = lazy(() => import("../../utils/NovaHeader"));
 
 const NovaHome = memo(() => {
@@ -34,7 +35,7 @@ const NovaHome = memo(() => {
           damping={0.5}
         >
           <img
-            className="mt-4 xl:mt-2 lg:mt-8 sm:scale-90 lg:scale-[.8] xl:scale-75 3xl:scale-[.65] lg:-ml-32 xl:-ml-56 3xl:-ml-96 4xl:-ml-[480px] 5xl:-ml-[540px] 6xl:-ml-[640px] pointer-events-none select-none"
+            className="mt-4 xl:mt-2 lg:mt-8 sm:scale-90 lg:scale-[.8] xl:scale-75 3xl:scale-[.65] lg:-ml-32 xl:-ml-56 3xl:-ml-96 4xl:-ml-[480px] 5xl:-ml-[540px] 6xl:-ml-[655px] pointer-events-none select-none"
             src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/Future is Sugar (typography).png"
             alt=""
           />
@@ -44,11 +45,13 @@ const NovaHome = memo(() => {
             alt=""
           />
         </Fade>
+        <motion.div initial={{opacity: 0, y: 500}} whileInView={{opacity: 1, y: 0}} transition={{duration: 0.8, type:"spring"}} viewport={{once: true}}>
         <img
           className="mt-6 lg:mt-12 3xl:mt-0 6xl:mt-0 lg:scale-90 3xl:scale-[.8] 5xl:scale-75 6xl:scale-[.65] xl:mt-12 pointer-events-none select-none"
           src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Tags.png"
           alt=""
         />
+        </motion.div>
         <Link
           className="mt-24 xxxxs:mt-24 xxs:mt-32 lg:mt-48"
           to={"/nova/shop"}
@@ -67,6 +70,9 @@ const NovaHome = memo(() => {
           alt=""
         />
       </main>
+      <div>
+        <Footer />
+      </div>
     </motion.div>
   );
 });

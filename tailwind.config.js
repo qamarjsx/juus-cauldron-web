@@ -6,11 +6,12 @@ export default {
       colors: {
         snow: "#FDF7FA",
         "rich-black": "#000411",
-        nova: "#FED381",
+        "nova-primary": "#FED381",
+        "nova-secondary": "#FCB462",
         about: "#6E6E6E",
         "faq-orange": "#FF7F01",
         "spring-green": "#84f80a",
-        "aqua": "#05e2fc",
+        aqua: "#05e2fc",
       },
       boxShadow: {
         "primary-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px",
@@ -31,8 +32,7 @@ export default {
         "6xl": "1920px",
       },
       animation: {
-        pulse: 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-      
+        pulse: "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },

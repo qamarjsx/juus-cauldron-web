@@ -1,12 +1,19 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, memo } from "react";
 import Spinner from "./Spinner";
 
-function JuusVideo() {
+const JuusVideo = memo(() => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const renderCount = useRef(0);
+  renderCount.current += 1;
+
+  useEffect(() => {
+    console.log(`MyComponent rendered ${renderCount.current} times`);
+  });
 
   const togglePlay = () => {
     if (isPlaying) {
@@ -53,7 +60,7 @@ function JuusVideo() {
       {isMuted ? (
         <svg
           onClick={handleMuteIconClick}
-          className="absolute bottom-2 3xl:bottom-40 right-2  w-6 h-6 cursor-pointer fill-current text-white"
+          className="absolute bottom-2 3xl:bottom-40 right-2  w-5 h-5 lg:w-7 lg:h-7 cursor-pointer fill-current text-white"
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
           height="1em"
@@ -67,7 +74,7 @@ function JuusVideo() {
       ) : (
         <svg
           onClick={handleMuteIconClick}
-          className="absolute bottom-2 3xl:bottom-40 right-2 42 w-6 h-6 cursor-pointer fill-current text-white"
+          className="absolute bottom-2 3xl:bottom-40 right-2 42 w-5 h-5 lg:w-7 lg:h-7 cursor-pointer fill-current text-white"
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
           height="1em"
@@ -86,6 +93,6 @@ function JuusVideo() {
       )}
     </div>
   );
-}
+}, []);
 
 export default JuusVideo;
