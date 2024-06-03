@@ -2,7 +2,7 @@ import React, { lazy, memo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
-import Footer from "../../utils/Footer";
+const Footer = lazy(() => import("../../utils/Footer"));
 const NovaHeader = lazy(() => import("../../utils/NovaHeader"));
 
 const NovaHome = memo(() => {
@@ -10,68 +10,75 @@ const NovaHome = memo(() => {
 
   return (
     <motion.div
-      className="relative overflow-x-hidden bg-nova scroll-smooth lg:h-auto"
+      className="relative overflow-x-hidden bg-nova-primary scroll-smooth lg:h-auto overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="">
+      <div>
         <NovaHeader isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-      <main className="pt-20 pb-10 h-screen flex flex-col items-center">
-        <img
-          fetchPriority="high"
-          loading="lazy"
-          rel="preload"
-          className="h-1/3 lg:h-[108.5%] 5xl:h-[105.5%] 6xl:h-[105%] xl:object-cover w-full object-fill pointer-events-none select-none"
-          src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/nova main banner.jpg"
-          alt=""
-        />
+      <main className="my-20 relative flex flex-col w-full">
+        <div className="">
+          <img
+            className="6xl:w-full"
+            src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/nova main banner.jpg"
+            alt=""
+          />
+        </div>
         <Fade
           triggerOnce={true}
-          className="lg:ml-16 xl:ml-32 3xl:ml-52 4xl:ml-80 5xl:ml-96"
+          className=""
           direction="left"
           cascade
           damping={0.5}
         >
           <img
-            className="mt-4 xl:mt-2 lg:mt-8 sm:scale-90 lg:scale-[.8] xl:scale-75 3xl:scale-[.65] lg:-ml-32 xl:-ml-56 3xl:-ml-96 4xl:-ml-[480px] 5xl:-ml-[540px] 6xl:-ml-[655px] pointer-events-none select-none"
+            className="mt-3 xl:mt-0 6xl:-mt-16 lg:-ml-20 xl:-ml-40 3xl:-ml-[282px] 4xl:-ml-80 6xl:-ml-[500px] lg:scale-75 xl:scale-[.65] 3xl:scale-[.55] 6xl:scale-[.45]"
             src="https://juusstorage.blob.core.windows.net/creatives/Nova Home/Future is Sugar (typography).png"
             alt=""
           />
           <img
-            className="scale-105 sm:scale-95 lg:scale-[.85] xl:scale-[.8] 3xl:scale-[.7] lg:-ml-32 xl:-ml-56 3xl:-ml-96 4xl:-ml-[480px] 5xl:-ml-[540px] 6xl:-ml-[640px] lg:-mt-8 xl:-mt-12 3xl:-mt-20 6xl:-mt-24 pointer-events-none select-none"
+            className="-ml-1.5 xxs:-ml-2 lg:-ml-10 xl:-ml-28 3xl:-ml-60 4xl:-ml-[272px] 6xl:-ml-[432px] -mt-0.5 lg:-mt-9 xl:-mt-16 3xl:-mt-28 4xl:-mt-32 5xl:-mt-36 6xl:-mt-52 xxs:-mt-1 lg:scale-90 xl:scale-[.8] 3xl:scale-[.65] 6xl:scale-[.55]"
             src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Free%20Paragraph%20(typography).png"
             alt=""
           />
         </Fade>
-        <motion.div initial={{opacity: 0, y: 500}} whileInView={{opacity: 1, y: 0}} transition={{duration: 0.8, type:"spring"}} viewport={{once: true}}>
-        <img
-          className="mt-6 lg:mt-12 3xl:mt-0 6xl:mt-0 lg:scale-90 3xl:scale-[.8] 5xl:scale-75 6xl:scale-[.65] xl:mt-12 pointer-events-none select-none"
-          src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Tags.png"
-          alt=""
-        />
-        </motion.div>
-        <Link
-          className="mt-24 xxxxs:mt-24 xxs:mt-32 lg:mt-48"
-          to={"/nova/shop"}
+        {/* <Fade direction="up" delay={1000} triggerOnce={true}> */}
+        <motion.div
+          initial={{ y: 500, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 100, damping: 8 }}
+          viewport={{ once: true }}
         >
+          <img
+            className="mt-10 3xl:mt-0 6xl:-mt-10 xl:scale-[.85] 3xl:scale-75 6xl:scale-[.65]"
+            src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Tags.png"
+            alt=""
+          />
+        </motion.div>
+        {/* </Fade> */}
+        <Link className="self-center mt-36 lg:mt-60" to={"/nova/shop"}>
           <Fade direction="down" duration={1000} delay={500}>
             <button className="select-none cursor-pointer flex items-center justify-between p-2 w-40 lg:w-56 xl:w-72 h-7 lg:h-11 text-snow text-sm lg border-2 rounded-xl hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition">
               <span className="mx-auto">DISCOVER FLAVORS</span>
             </button>
           </Fade>
         </Link>
-        <img
+        <div
           className={`${
             isOpen ? "hidden" : "absolute"
-          } pointer-events-none select-none opacity-65 right-0 4xl:right-32 6xl:right-72 -bottom-10 xxxxs:-bottom-20 xxxs:-bottom-44 xxs:-bottom-12 sm:-bottom-96 lg:-bottom-[540px] xl:-bottom-[1080px] 2xl:-bottom-[580px] 3xl:-bottom-[1500px] 4xl:-bottom-[1720px] scale-125 xxxs:scale-125 lg:scale-100 xl:scale-90 3xl:scale-100 4xl:scale-x-110 5xl:scale-x-125 6xl:scale-x-150`}
-          src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Doodle%20art.png"
-          alt=""
-        />
+          } pointer-events-none -bottom-5 xxxxs:-bottom-10 xxs:-bottom-16 lg:-bottom-40 xl:-bottom-56 3xl:-bottom-72 4xl:-bottom-64 6xl:-bottom-72 3xl:right-0 6xl:right-40`}
+        >
+          <img
+            className={`opacity-75 xl:scale-y-[.8] 3xl:scale-x-95 6xl:scale-x-125 6xl:scale-y-[1.05]`}
+            src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Doodle%20art.png"
+            alt=""
+          />
+        </div>
       </main>
       <div>
-        <Footer />
+        <Footer theme="nova" />
       </div>
     </motion.div>
   );

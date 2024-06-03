@@ -93,7 +93,7 @@ function Footer({ theme }) {
       <div className="flex justify-center items-center h-1/6">
         <p
           className={`text-[11px]  ${
-            theme === "nova" ? "text-zinc-500" : "text-zinc-400"
+            theme === "nova" ? "text-white" : "text-zinc-400"
           }`}
         >
           © 2024,{" "}

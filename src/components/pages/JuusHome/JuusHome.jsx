@@ -28,7 +28,7 @@ const JuusHome = memo(() => {
                 alt=""
               />
               <img
-                className="scale-105 sm:scale-95 lg:scale-[.8] xl:scale-[.8] 3xl:scale-[.65] 6xl:scale-50 lg:-ml-20 xl:-ml-28 3xl:-ml-60 4xl:-ml-64 5xl:-ml-64 6xl:-ml-[480px] -mt-1.5 lg:-mt-12 xl:-mt-[72px] 3xl:-mt-32 4xl:-mt-[104px] 5xl:-mt-40 6xl:-mt-60 pointer-events-none select-none"
+                className="scale-105 sm:scale-95 lg:scale-[.8] xl:scale-[.8] 3xl:scale-[.65] 6xl:scale-50 lg:-ml-20 xl:-ml-28 3xl:-ml-60 4xl:-ml-64 5xl:-ml-64 6xl:-ml-[480px] -mt-1.5 lg:-mt-12 xl:-mt-[72px] 3xl:-mt-32 4xl:-mt-36 5xl:-mt-40 6xl:-mt-60 pointer-events-none select-none"
                 src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Free%20Paragraph%20(typography).png"
                 alt=""
               />
