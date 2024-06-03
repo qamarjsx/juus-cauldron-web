@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 
@@ -17,7 +16,7 @@ function FaqAccordion({ question, answer }) {
       </div>
       {showAnswer && (
         <Fade triggerOnce={true}
-          className="p-3 rounded-lg bg-nova"
+          className="p-3 rounded-lg bg-nova-primary"
         >
           <p className="text-sm xxs:text-base select-text">{answer}</p>
         </Fade>
