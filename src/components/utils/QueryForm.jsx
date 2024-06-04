@@ -109,7 +109,7 @@ function QueryForm() {
           onClick={handleTextareaFocus}
           onBlur={handleTextareaBlur}
           onResize={"none"}
-          className="text-rich-black bg-faq-orange rounded-2xl w-full border-white border outline-none p-4 h-64"
+          className="text-rich-black bg-faq-orange rounded-2xl w-full border-white border outline-none p-4 h-64 min-h-64 max-h-64"
           name="query-description"
           id="query-description"
           cols=""

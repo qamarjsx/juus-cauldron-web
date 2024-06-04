@@ -105,6 +105,9 @@ const FAQs = memo(() => {
       style={{
         backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/FAQs%20Page/output-onlinepngtools.png"})`,
       }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
       <div>
         <Header />
