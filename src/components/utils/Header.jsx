@@ -11,9 +11,8 @@ function Header() {
 
   const handleScroll = () => {
     if (window.scrollY <= 80) {
-      setShowHeader(true)
-    }
-    else if (window.scrollY > lastScrollY) {
+      setShowHeader(true);
+    } else if (window.scrollY > lastScrollY) {
       // Scrolling down
       setShowHeader(false);
     } else {
@@ -24,10 +23,10 @@ function Header() {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
 
@@ -42,7 +41,11 @@ function Header() {
 
   return (
     <>
-      <header className={`${showHeader? 'translate-y-0' : '-translate-y-full'} fixed z-40 w-full h-20 flex justify-between 6xl:justify-evenly items-center p-4 lg:px-12 3xl:px-24 4xl:px-32 5xl:px-36 border-b border-zinc-900 bg-black transition-transform duration-300 ease-in-out`}>
+      <header
+        className={`${
+          showHeader ? "translate-y-0" : "-translate-y-full"
+        } fixed z-40 w-full h-20 flex justify-between 6xl:justify-evenly items-center p-4 lg:px-12 3xl:px-24 4xl:px-32 5xl:px-36 border-b border-zinc-900 bg-black transition-transform duration-300 ease-in-out`}
+      >
         {isOpen ? (
           <svg
             onClick={handleHamburgerClick}
@@ -77,7 +80,10 @@ function Header() {
           </svg>
         )}
         <div className="lg:flex lg:w-5/6">
-          <Link className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:top-0 lg:left-0 lg:translate-x-0 lg:translate-y-0" to={"/"}>
+          <Link
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:top-0 lg:left-0 lg:translate-x-0 lg:translate-y-0"
+            to={"/"}
+          >
             <img
               className="scale-95 h-16 cursor-pointer select-none lg:mr-0.5 xl:mr-9"
               src="https://juusstorage.blob.core.windows.net/creatives/Homepage JC/Juus cauldron logo white.png"

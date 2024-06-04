@@ -6,12 +6,58 @@ function ContactForm() {
   const [isPhoneNumberInputFocused, setIsPhoneNumberInputFocused] =
     useState(false);
   const [isCommentInputFocused, setIsCommentInputFocused] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [comment, setComment] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (name !== "" && email !== "" && phoneNumber !== "" && comment !== "") {
+      const formData = {
+        name,
+        email,
+        phoneNumber,
+        comment,
+      };
+
+      try {
+        const response = await fetch("http://localhost:5000/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          // Handle successful response
+          // console.log("Email sent successfully");
+          alert("Query sent successfully!");
+          setName("");
+          setEmail("");
+          setPhoneNumber("");
+          setComment("");
+        } else {
+          // Handle error response
+          // console.error("Error sending email");
+          alert("Error sending email.1");
+        }
+      } catch (error) {
+        // Handle network error
+        // console.error("Network error:", error);
+        alert("Error sending email", error);
+      }
+    } else {
+      // console.error("Please fill in all fields");
+      alert("Please fill in all fields.");
+    }
   };
   return (
-    <form onSubmit={handleSubmit} className="mt-16 lg:mx-24 3xl:mx-64 4xl:mx-80 5xl:mx-96 6xl:mx-[540px]">
+    <form
+      onSubmit={handleSubmit}
+      className="mt-16 lg:mx-24 3xl:mx-64 4xl:mx-80 5xl:mx-96 6xl:mx-[540px]"
+    >
       <div className="my-4 3xl:my-6 flex justify-center items-center relative">
         <label
           className={`${
@@ -22,6 +68,7 @@ function ContactForm() {
           Name
         </label>
         <input
+          onChange={(e) => setName(e.target.value)}
           onFocus={() => setIsNameInputFocused(true)}
           onBlur={(e) => {
             if (e.target.value === "") setIsNameInputFocused(false);
@@ -44,6 +91,7 @@ function ContactForm() {
           Email
         </label>
         <input
+          onChange={(e) => setEmail(e.target.value)}
           onFocus={() => setIsEmailInputFocused(true)}
           onBlur={(e) => {
             if (e.target.value === "") setIsEmailInputFocused(false);
@@ -66,6 +114,7 @@ function ContactForm() {
           Phone No.
         </label>
         <input
+          onChange={(e) => setPhoneNumber(e.target.value)}
           onFocus={() => setIsPhoneNumberInputFocused(true)}
           onBlur={(e) => {
             if (e.target.value === "") setIsPhoneNumberInputFocused(false);
@@ -88,11 +137,11 @@ function ContactForm() {
           Comment
         </label>
         <textarea
+          onChange={(e) => setComment(e.target.value)}
           onFocus={() => setIsCommentInputFocused(true)}
           onBlur={(e) => {
             if (e.target.value === "") setIsCommentInputFocused(false);
           }}
-          onResize={"none"}
           cols=""
           rows="7"
           className={`border outline-none appearance-none ${
@@ -104,7 +153,12 @@ function ContactForm() {
         ></textarea>
       </div>
       <div className="flex justify-center w-28 h-11 shadow-primary-shadow rounded-lg mx-3 lg:mx-5 xl:mx-7 3xl:mx-9 4xl:mx-8 5xl:mx-7 6xl:mx-8 mt-7 3xl:mt-10 mb-10 3xl:mb-14 bg-black ">
-        <button className="text-snow text-sm h-full w-full">Send</button>
+        <button
+          onClick={handleSubmit}
+          className="text-snow text-sm h-full w-full"
+        >
+          Send
+        </button>
       </div>
     </form>
   );

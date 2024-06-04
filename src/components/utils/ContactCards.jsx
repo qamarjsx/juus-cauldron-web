@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-
 function ContactCards() {
   return (
     <section className="flex flex-col 3xl:flex-row items-center 3xl:justify-around my-6 lg:mx-16 4xl:mx-56">

@@ -36,43 +36,45 @@ function QueryForm() {
     if (emailInputRef.current.value === "") setEmailInputFocused(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (subject && email && description !== "") {
+    if (subject !== "" && email !== "" && description !== "") {
       const formData = {
-        subject,
-        description,
-        email,
+        subject: subject,
+        email: email,
+        description: description,
       };
-    } else {
-      alert("Please fill in all fields.");
-      return;
-    }
 
-    // Send the form data to the backend
-    fetch("http://localhost:5000/send-query", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
+      try {
+        const response = await fetch("http://localhost:5000/faqs", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          // Handle successful response
+          // console.log("Email sent successfully");
           alert("Query sent successfully!");
           setSubject("");
           setEmail("");
           setDescription("");
         } else {
-          alert("Failed to send query.1");
+          // Handle error response
+          // console.error("Error sending email");
+          alert("Error sending email.");
         }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("Failed to send query.2");
-      });
+      } catch (error) {
+        // Handle network error
+        // console.error("Network error:", error);
+        alert("Error sending email", error);
+      }
+    } else {
+      // console.error("Please fill in all fields");
+      alert("Please fill in all fields.");
+    }
   };
 
   return (
@@ -104,11 +106,12 @@ function QueryForm() {
       <div className="my-3 w-11/12 flex flex-col items-center relative">
         <textarea
           value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          onChange={(e) => {
+            setDescription(e.target.value);
+          }}
           ref={textareaRef}
           onClick={handleTextareaFocus}
           onBlur={handleTextareaBlur}
-          onResize={"none"}
           className="text-rich-black bg-faq-orange rounded-2xl w-full border-white border outline-none p-4 h-64 min-h-64 max-h-64"
           name="query-description"
           id="query-description"
@@ -147,7 +150,12 @@ function QueryForm() {
         )}
       </div>
       <div className="shadow-primary-shadow relative top-7 mt-4 bg-spring-green rounded-xl w-32 h-12 flex justify-center items-center">
-        <button className="text-white text-3xl bg-spring-green">SEND</button>
+        <button
+          onClick={handleSubmit}
+          className="text-white text-3xl bg-spring-green w-full rounded-xl"
+        >
+          SEND
+        </button>
       </div>
     </form>
   );
