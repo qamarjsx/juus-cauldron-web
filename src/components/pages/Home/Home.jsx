@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useRef, lazy, memo } from "react";
+import React, { Suspense, useState, useRef, lazy, memo, useEffect } from "react";
 import "./Home.css";
 import { motion } from "framer-motion";
 import PageFallback from "../../utils/PageFallback.jsx";
@@ -15,6 +15,22 @@ const Home = memo(() => {
   const sliderImgWrapperRef = useRef(null);
   const [showSlideA, setShowSlideA] = useState(false);
   const [showSlideB, setShowSlideB] = useState(false);
+
+  useEffect(() => {
+    const preventSwipe = (e) => {
+      e.preventDefault();
+    };
+
+    window.addEventListener('touchstart', preventSwipe, { passive: false });
+    window.addEventListener('touchmove', preventSwipe, { passive: false });
+    window.addEventListener('touchend', preventSwipe, { passive: false });
+
+    return () => {
+      window.removeEventListener('touchstart', preventSwipe);
+      window.removeEventListener('touchmove', preventSwipe);
+      window.removeEventListener('touchend', preventSwipe);
+    };
+  }, []);
 
   const checkWidth = () => {
     if (sliderImgWrapperRef.current) {
@@ -83,10 +99,11 @@ const Home = memo(() => {
           ref={sliderRef}
           onMouseMove={sliderMouseMove}
           onTouchMove={sliderMouseMove}
+          // onMouseDown={sliderMouseDown}
+
           onTouchStart={sliderMouseDown}
           onMouseUp={sliderMouseUp}
           onTouchEnd={sliderMouseUp}
-          onMouseLeave={sliderMouseLeave}
           id="image-comparison-slider"
           className="relative overflow-hidden"
         >

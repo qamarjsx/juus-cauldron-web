@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import PageFallback from "./PageFallback.jsx";
+import Homee from "../pages/Home/Homee.jsx";
 const Home = lazy(() => import("../pages/Home/Home.jsx"));
 const About = lazy(() => import("../pages/About/About.jsx"));
 const Shop = lazy(() => import("../pages/Shop/Shop.jsx"));
@@ -19,6 +20,7 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route index path="/" element={<Suspense fallback={<PageFallback />}><Home /></Suspense>}/>
+        <Route path="/home" element={<Suspense fallback={<PageFallback />}><Homee /></Suspense>} />
         <Route path="/juus" element={<Suspense fallback={<PageFallback />}><JuusHome /></Suspense>} />
         <Route path="/nova" element={<Suspense fallback={<PageFallback />}><NovaHome /></Suspense>} />
         <Route path="about" element={<Suspense fallback={<PageFallback />}><About /></Suspense>} />
