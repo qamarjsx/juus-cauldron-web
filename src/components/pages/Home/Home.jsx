@@ -97,7 +97,7 @@ const Home = memo(() => {
       <div className="w-full h-screen flex items-center justify-center">
         <div
           ref={sliderRef}
-          onMouseMove={sliderMouseMove}
+          // onMouseMove={sliderMouseMove}
           onTouchMove={sliderMouseMove}
           // onMouseDown={sliderMouseDown}
 
