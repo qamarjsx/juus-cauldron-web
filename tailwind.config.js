@@ -20,6 +20,7 @@ export default {
         xxxxs: "360px",
         xxxs: "375px",
         xxs: "390px",
+        xsm: "410px",
         xs: "480px",
         sm: "540px",
         md: "640px",
@@ -33,6 +34,9 @@ export default {
       },
       animation: {
         pulse: "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      },
+      fontFamily: {
+        anton: ['Anton', "sans-serif"],
       },
     },
   },

@@ -123,7 +123,7 @@ const Home = memo(() => {
             onMouseEnter={sliderMouseLeave}
           >
             <div className="handle-line w-0.5 grow bg-white"></div>
-            <div className="handle-circle text-white shadow-primary-shadow bg-yellow-400 rounded-[50%] flex items-center justify-evenly">
+            <motion.div animate={{x: [5, 0, -5, 0, 5]}} transition={{repeat: Infinity}} className="handle-circle text-white shadow-primary-shadow bg-yellow-400 rounded-[50%] flex items-center justify-evenly">
               <svg
                 className={``}
                 xmlns="http://www.w3.org/2000/svg"
@@ -148,7 +148,7 @@ const Home = memo(() => {
                   d="M17.215 11.318c1.047-.567 1.047-2.07 0-2.638L5.216 2.18A1.5 1.5 0 0 0 3.002 3.5v12.999a1.5 1.5 0 0 0 2.214 1.319zm-.476-1.758a.5.5 0 0 1 0 .879l-11.999 6.5a.5.5 0 0 1-.738-.44v-13a.5.5 0 0 1 .738-.439z"
                 ></path>
               </svg>
-            </div>
+            </motion.div>
             <div className="handle-line w-0.5 grow bg-white"></div>
           </div>
         </div>

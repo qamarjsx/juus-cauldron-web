@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 
 const SplitJuusSlide = memo(() => {
   return (
-    <div className="relative">
+    <div className="relative font-anton">
       <div
         style={{
           backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/bgGreen-small.png"})`,
@@ -18,7 +18,7 @@ const SplitJuusSlide = memo(() => {
             src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Juus%20bottle%20green%20apple%20wbg.png"
             alt=""
           />
-          <div className="pointer-events-none select-none absolute flex flex-col justify-center items-end bottom-[7%] xxs:bottom-[11%] 3xl:bottom-[5%] left-[13.5%] xxxxs:left-[17%] xxxs:left-[18%] xxs:left-[10.5%] sm:left-[21%] lg:left-1/4 xl:left-[37%] 2xl:left-[38%] 3xl:left-[37.75%] 4xl:left-[36.5%] 5xl:left-[37%] 6xl:left-[39.75%] text-4xl xxs:text-5xl lg:text-6xl xl:text-4xl 3xl:text-5xl 4xl:text-6xl text-snow font-extrabold">
+          <div className="pointer-events-none select-none absolute flex flex-col justify-center items-end bottom-[10%] xxs:bottom-[11%] lg:bottom-[8%] 3xl:bottom-[2.75%] left-[13.5%] xxxxs:left-[9%] xxxs:left-[19%] xxs:left-[12.5%] xsm:left-[15%] sm:left-[21%] lg:left-[20%] xl:left-[37.5%] 2xl:left-[38%] 3xl:left-[37%] 4xl:left-[38.1%] 5xl:left-[39%] 6xl:left-[41%] text-5xl xxxxs:text-6xl xxxs:text-5xl xxs:text-6xl lg:text-8xl xl:text-5xl 3xl:text-7xl text-snow font-semibold tracking-wide">
             <h1>DELVE</h1>
             <h1>THE</h1>
           </div>
