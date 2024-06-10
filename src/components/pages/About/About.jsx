@@ -20,7 +20,7 @@ const About = memo(() => {
       <main className="pt-20">
         <div>
           <AboutVideo />
-          <article className="px-5 lg:px-24 3xl:px-28 font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">
+          <article className="px-5 lg:px-24 3xl:px-28 4xl:px-48 6xl:px-64 font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">
             <p className="my-4 3xl:my-9 4xl:my-16">
               Our journey started in the research facilities of New Zealand. It
               was a never-ending storm of difficulties.
@@ -42,18 +42,18 @@ const About = memo(() => {
         </div>
         <div className="6xl:flex 6xl:flex-col">
           <img
-            className="my-5 lg:my-28 3xl:mt-20 3xl:mb-0 3xl:w-full  6xl:self-center"
+            className="lg:scale-90 xl:scale-75 6xl:scale-[.65] my-5 lg:my-0 3xl:mb-0 3xl:w-full 6xl:self-center"
             src="https://juusstorage.blob.core.windows.net/website/images/about/about-main.png"
             alt=""
           />
           <Fade triggerOnce={true} direction="left">
             <img
-              className="scale-75 xl:scale-[.65] 3xl:scale-[.55] 6xl:scale-[.45] -ml-5 xxxxs:-ml-8 lg:-ml-14 xl:-ml-32 3xl:-ml-52 4xl:-ml-56 5xl:-ml-60 6xl:-ml-[420px] -mb-3 lg:-mb-6 xl:-mb-9 3xl:-mb-24 4xl:-mb-32 6xl:-mb-16"
+              className="scale-75 lg:scale-[.65] xl:scale-[.55] 3xl:scale-[.55] 4xl:scale-50 6xl:scale-[.45] -ml-5 xxxxs:-ml-8 lg:-ml-24 xl:-ml-40 3xl:-ml-[200px] 4xl:-ml-44 5xl:-ml-48 6xl:-ml-[272px] -mb-3 lg:-mb-6 xl:-mb-12 3xl:-mb-24 4xl:-mb-32 6xl:-mb-16"
               src="https://juusstorage.blob.core.windows.net/creatives/About%20Us/made%20to%20international.png"
               alt=""
             />
           </Fade>
-          <article className="mb-4 lg:mb-20 3xl:mb-32 3xl:-mt-16 6xl:-mt-32 px-4 lg:px-10 3xl:px-24 font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">
+          <article className="mb-4 lg:mb-20 3xl:mb-32 3xl:-mt-16 6xl:-mt-32 px-4 lg:px-10 3xl:px-24 4xl:px-48 6xl:px-64 font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">
             <Fade cascade triggerOnce={true}>
               <h1 className="my-4 lg:mt-8 3xl:mt-20 font-bold lg:font-extrabold text-lg lg:text-2xl 3xl:text-4xl">
                 INTERNATIONAL STANDARDS
