@@ -6,13 +6,12 @@ const SplitJuusSlide = memo(() => {
     <div className="relative font-anton">
       <div
         style={{
-          backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/bgGreen-small.png"})`,
+          backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Background%20Greenapple.png"})`,
         }}
-        className={`relative overflow-hidden h-screen bg-cover bg-center`}
+        className={`hover:animate-pulse relative overflow-hidden h-screen bg-cover bg-center`}
       >
         <Fade delay={300} cascade damping={0.75}>
           <img
-            fetchPriority="high"
             loading="lazy"
             className="pointer-events-none select-none scale-105 xxs:scale-110 sm:scale-[.85] lg:scale-90 xl:scale-[.4] 4xl:scale-[.45] 6xl:scale-50 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform"
             src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Juus%20bottle%20green%20apple%20wbg.png"

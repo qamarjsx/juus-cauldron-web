@@ -12,6 +12,7 @@ export default {
         "faq-orange": "#FF7F01",
         "spring-green": "#84f80a",
         aqua: "#05e2fc",
+        "slider": "#D9BC20",
       },
       boxShadow: {
         "primary-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px",
