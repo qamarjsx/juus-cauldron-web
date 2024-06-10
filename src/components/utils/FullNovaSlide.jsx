@@ -1,85 +1,49 @@
-import React, { memo, useState } from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
 
 const FullNovaSlide = memo(() => {
-  const [arrowColor, setArrowColor] = useState("white");
 
   return (
-    <div className="relative">
+    <div className="relative h-auto">
       <div
         style={{
           backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Nova%20background.png"})`,
         }}
-        className={`flex flex-col justify-evenly sm:justify-evenly lg:justify-around 2xl:justify-evenly items-center relative overflow-hidden h-screen bg-cover bg-center`}
+        className={`flex flex-col justify-evenly sm:justify-evenly lg:justify-around 2xl:justify-evenly items-center relative overflow-hidden h-screen bg-cover bg-center xl:bg-top`}
       >
         <img
-          fetchPriority="high"
           loading="lazy"
-          className="-rotate-[0.75deg] pointer-events-none select-none scale-x-105 xxs:scale-x-110 scale-y-[1.13] xxs:scale-y-[1.195] sm:scale-[.85] lg:scale-x-[.9] lg:scale-y-[.97] xl:scale-x-[.4] xl:scale-y-[.435] 4xl:scale-x-[.45] 4xl:scale-y-[.475] 6xl:scale-x-[.5] 6xl:scale-y-[.53] absolute top-[50.15%] left-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+          className="-rotate-[0.75deg] pointer-events-none select-none scale-x-105 xxs:scale-x-110 scale-y-[1.13] xxs:scale-y-[1.195] sm:scale-[.85] lg:scale-x-[.9] lg:scale-y-[.97] xl:scale-x-[.4] xl:scale-y-[.435] 4xl:scale-x-[.45] 4xl:scale-y-[.475] 6xl:scale-x-[.5] 6xl:scale-y-[.53] absolute top-[45.15%] left-1/2 -translate-x-1/2 -translate-y-1/2 transform"
           src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/full%20bottle%20nova.png"
-          alt="Juus Bottle"
+          alt="Nova Bottle"
         />
-        <Fade
-          direction="down"
-          className="w-11/12 xxxs:w-10/12 xxs:w-9/12 xs:w-8/12 lg:w-7/12 3xl:w-1/5 4xl:w-1/4"
-        >
-          <img
-            className="pointer-events-none select-none scale-[.85] xxs:scale-100 sm:scale-90 lg:scale-100 xl:scale-50 2xl:scale-50 3xl:scale-150 4xl:scale-125 6xl:scale-100"
-            src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Typography%20Delve%20in%20future.png"
-            alt="FUTURE"
-          />
-        </Fade>
-        <div className="z-30 flex flex-col sm:flex-row lg:flex-row sm:justify-center lg:justify-center 3xl:justify-evenly items-center mt-24 xxs:mt-32 xs:mt-56 sm:mt-36 lg:mt-56 xl:-mt-2 3xl:mt-48 4xl:mt-56 -mb-16 xxxs:-mb-[72px] 3xl:-mb-16 3xl:flex-row">
-          <Fade
-            delay={300}
-            direction="right"
-            className="w-11/12 xxxs:w-10/12 xxs:w-9/12 xs:w-8/12 lg:w-7/12 3xl:w-1/5 4xl:w-1/4"
-          >
-            <img
-              className="pointer-events-none select-none scale-[.85] xxs:scale-100 sm:scale-90 lg:scale-100 xl:scale-50 2xl:scale-50 3xl:scale-150 4xl:scale-125 6xl:scale-100"
-              src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Typography%20Delve%20in%20future.png"
-              alt="Text about Juus"
-            />
-          </Fade>
-          <Fade
-            delay={800}
-            direction="down"
-            className="select-none xl:self-center xl:pt-20 3xl:-ml-40 6xl:-ml-80 mx-5"
-          >
-            <Link className="" to={"/nova"}>
-              <motion.button
-                onMouseEnter={() => setArrowColor("black")}
-                onMouseLeave={() => setArrowColor("white")}
-                animate={{ x: [0, 20, -20, 0] }}
-                transition={{
-                  duration: 0.8,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                }}
-                className="xxxxs:-mt-3.5 xxs:-mt-0 cursor-pointer flex items-center italic justify-between p-2 w-28 h-8 text-snow text-sm border-2 rounded-full hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition"
-              >
-                <span className="mx-auto">Buy Nova</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.5em"
-                  height="2em"
-                  viewBox="0 0 22 22"
-                >
-                  <path
-                    fill="none"
-                    stroke={arrowColor}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1}
-                    d="M3 12h18m0 0l-8.5-8.5M21 12l-8.5 8.5"
-                  ></path>
-                </svg>
-              </motion.button>
+        <motion.div initial={{x: 200, opacity: 0}} animate={{x: 0, opacity: 1}} transition={{type: "spring", stiffness: 150, damping: 9}}  className="w-full lg:w-9/12 xl:w-1/2 3xl:w-[45%] 6xl:w-5/12 absolute flex flex-col bottom-[15%] xxxs:bottom-[8%] xxs:bottom-[14%] xsm:bottom-[9%] lg:bottom-[6%] xl:bottom-0 6xl:bottom-[1%] left-[4%] lg:left-[12%] xl:left-[25%] text-snow">
+          <div className="font-anton flex items-center">
+            <h1 className="text-7xl xsm:text-[84px] lg:text-[108px] xl:text-[84px] 3xl:text-8xl 4xl:text-[108px] 6xl:text-[120px]">FUTURE</h1>
+            <div className="ml-1 lg:ml-2 lg:-mt-2 xl:-mt-0 3xl:-mt-2 4xl:-mt-3 6xl:-mt-4 flex flex-col justify-between lg:justify-center items-start ">
+              <h1 className="text-3xl xsm:text-[40px] lg:text-[50px] xl:text-[40px] 3xl:text-[46px] 4xl:text-[50px] 6xl:text-[58px] xsm:leading-none lg:leading-[1.15] xl:leading-none 3xl:leading-tight">IS</h1>
+              <h1 className="text-3xl xsm:text-[40px] lg:text-[50px] xl:text-[40px] 3xl:text-[46px] 4xl:text-[50px] 6xl:text-[58px]">SUGAR</h1>
+            </div>
+          </div>
+          <div className="flex items-center lg:justify-between">
+            <h1 className="font-anton text-7xl xsm:text-[84px] lg:text-[108px] xl:text-[84px] 3xl:text-8xl 4xl:text-[108px] 6xl:text-[120px]">FREE</h1>
+            <Link to={'/juus'}>
+            <motion.button
+              animate={{ x: [0, 5, -5, 0] }}
+              transition={{
+                duration: 0.8,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+              className={`hover:text-black hover:bg-snow shadow-primary-shadow mx-5 h-[26px] w-28 text-xs px-1.5 border-2 rounded-3xl flex items-center justify-center`}
+            >
+              <span>DISCOVER MORE</span>
+            </motion.button>
             </Link>
-          </Fade>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );

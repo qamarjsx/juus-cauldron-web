@@ -48,7 +48,7 @@ const NovaHome = memo(() => {
         <motion.div
           initial={{ y: 300, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 100, damping: 8 }}
+          transition={{ type: "spring", stiffness: 70, damping: 8 }}
           viewport={{ once: true }}
         >
           <img
@@ -58,7 +58,7 @@ const NovaHome = memo(() => {
           />
         </motion.div>
         {/* </Fade> */}
-        <Link className="self-center mt-36 lg:mt-60" to={"/nova/shop"}>
+        <Link className="self-center mt-36 lg:mt-60" to={"https://juus.pk/pages/shop"}>
           <Fade direction="down" duration={1000} delay={500}>
             <button className="select-none cursor-pointer flex items-center justify-between p-2 w-40 lg:w-56 xl:w-72 h-7 lg:h-11 text-snow text-sm lg border-2 rounded-xl hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition">
               <span className="mx-auto">DISCOVER FLAVORS</span>

@@ -37,7 +37,7 @@ const JuusHome = memo(() => {
         </div>
         <Link
           className="sm:my-20 lg:my-24 xl:my-32 3xl:my-44 5xl:my-52"
-          to={"/juus/shop"}
+          to={"https://juus.pk/pages/shop"}
         >
           <Fade direction="down" duration={1000} delay={500}>
             <button className="select-none cursor-pointer flex items-center font-bold justify-between p-2 w-40 lg:w-56 xl:w-72 h-9 lg:h-11 text-snow text-sm lg border-2 rounded-3xl hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition">

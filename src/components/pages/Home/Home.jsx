@@ -15,25 +15,37 @@ function Home() {
   const [showFullNovaSlide, setShowFullNovaSlide] = useState(false);
   const navigator = useNavigate();
 
-
-  const handleSliderDrag = (e) => {
-    console.log(slideValue);
+  useEffect(() => {
     if (slideValue >= 80) {
       setShowFullJuusSlide(true);
       setShowFullNovaSlide(false);
-      // setInterval(() => {
-      //   navigator("/juus");
-      // }, 1500);
     } else if (slideValue <= 20) {
       setShowFullJuusSlide(false);
       setShowFullNovaSlide(true);
-      // setInterval(() => {
-      //   navigator("/nova");
-      // }, 1500);
-    } else if (slideValue > 20 || slideValue < 80) {
+    }
+    else {
       setShowFullJuusSlide(false);
       setShowFullNovaSlide(false);
     }
+  }, [slideValue]);
+
+  useEffect(() => {
+    let timer;
+    if (showFullJuusSlide) {
+      timer = setTimeout(() => {
+        navigator('/juus'); // Replace with the actual route for stateOne
+      }, 1500);
+    } else if (showFullNovaSlide) {
+      timer = setTimeout(() => {
+        navigator('/nova'); // Replace with the actual route for stateTwo
+      }, 1500);
+    }
+
+    return () => clearTimeout(timer); // Cleanup timeout if dependencies change
+  }, [showFullJuusSlide, showFullNovaSlide, navigator]);
+
+  const handleSliderDrag = (e) => {
+    console.log(slideValue);
     setSlideValue(e.target.value);
   };
 
@@ -58,16 +70,16 @@ function Home() {
         <div className="w-full h-full absolute" style={clipPathStyle}>
           {showFullJuusSlide ? <FullJuusSlide /> : <SplitJuusSlide />}
         </div>
-        <div className="absolute top-[46%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">
+        <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">
           <input
             value={slideValue}
             onChange={handleSliderDrag}
             id="slider"
-            className="h-0 appearance-none -ml-5 lg:-ml-8 outline-none bg-transparent"
+            className="h-0 appearance-none -ml-5 lg:-ml-[27px] outline-none bg-transparent"
             type="range"
             min={0}
             max={100}
-            step={0.01}
+            step={0.001}
           />
         </div>
       </main>
