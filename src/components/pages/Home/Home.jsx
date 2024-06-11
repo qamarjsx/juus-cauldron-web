@@ -15,15 +15,21 @@ function Home() {
   const [showFullNovaSlide, setShowFullNovaSlide] = useState(false);
   const navigator = useNavigate();
 
+  const handleSliderDragEnd = () => {
+    console.log("drag ended");
+    if (slideValue > 15 && slideValue < 85) {
+      setSlideValue(50);
+    }
+  };
+
   useEffect(() => {
-    if (slideValue >= 80) {
+    if (slideValue >= 85) {
       setShowFullJuusSlide(true);
       setShowFullNovaSlide(false);
-    } else if (slideValue <= 20) {
+    } else if (slideValue <= 15) {
       setShowFullJuusSlide(false);
       setShowFullNovaSlide(true);
-    }
-    else {
+    } else {
       setShowFullJuusSlide(false);
       setShowFullNovaSlide(false);
     }
@@ -33,11 +39,11 @@ function Home() {
     let timer;
     if (showFullJuusSlide) {
       timer = setTimeout(() => {
-        navigator('/juus'); // Replace with the actual route for stateOne
+        navigator("/juus"); // Replace with the actual route for stateOne
       }, 1500);
     } else if (showFullNovaSlide) {
       timer = setTimeout(() => {
-        navigator('/nova'); // Replace with the actual route for stateTwo
+        navigator("/nova"); // Replace with the actual route for stateTwo
       }, 1500);
     }
 
@@ -67,13 +73,18 @@ function Home() {
         <div className="w-full h-full absolute">
           {showFullNovaSlide ? <FullNovaSlide /> : <SplitNovaSlide />}
         </div>
-        <div className="w-full h-full absolute" style={clipPathStyle}>
+        <div
+          className="w-full h-full absolute transition-[clip-path] duration-300 delay-0 ease-custom-ease"
+          style={clipPathStyle}
+        >
           {showFullJuusSlide ? <FullJuusSlide /> : <SplitJuusSlide />}
         </div>
         <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">
           <input
             value={slideValue}
             onChange={handleSliderDrag}
+            onMouseUp={handleSliderDragEnd}
+            onTouchEnd={handleSliderDragEnd}
             id="slider"
             className="h-0 appearance-none -ml-5 lg:-ml-[27px] outline-none bg-transparent"
             type="range"
