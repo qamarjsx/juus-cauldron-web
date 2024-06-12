@@ -11,7 +11,7 @@ const SplitJuusSlide = memo(() => {
         }}
         className={`relative overflow-hidden h-screen bg-cover bg-center xl:bg-bottom`}
       >
-        <Fade delay={300} cascade damping={0.75}>
+        <Fade delay={200} cascade triggerOnce={true}>
           <img
             loading="lazy"
             className="pointer-events-none select-none scale-105 xxs:scale-110 sm:scale-[.85] lg:scale-90 xl:scale-[.4] 4xl:scale-[.45] 6xl:scale-50 absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 transform"

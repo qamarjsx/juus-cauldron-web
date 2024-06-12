@@ -10,7 +10,7 @@ const SplitNovaSlide = memo(() => {
         }}
         className={`relative overflow-hidden h-screen bg-cover bg-center xl:bg-top`}
       >
-        <Fade delay={300} cascade damping={0.75}>
+        <Fade delay={200} cascade triggerOnce={true}>
           <img
             loading="lazy"
             className="-rotate-[0.75deg] pointer-events-none select-none scale-x-105 xxs:scale-x-110 scale-y-[1.13] xxs:scale-y-[1.195] sm:scale-[.85] lg:scale-x-[.9] lg:scale-y-[.97] xl:scale-x-[.4] xl:scale-y-[.435] 4xl:scale-x-[.45] 4xl:scale-y-[.475] 6xl:scale-x-[.5] 6xl:scale-y-[.53] absolute top-[45.15%] left-1/2 -translate-x-1/2 -translate-y-1/2 transform"

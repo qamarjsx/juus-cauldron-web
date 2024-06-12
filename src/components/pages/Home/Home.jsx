@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Header from "../../utils/Header.jsx";
 import FullJuusSlide from "../../utils/FullJuusSlide.jsx";
 import FullNovaSlide from "../../utils/FullNovaSlide.jsx";
-import SplitJuusSlide from "../../utils/SplitJuusSlide.jsx";
-import SplitNovaSlide from "../../utils/SplitNovaSlide.jsx";
+
 import "./Home.css";
 import "../../../index.css";
 import { motion } from "framer-motion";
@@ -72,13 +71,13 @@ function Home() {
       </div>
       <main className={`h-screen w-full relative overflow-hidden ${isOpen && "brightness-95"}`} onClick={() => setIsOpen(false)}>
         <div className="w-full h-full absolute">
-          {showFullNovaSlide ? <FullNovaSlide /> : <SplitNovaSlide />}
+          <FullNovaSlide sliderValue={slideValue} />
         </div>
         <div
           className="w-full h-full absolute transition-[clip-path] duration-300 delay-0 ease-custom-ease"
           style={clipPathStyle}
         >
-          {showFullJuusSlide ? <FullJuusSlide /> : <SplitJuusSlide />}
+          <FullJuusSlide sliderValue={slideValue} />
         </div>
         <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">
           <input

@@ -71,7 +71,7 @@ const NovaHome = memo(() => {
           } pointer-events-none -bottom-5 xxxxs:-bottom-10 xxs:-bottom-16 lg:-bottom-40 xl:-bottom-56 3xl:-bottom-72 4xl:-bottom-64 6xl:-bottom-72 3xl:right-0 6xl:right-40`}
         >
           <img
-            className={`opacity-75 xl:scale-y-[.8] 3xl:scale-x-95 6xl:scale-x-125 6xl:scale-y-[1.05]`}
+            className={`opacity-60 xl:scale-y-[.8] 3xl:scale-x-95 6xl:scale-x-125 6xl:scale-y-[1.05]`}
             src="https://juusstorage.blob.core.windows.net/creatives/Nova%20Home/Doodle%20art.png"
             alt=""
           />
