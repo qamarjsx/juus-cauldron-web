@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 const SlidingMenu = lazy(() => import("./SlidingMenu.jsx"));
 const NavLinks = lazy(() => import("./NavLinks.jsx"));
 
-function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+function Header({ isOpen, setIsOpen }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);

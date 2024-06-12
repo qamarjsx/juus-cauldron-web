@@ -9,7 +9,7 @@ function SlidingMenu({ theme, isOpen }) {
     <AnimatePresence>
       <motion.div
         style={{ top: `${window.scrollY}px` }}
-        className={`absolute left-0 z-[35] w-full overflow-hidden`}
+        className={`absolute left-0 z-[35] w-[90%] overflow-hidden shadow-primary-shadow`}
         animate={{
           x: isOpen ? 0 : "-100%",
           transition: {

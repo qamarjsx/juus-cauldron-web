@@ -1,4 +1,4 @@
-import React, { lazy, memo } from "react";
+import React, { lazy, memo, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
 const AboutVideo = lazy(() => import("../../utils/AboutVideo.jsx"));
@@ -7,6 +7,8 @@ const Certification = lazy(() => import("../../utils/Certification.jsx"));
 const Footer = lazy(() => import("../../utils/Footer.jsx"));
 
 const About = memo(() => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <motion.div
       className="relative overflow-x-hidden scroll-smooth"
@@ -15,9 +17,9 @@ const About = memo(() => {
       exit={{ opacity: 0 }}
     >
       <div className="">
-        <Header />
+        <Header isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-      <main className="pt-20">
+      <main className={`pt-20`} onClick={() => setIsOpen(false)}>
         <div>
           <AboutVideo />
           <article className="px-5 lg:px-24 3xl:px-28 4xl:px-48 6xl:px-64 font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">

@@ -12,7 +12,7 @@ const JuusVideo = memo(() => {
   renderCount.current += 1;
 
   useEffect(() => {
-    console.log(`MyComponent rendered ${renderCount.current} times`);
+    console.log(`Video rendered ${renderCount.current} times`);
   });
 
   const togglePlay = () => {

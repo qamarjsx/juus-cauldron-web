@@ -1,13 +1,20 @@
 import React, { useState, useEffect, lazy } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-const SlidingMenu = lazy(() => import("./SlidingMenu.jsx"));
+import { toggleIsOpen } from "../../redux/isOpenSlice.js";
 const NavLinks = lazy(() => import("./NavLinks.jsx"));
+const SlidingMenu = lazy(() => import("../utils/SlidingMenu.jsx"));
 
 function JuusHeader() {
-  const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+  const isOpen = useSelector(state => state.isOpen);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  
+  const handleHamburgerClick = () => {
+    dispatch(toggleIsOpen());
+  };
 
   const handleScroll = () => {
     if (window.scrollY > lastScrollY) {
@@ -34,10 +41,7 @@ function JuusHeader() {
     else document.body.style.overflow = "auto";
   }, [isOpen]);
 
-  const handleHamburgerClick = () => {
-    setIsOpen(!isOpen);
-    console.log(isOpen);
-  };
+
   return (
     <>
       <header

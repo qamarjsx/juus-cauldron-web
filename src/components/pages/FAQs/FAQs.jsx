@@ -99,6 +99,8 @@ const FAQsArr = [
 ];
 
 const FAQs = memo(() => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <motion.div
       className="bg-cover bg-fixed 2xl:bg-scroll bg-no-repeat bg-center overflow-x-hidden"
@@ -110,9 +112,9 @@ const FAQs = memo(() => {
       exit={{ opacity: 0 }}
     >
       <div>
-        <Header />
+        <Header isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-      <section className="pt-20">
+      <section className="pt-20" onClick={() => setIsOpen(false)}>
         <img
           className=""
           rel="preload"

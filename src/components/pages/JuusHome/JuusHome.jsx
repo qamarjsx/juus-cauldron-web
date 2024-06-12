@@ -1,12 +1,18 @@
-import React, { lazy, memo } from "react";
+import React, { lazy, memo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
 const JuusVideo = lazy(() => import("../../utils/JuusVideo.jsx"));
 const Footer = lazy(() => import("../../utils/Footer.jsx"));
 const JuusHeader = lazy(() => import("../../utils/JuusHeader.jsx"));
+import { setIsOpen } from '../../../redux/isOpenSlice.js';
+
 
 const JuusHome = memo(() => {
+  const dispatch = useDispatch();
+  // const isOpen = useSelector(state => state.isOpen);
+
   return (
     <motion.div
       className="relative overflow-x-hidden bg-black scroll-smooth"
@@ -17,7 +23,7 @@ const JuusHome = memo(() => {
       <div className="">
         <JuusHeader />
       </div>
-      <main className="mt-20 xl:mt-16 3xl:mt-8 h-screen flex flex-col items-center justify-between lg:h-auto">
+      <main className={`mt-20 xl:mt-16 3xl:mt-8 h-screen flex flex-col items-center justify-between lg:h-auto`} onClick={() => dispatch(setIsOpen(false))}>
         <div className="">
           <JuusVideo />
           <div className="">
@@ -42,21 +48,6 @@ const JuusHome = memo(() => {
           <Fade direction="down" duration={1000} delay={500}>
             <button className="select-none cursor-pointer flex items-center font-bold justify-between p-2 w-40 lg:w-56 xl:w-72 h-9 lg:h-11 text-snow text-sm lg border-2 rounded-3xl hover:bg-snow hover:text-rich-black hover:shadow-primary-shadow hover:shadow-snow transition">
               <span className="mx-auto">DISCOVER FLAVORS</span>
-              {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1.5em"
-              height="2em"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="none"
-                stroke={arrowColor}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1}
-                d="M3 12h18m0 0l-8.5-8.5M21 12l-8.5 8.5"
-              ></path>
-            </svg> */}
             </button>
           </Fade>
         </Link>

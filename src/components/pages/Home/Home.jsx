@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const [isOpen, setIsOpen] = useState(false);
   const [slideValue, setSlideValue] = useState(50);
   const [showFullJuusSlide, setShowFullJuusSlide] = useState(false);
   const [showFullNovaSlide, setShowFullNovaSlide] = useState(false);
@@ -67,9 +68,9 @@ function Home() {
       transition={{ duration: 0.3 }}
     >
       <div>
-        <Header />
+        <Header isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-      <main className="h-screen w-full relative overflow-hidden">
+      <main className={`h-screen w-full relative overflow-hidden ${isOpen && "brightness-95"}`} onClick={() => setIsOpen(false)}>
         <div className="w-full h-full absolute">
           {showFullNovaSlide ? <FullNovaSlide /> : <SplitNovaSlide />}
         </div>
