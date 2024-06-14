@@ -49,9 +49,9 @@ function SlidingMenu({ theme, isOpen }) {
               </Link>
               <Link to={"https://www.youtube.com/@JuusPakistan"}>
                 <img
-                  className="h-5"
-                  src="https://juusstorage.blob.core.windows.net/website/images/general/linkedin-white.png"
-                  alt="linkedin logo"
+                  className="h-5 scale-150"
+                  src="https://juusstorage.blob.core.windows.net/website/images/general/mdi--youtube.png"
+                  alt="youtube logo"
                 />
               </Link>
             </Fade>
