@@ -17,16 +17,16 @@ function Home() {
 
   const handleSliderDragEnd = () => {
     console.log("drag ended");
-    if (slideValue > 15 && slideValue < 85) {
+    if (slideValue > 20 && slideValue < 80) {
       setSlideValue(50);
     }
   };
 
   useEffect(() => {
-    if (slideValue >= 85) {
+    if (slideValue >= 80) {
       setShowFullJuusSlide(true);
       setShowFullNovaSlide(false);
-    } else if (slideValue <= 15) {
+    } else if (slideValue <= 20) {
       setShowFullJuusSlide(false);
       setShowFullNovaSlide(true);
     } else {
