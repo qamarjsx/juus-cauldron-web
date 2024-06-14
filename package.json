@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:5000",
+  "proxy": "https://juus-cauldron-web-backend-production.up.railway.app/",
   "name": "juus-cauldron-web",
   "private": true,
   "version": "0.0.0",

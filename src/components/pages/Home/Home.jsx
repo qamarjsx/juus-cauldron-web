@@ -40,11 +40,11 @@ function Home() {
     if (showFullJuusSlide) {
       timer = setTimeout(() => {
         navigator("/juus"); // Replace with the actual route for stateOne
-      }, 1500);
+      }, 1000);
     } else if (showFullNovaSlide) {
       timer = setTimeout(() => {
         navigator("/nova"); // Replace with the actual route for stateTwo
-      }, 1500);
+      }, 1000);
     }
 
     return () => clearTimeout(timer); // Cleanup timeout if dependencies change

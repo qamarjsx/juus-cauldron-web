@@ -22,7 +22,7 @@ function ContactForm() {
       };
 
       try {
-        const response = await fetch("http://localhost:5000/contact", {
+        const response = await fetch("https://juus-cauldron-web-backend-production.up.railway.app/contact", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -33,11 +33,11 @@ function ContactForm() {
         if (response.ok) {
           // Handle successful response
           // console.log("Email sent successfully");
-          alert("Query sent successfully!");
           setName("");
           setEmail("");
           setPhoneNumber("");
           setComment("");
+          alert("Query sent successfully!");
         } else {
           // Handle error response
           // console.error("Error sending email");

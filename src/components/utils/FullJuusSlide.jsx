@@ -4,6 +4,7 @@ import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
 import FullNovaSlide from "./FullNovaSlide";
 
+
 const FullJuusSlide = memo(({ sliderValue }) => {
   return (
     <div className="relative h-auto">
@@ -15,13 +16,20 @@ const FullJuusSlide = memo(({ sliderValue }) => {
       >
         <Fade triggerOnce={true}>
         <img
-          fetchPriority="high"
           loading="lazy"
-          className={`pointer-events-none select-none scale-105 xxs:scale-110 sm:scale-[.85] lg:scale-90 xl:scale-[.4] 4xl:scale-[.45] 6xl:scale-50 absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 transform ${sliderValue >= 85 && "scl"}`}
+          className={`pointer-events-none select-none ${
+            sliderValue >= 80 ? "scale-[1.15]" : "scale-110"
+          } ${sliderValue >= 80 ? "xxs:scale-[1.2]" : "xxs:scale-[1.15]"} ${
+            sliderValue >= 80 ? "sm:scale-90" : "sm:scale-[.85]"
+          } ${sliderValue >= 80 ? "lg:scale-95" : "lg:scale-90"} ${
+            sliderValue >= 80 ? "xl:scale-[.45]" : "xl:scale-[.4]"
+          } ${sliderValue >= 80 ? "4xl:scale-50" : "4xl:scale-[.45]"} ${
+            sliderValue >= 80 ? "6xl:scale-[.55]" : "6xl:scale-50"
+          } absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 transform transition-transform ${sliderValue >= 80 && "-translate-x-[45%]"}`}
           src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Juus%20bottle%20green%20apple%20wbg.png"
           alt="Juus Bottle"
         /></Fade>
-        {sliderValue >= 85 ? (
+        {sliderValue >= 80 ? (
           <motion.div
             initial={{ x: -200, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
