@@ -5,13 +5,14 @@ import { motion } from "framer-motion";
 import FullNovaSlide from "./FullNovaSlide";
 
 
-const FullJuusSlide = memo(({ sliderValue }) => {
+const FullJuusSlide = memo(({ sliderValue, setSliderValue }) => {
   return (
     <div className="relative h-auto">
       <div
         style={{
           backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Background%20Greenapple.png"})`,
         }}
+        onClick={() => setSliderValue(95)}
         className={`flex flex-col justify-evenly sm:justify-evenly lg:justify-around 2xl:justify-evenly items-center relative overflow-hidden h-screen bg-cover bg-center xl:bg-bottom`}
       >
         <Fade triggerOnce={true}>
@@ -25,7 +26,7 @@ const FullJuusSlide = memo(({ sliderValue }) => {
             sliderValue >= 80 ? "xl:scale-[.45]" : "xl:scale-[.4]"
           } ${sliderValue >= 80 ? "4xl:scale-50" : "4xl:scale-[.45]"} ${
             sliderValue >= 80 ? "6xl:scale-[.55]" : "6xl:scale-50"
-          } absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 transform transition-transform ${sliderValue >= 80 && "-translate-x-[45%]"}`}
+          } absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 transform transition-transform ${sliderValue >= 80 && "-translate-x-[45%] -translate-y-[52.5%]"}`}
           src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Juus%20bottle%20green%20apple%20wbg.png"
           alt="Juus Bottle"
         /></Fade>

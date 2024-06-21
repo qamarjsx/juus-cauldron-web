@@ -71,13 +71,13 @@ function Home() {
       </div>
       <main className={`h-screen w-full relative overflow-hidden ${isOpen && "brightness-95"}`} onClick={() => setIsOpen(false)}>
         <div className="w-full h-full absolute">
-          <FullNovaSlide sliderValue={slideValue} />
+          <FullNovaSlide sliderValue={slideValue} setSliderValue={setSlideValue} />
         </div>
         <div
           className="w-full h-full absolute transition-[clip-path] duration-300 delay-0 ease-custom-ease"
           style={clipPathStyle}
         >
-          <FullJuusSlide sliderValue={slideValue} />
+          <FullJuusSlide sliderValue={slideValue} setSliderValue={setSlideValue} />
         </div>
         <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">
           <input
