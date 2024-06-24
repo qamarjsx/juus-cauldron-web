@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { toggleIsOpen } from "../../redux/isOpenSlice.js";
 import { Fade } from "react-awesome-reveal";
+import SocialCapsule from "./SocialCapsule.jsx";
 const NavLinks = lazy(() => import("./NavLinks.jsx"));
 const SlidingMenu = lazy(() => import("../utils/SlidingMenu.jsx"));
 
@@ -13,13 +14,18 @@ function JuusHeader() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [scoialsBtnClicked, setScoialsBtnClicked] = useState(false);
+
 
   const handleHamburgerClick = () => {
     dispatch(toggleIsOpen());
   };
 
   const handleScroll = () => {
-    if (window.scrollY > lastScrollY) {
+    if (window.scrollY <= 72) {
+      setShowHeader(true);
+    }
+    else if (window.scrollY > lastScrollY) {
       // Scrolling down
       console.log(lastScrollY);
       setShowHeader(false);
@@ -97,8 +103,23 @@ function JuusHeader() {
           {!isMobile && <NavLinks />}
         </div>
         <div className="flex">
-          <div className="flex">
-            <Fade direction="down" cascade damping={0.3}>
+        {isMobile ? (<svg
+            className={`hover:scale-105 cursor-pointer transition-transform ${scoialsBtnClicked && "rotate-180"}`}
+            onClick={() => setScoialsBtnClicked(!scoialsBtnClicked)}
+            xmlns="http://www.w3.org/2000/svg"
+            width="1.5em"
+            height="2em"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="white"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 5a2 2 0 1 0 4 0a2 2 0 1 0-4 0M3 19a2 2 0 1 0 4 0a2 2 0 1 0-4 0m14 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0m-8-5a3 3 0 1 0 6 0a3 3 0 1 0-6 0m3-7v4m-5.3 6.8l2.8-2m7.8 2l-2.8-2"
+            ></path>
+          </svg>) : (<Fade direction="down" cascade damping={0.3}>
               <a
                 target="_blank"
                 href={"https://www.facebook.com/profile.php?id=61550934897741"}
@@ -126,8 +147,9 @@ function JuusHeader() {
                   alt="youtube logo"
                 />
               </a>
-            </Fade>
-          </div>
+            </Fade>)}
+          <SocialCapsule isSocialBtnClicked={scoialsBtnClicked} />
+          
           {/* <svg
             className="mr-1.5"
             xmlns="http://www.w3.org/2000/svg"
