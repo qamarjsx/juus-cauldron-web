@@ -50,24 +50,24 @@ const About = memo(() => {
           />
           <Fade triggerOnce={true} direction="left">
             <img
-              className="scale-75 lg:scale-[.65] xl:scale-[.55] 3xl:scale-[.55] 4xl:scale-50 6xl:scale-[.45] -ml-5 xxxxs:-ml-8 lg:-ml-24 xl:-ml-40 3xl:-ml-[200px] 4xl:-ml-44 5xl:-ml-48 6xl:-ml-[272px] -mb-3 lg:-mb-6 xl:-mb-12 3xl:-mb-24 4xl:-mb-32 6xl:-mb-16"
+              className="scale-75 lg:scale-[.65] xl:scale-[.55] 3xl:scale-[.55] 4xl:scale-50 6xl:scale-[.45] -ml-5 xxxxs:-ml-8 lg:-ml-24 xl:-ml-[168px] 3xl:-ml-[216px] 4xl:-ml-[268px] 5xl:-ml-72 6xl:-ml-[428px] -mb-3 lg:-mb-10 xl:-mb-16 3xl:-mb-24 4xl:-mb-32 6xl:-mb-16 3xl:-mt-20 6xl:-mt-40"
               src="https://juusstorage.blob.core.windows.net/creatives/About%20Us/made%20to%20international.png"
               alt=""
             />
           </Fade>
-          <article className="mb-4 lg:mb-20 3xl:mb-32 3xl:-mt-16 6xl:-mt-32 px-4 lg:px-10 3xl:px-24 4xl:px-48 6xl:px-64 font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">
+          <article className="mb-4 lg:mb-20 3xl:mb-32 3xl:-mt-16 6xl:-mt-32 px-4 lg:px-10 3xl:px-24 font-light lg:font-normal lg:text-xl 3xl:text-3xl text-about">
             <Fade cascade triggerOnce={true}>
               <h1 className="my-4 lg:mt-8 3xl:mt-20 font-bold lg:font-extrabold text-lg lg:text-2xl 3xl:text-4xl">
                 INTERNATIONAL STANDARDS
               </h1>
-              <p className="">
+              <p className="6xl:mr-72">
                 Juus is Pakistans's first pocket-sized liquid enhancer,
                 developed with international standards.
               </p>
               <h1 className="my-4 lg:mt-8 3xl:mt-20 font-bold lg:font-extrabold text-lg lg:text-2xl 3xl:text-4xl">
                 MADE WITH YOU IN MIND
               </h1>
-              <p className="">
+              <p className="6xl:mr-72">
                 Juus creates one of a kind, new experience for its consumers.
                 Our Zero Sugar & Zero Calories principle sets you free of all
                 worries.
@@ -75,7 +75,7 @@ const About = memo(() => {
               <h1 className="my-4 lg:mt-8 3xl:mt-20 font-bold lg:font-extrabold text-lg lg:text-2xl 3xl:text-4xl">
                 AFFORDABLE HIGH QUALITY
               </h1>
-              <p className="">
+              <p className="6xl:mr-72">
                 Our goal is to make people move on to something better and keep
                 the excitement coming, while keeping the costs low and
                 budget-friendly.

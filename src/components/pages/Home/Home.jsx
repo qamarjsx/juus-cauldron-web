@@ -71,7 +71,7 @@ function Home() {
       </div>
       <main className={`h-screen w-full relative overflow-hidden ${isOpen && "brightness-95"}`} onClick={() => setIsOpen(false)}>
         <div className="w-full h-full absolute">
-          <FullNovaSlide sliderValue={slideValue} setSliderValue={setSlideValue} />
+          <FullNovaSlide isOpen={isOpen} sliderValue={slideValue} setSliderValue={setSlideValue} />
         </div>
         <div
           className="w-full h-full absolute transition-[clip-path] duration-300 delay-0 ease-custom-ease"

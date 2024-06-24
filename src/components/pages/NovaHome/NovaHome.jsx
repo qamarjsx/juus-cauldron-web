@@ -18,7 +18,7 @@ const NovaHome = memo(() => {
       <div>
         <NovaHeader isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-      <main className={`my-20 relative flex flex-col w-full ${isOpen && "brightness-95"}`} onClick={() => setIsOpen(false)}>
+      <main className={`my-[72px] relative flex flex-col w-full ${isOpen && "brightness-95"}`} onClick={() => setIsOpen(false)}>
         <div className="">
           <img
             className="6xl:w-full"

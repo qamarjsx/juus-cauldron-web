@@ -3,14 +3,19 @@ import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
 
-const FullNovaSlide = memo(({ sliderValue, setSliderValue }) => {
+const FullNovaSlide = memo(({isOpen, sliderValue, setSliderValue }) => {
+  const handleRightHalfClick = () => {
+    if (!isOpen) {
+      setSliderValue(5);
+    }
+  }
   return (
     <div className="relative h-auto">
       <div
         style={{
           backgroundImage: `url(${"https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/Nova%20background.png"})`,
         }}
-        onClick={() => setSliderValue(5)}
+        onClick={handleRightHalfClick}
         className={`flex flex-col justify-evenly sm:justify-evenly lg:justify-around 2xl:justify-evenly items-center relative overflow-hidden h-screen bg-cover bg-center xl:bg-top`}
       >
         <Fade triggerOnce={true}>
@@ -24,7 +29,7 @@ const FullNovaSlide = memo(({ sliderValue, setSliderValue }) => {
             sliderValue <= 20 ? "xl:scale-x-[.45] xl:scale-y-[.4825]" : "xl:scale-x-[.4] xl:scale-y-[.4325]"
           } ${sliderValue <= 20 ? "4xl:scale-x-50 4xl:scale-y-[.525]" : "4xl:scale-x-[.45] 4xl:scale-y-[.475]"} ${
             sliderValue <= 20 ? " 6xl:scale-x-[.55]  6xl:scale-y-[.58]" : "6xl:scale-x-50 6xl:scale-y-[.53]"
-          } absolute top-[45.2225%] left-1/2 -translate-x-1/2 -translate-y-1/2 transform transition-transform ${sliderValue <= 20 && "-translate-x-[55%] -translate-y-[52.5%]"}`}
+          } absolute top-[45.2225%] left-1/2 -translate-x-1/2 -translate-y-1/2 transform transition-transform ${sliderValue <= 20 && "-translate-x-[53%] -translate-y-[52%]"}`}
           src="https://juusstorage.blob.core.windows.net/creatives/Homepage%20JC/full%20bottle%20nova.png"
           alt="Nova Bottle"
         /></Fade>
